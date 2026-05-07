@@ -211,10 +211,10 @@
         DEFAULT {
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-            &kp Q    &kp L    &kp U       &com_excl           &dot_qmark                                                 &kp F                    &kp W              &kp R    &kp Y    &kp P
-            &kp E    &kp I    &kp A       &kp O                                                                          &kp K                    &kp T              &kp N    &kp S    &kp H
-            &kp Z    &kp X    &kp C       &kp V                                                             &kp SLASH    &kp G                    &kp D              &kp M    &kp J    &kp B
-                              &qm LALT    &mt LSHIFT SPACE    &lt_ime_off ARROW_NUM F15    &qm LCTRL        &kp MINUS    &lt_ime_on SYMBOL F14    &qmt LGUI ENTER
+            &kp Q           &kp L           &kp U           &com_excl       &dot_qmark                                      &kp F           &kp W           &kp R           &kp Y           &kp P
+            &kp E           &kp I           &kp A           &kp O                                                           &kp K           &kp T           &kp N           &kp S           &kp H
+            &kp Z           &kp X           &kp C           &kp V                                           &kp SLASH       &kp G           &kp D           &kp M           &kp J           &kp B
+                                            &qm LALT        &mt LSHFT SPACE &lt_ime_off     ARROW_NUM F15   &qm LCTRL       &kp MINUS       &lt_ime_on SYMBOL F14 &qmt LGUI ENTER
             >;
             sensor-bindings = <&inc_dec_kp LC(PG_UP) LC(PG_DN) &inc_dec_kp LC(PG_UP) LC(PG_DN)>;
         };
