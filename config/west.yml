@@ -15,7 +15,7 @@ manifest:
       remote: Reinmuth66
       revision: main
     - name: zmk-rgbled-widget
-      remote: Reinmuth66
+      remote: iris202938
       revision: main
     - name: zmk-input-processor-keybind
       remote: zettaface
