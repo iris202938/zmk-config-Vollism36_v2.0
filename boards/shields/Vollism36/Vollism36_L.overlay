@@ -11,6 +11,15 @@
 #define MOUSE 5
 #define SYSTEM 6
 
+/ {
+    /* 既存の定義（input_processorsなど）と同じ階層に追加 */
+    aliases {
+        led-red = &led0;   /* Xiao BLE の赤色LEDラベル */
+        led-green = &led1; /* Xiao BLE の緑色LEDラベル */
+        led-blue = &led2;  /* Xiao BLE の青色LEDラベル */
+    };
+};
+
 &kscan0 {
         col-gpios
             = <&xiao_d 1 GPIO_ACTIVE_HIGH>
