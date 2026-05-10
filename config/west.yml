@@ -6,6 +6,8 @@ manifest:
     #   url-base: https://github.com/Reinmuth66
     - name: badjeff
       url-base: https://github.com/badjeff
+    - name: petejohanson
+      url-base: https://github.com/petejohanson
     - name: sayu-hub
       url-base: https://github.com/sayu-hub
     - name: zettaface
@@ -22,7 +24,8 @@ manifest:
       import: app/west.yml
     - name: zmk-pmw3610-driver
       # remote: Reinmuth66
-      remote: sayu-hub
+      # remote: sayu-hub
+      remote: petejohanson
       revision: main
     - name: zmk-rgbled-widget
       remote: iris202938
