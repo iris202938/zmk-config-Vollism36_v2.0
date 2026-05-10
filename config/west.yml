@@ -8,8 +8,8 @@ manifest:
       url-base: https://github.com/badjeff
     # - name: petejohanson
     #   url-base: https://github.com/petejohanson
-    # - name: sayu-hub
-    #   url-base: https://github.com/sayu-hub
+    - name: sayu-hub
+      url-base: https://github.com/sayu-hub
     - name: zettaface
       url-base: https://github.com/zettaface
     - name: iris202938  # <-- led
@@ -22,11 +22,9 @@ manifest:
       # revision: main
       revision: v0.3
       import: app/west.yml
-    - name: zmk-pmw3610
-      # remote: badjeff
-      remote: zettaface
-      revision: main     # 「feat/zmk-input」から「main」に変更
-      path: modules/zmk-pmw3610-driver # フォルダ名は以前のままでもOK
+    - name: zmk-pmw3610-driver
+      remote: sayu-hub
+      revision: main
     - name: zmk-rgbled-widget
       remote: iris202938
       revision: main
