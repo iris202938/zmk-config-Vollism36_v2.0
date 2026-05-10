@@ -26,6 +26,7 @@ manifest:
       # remote: badjeff
       remote: zettaface
       revision: main     # 「feat/zmk-input」から「main」に変更
+      path: modules/zmk-pmw3610-driver # フォルダ名は以前のままでもOK
     - name: zmk-rgbled-widget
       remote: iris202938
       revision: main
