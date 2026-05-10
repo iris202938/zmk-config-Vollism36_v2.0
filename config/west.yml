@@ -22,8 +22,8 @@ manifest:
       # revision: main
       revision: v0.3
       import: app/west.yml
-    - name: zmk-pmw3610          # ここを実際のプロジェクト名「zmk-pmw3610」に変更
-      remote: petejohanson
+    - name: zmk-pmw3610-driver
+      remote: badjeff
       revision: main     # 「feat/zmk-input」から「main」に変更
     - name: zmk-rgbled-widget
       remote: iris202938
