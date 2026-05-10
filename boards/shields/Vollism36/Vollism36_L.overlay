@@ -9,7 +9,7 @@
 #define SYMBOL 3
 #define FUNCTION 4
 #define MOUSE 5
-#define SYSTEM 6
+#define SYSTEM 6    
 
 / {
     /* 既存の定義（input_processorsなど）と同じ階層に追加 */
