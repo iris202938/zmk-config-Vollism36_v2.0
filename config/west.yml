@@ -24,7 +24,7 @@ manifest:
       import: app/west.yml
     - name: zmk-pmw3610          # ここを実際のプロジェクト名「zmk-pmw3610」に変更
       remote: petejohanson
-      revision: feat/zmk-input   # 最新のZMK仕様に対応したブランチを指定
+      revision: main     # 「feat/zmk-input」から「main」に変更
     - name: zmk-rgbled-widget
       remote: iris202938
       revision: main
