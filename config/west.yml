@@ -4,8 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     # - name: Reinmuth66
     #   url-base: https://github.com/Reinmuth66
-    # - name: badjeff
-    #   url-base: https://github.com/badjeff
+    - name: badjeff
+      url-base: https://github.com/badjeff
     # - name: petejohanson
     #   url-base: https://github.com/petejohanson
     # - name: sayu-hub
