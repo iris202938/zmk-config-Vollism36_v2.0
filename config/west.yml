@@ -22,7 +22,7 @@ manifest:
       # revision: main
       revision: v0.3
       import: app/west.yml
-    - name: zmk-pmw3610-driver
+    - name: zmk-pmw3610
       # remote: badjeff
       remote: zettaface
       revision: main     # 「feat/zmk-input」から「main」に変更
