@@ -8,8 +8,8 @@ manifest:
       url-base: https://github.com/badjeff
     - name: petejohanson
       url-base: https://github.com/petejohanson
-    - name: sayu-hub
-      url-base: https://github.com/sayu-hub
+    # - name: sayu-hub
+    #   url-base: https://github.com/sayu-hub
     - name: zettaface
       url-base: https://github.com/zettaface
     - name: iris202938  # <-- led
