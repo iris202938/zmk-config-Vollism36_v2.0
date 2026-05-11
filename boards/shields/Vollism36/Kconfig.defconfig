@@ -1,4 +1,4 @@
-if SHIELD_VOLLISM36_R
+if SHIELD_VOLLISM36_L
 
 config ZMK_KEYBOARD_NAME
     default "Vollism36"
