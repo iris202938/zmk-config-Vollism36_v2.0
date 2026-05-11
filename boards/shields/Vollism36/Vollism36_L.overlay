@@ -100,3 +100,24 @@
 //     status = "okay";
 //     device = <&trackball>;
 // };
+
+/* 自分のトラックボール用のリスナー */
+&trackball_listener {
+    status = "okay";
+    device = <&trackball>;
+};
+
+/* 右から飛んでくるアナログスティック信号用のリスナー */
+/* もしdtsi側に定義がなければ、新規で作成します */
+/ {
+    peripheral_listener: peripheral_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball_split>; /* 右から転送されてくる仮想デバイスを指定 */
+        
+        /* ここにスティック用のレイヤー設定などを記述 */
+        default {
+            layers = <DEFAULT>;
+            input-processors = <&zip_xy_scaler 1 30>;
+        };
+    };
+};
