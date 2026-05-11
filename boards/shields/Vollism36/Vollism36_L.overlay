@@ -5,12 +5,27 @@
 // #include <dt-bindings/zmk/input.h>
 
 #define QWE 0
-#define QWERTY 1
-#define ARROW_NUM 2
-#define SYMBOL 3
-#define FUNCTION 4
-#define MOUSE 5
-#define SYSTEM 6    
+#define NIC 1
+#define LIN 2
+#define NICL 3
+#define WIN 4
+#define LWR 5
+#define LWRL 6
+#define LWRW 7
+#define RSE 8
+#define RSEL 9
+#define RSEW 10
+#define ADJ 11
+#define ADJL 12
+#define ADJW 13
+#define MOV 14
+#define MOVL 15
+#define MOVW 16
+#define NUM 17
+#define NUML 18
+#define NUMW 19
+#define WINS 20
+#define BLE 21
 
 / {
     /* 既存の定義（input_processorsなど）と同じ階層に追加 */

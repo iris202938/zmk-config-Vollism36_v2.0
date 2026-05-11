@@ -5,12 +5,27 @@
 #include <dt-bindings/zmk/keys.h>
 
 #define QWE 0
-#define QWERTY 1
-#define ARROW_NUM 2
-#define SYMBOL 3
-#define FUNCTION 4
-#define MOUSE 5
-#define SYSTEM 6
+#define NIC 1
+#define LIN 2
+#define NICL 3
+#define WIN 4
+#define LWR 5
+#define LWRL 6
+#define LWRW 7
+#define RSE 8
+#define RSEL 9
+#define RSEW 10
+#define ADJ 11
+#define ADJL 12
+#define ADJW 13
+#define MOV 14
+#define MOVL 15
+#define MOVW 16
+#define NUM 17
+#define NUML 18
+#define NUMW 19
+#define WINS 20
+#define BLE 21
 
 / {
     /* 既存の定義（input_processorsなど）と同じ階層に追加 */
@@ -131,30 +146,30 @@
 		compatible = "zmk,input-listener";
         device = <&anin0>;
 		symbol {
-			layers = <SYMBOL>;
+			layers = <WIN>;
 			input-processors = <&zip_keybind_keys_arrow>;
 			process-next;
 		};
 		symbol-prevent {
-			layers = <SYMBOL>;
+			layers = <WIN>;
 			input-processors = <&zip_xy_scaler 0 1>;
 		};
 		arrow_num {
-			layers = <ARROW_NUM>;
+			layers = <NUM>;
 			input-processors = <&zip_keybind_keys_f_a_o>;
 			process-next;
 		};
 		arrow_num-prevent {
-			layers = <ARROW_NUM>;
+			layers = <NUM>;
 			input-processors = <&zip_xy_scaler 0 1>;
 		};
 		qwerty {
-			layers = <QWERTY>;
+			layers = <LIN>;
 			input-processors = <&zip_keybind_keys_browser>;
 			process-next;
 		};
 		qwerty-prevent {
-			layers = <QWERTY>;
+			layers = <LIN>;
 			input-processors = <&zip_xy_scaler 0 1>;
 		};
 		default {
@@ -170,16 +185,16 @@
         compatible = "zmk,input-listener";
         device = <&trackball_split>;
 		symbol {
-			layers = <SYMBOL>;
+			layers = <WIN>;
 			input-processors = <&zip_keybind_keys_arrow>;
 			process-next;
 		};
 		symbol-prevent {
-			layers = <SYMBOL>;
+			layers = <WIN>;
 			input-processors = <&zip_xy_scaler 0 1>;
 		};
 		arrow_num {
-			layers = <ARROW_NUM>;
+			layers = <NUM>;
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
 							 , <&zip_xy_scaler 1 30>
 							 , <&zip_xy_to_scroll_mapper>
