@@ -96,7 +96,7 @@
 // };
 
 /* 既存のノードをラベル参照して、足りないプロパティだけを補充します */
-&trackball_split {
-    status = "okay";
-    device = <&trackball>;
-};
+// &trackball_split {
+//     status = "okay";
+//     device = <&trackball>;
+// };
