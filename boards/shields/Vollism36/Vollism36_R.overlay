@@ -197,6 +197,11 @@
     excluded-positions = <20 21 22 32>;
 };
 
+/* 右側（R）でも入力転送機能を無効化する */
+&{/split_inputs/trackball_split@0} {
+    status = "disabled";
+};
+
 &trackball_listener {
     // status = "okay";
 	status = "disabled";  /* okay から disabled に変更 */
