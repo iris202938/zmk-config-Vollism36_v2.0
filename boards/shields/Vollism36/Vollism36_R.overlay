@@ -1,0 +1,207 @@
+#include "Vollism36.dtsi"
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <dt-bindings/zmk/keys.h>
+
+#define QWE 0
+#define QWERTY 1
+#define ARROW_NUM 2
+#define SYMBOL 3
+#define FUNCTION 4
+#define MOUSE 5
+#define SYSTEM 6
+
+/ {
+    /* 既存の定義（input_processorsなど）と同じ階層に追加 */
+    aliases {
+        led-red = &led0;   /* Xiao BLE の赤色LEDラベル */
+        led-green = &led1; /* Xiao BLE の緑色LEDラベル */
+        led-blue = &led2;  /* Xiao BLE の青色LEDラベル */
+    };
+};
+
+&default_transform {
+    col-offset = <5>;
+};
+
+&kscan0 {
+        col-gpios
+            = <&xiao_d 4 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 5 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 6 GPIO_ACTIVE_HIGH>
+            , <&gpio0 9 GPIO_ACTIVE_HIGH>
+            , <&gpio0 10 GPIO_ACTIVE_HIGH>
+            ;
+};
+
+&adc {
+	status = "okay";
+};
+
+/ {
+	anin0: analog_input_0 {
+		compatible = "zmk,analog-input";
+		sampling-hz = <100>;
+		y-ch {
+			io-channels = <&adc 0>; // <--- see ain-map.png for nRF52840
+			mv-mid = <1590>;
+			mv-min-max = <1600>;
+			mv-deadzone = <88>;
+			scale-multiplier = <1>;
+			scale-divisor = <50>;
+			#invert;
+			evt-type = <INPUT_EV_REL>;
+			input-code = <INPUT_REL_Y>;
+			#report-on-change-only;
+		};
+		x-ch {
+			io-channels = <&adc 1>; // <--- see ain-map.png for nRF52840
+			mv-mid = <1650>;
+			mv-min-max = <1600>;
+			mv-deadzone = <88>;
+			scale-multiplier = <1>;
+			scale-divisor = <50>;
+			invert;
+			evt-type = <INPUT_EV_REL>;
+			input-code = <INPUT_REL_X>;
+
+			/* enable report mdoe for gamepad axix or knob */
+			/* to only call input_report on quantquantized value is updated */
+			/* NOTE: mouse input does NOT need this */
+			#report-on-change-only;
+
+		};
+	};
+
+	zip_keybind_keys_f_a_o: zip_keybind_keys_four_arithmetic_operations {
+	        compatible = "zmk,input-processor-keybind";
+	        #input-processor-cells = <0>;
+			track_remainders;
+	        bindings = <&kp MINUS>
+	                 , <&kp PLUS>
+	                 , <&kp ASTERISK>
+	                 , <&kp SLASH>
+					 ;
+	        tick = <150>;
+	        wait-ms = <100>;
+	        tap-ms = <50>;
+	        mode = <1>;
+	        // threshold = <10>
+	        // max_threshold = <200>
+	        // max_pending_activations = <10>
+    };
+	zip_keybind_keys_arrow: zip_keybind_keys_arrow {
+	        compatible = "zmk,input-processor-keybind";
+	        #input-processor-cells = <0>;
+		    track_remainders;
+	        bindings = <&kp RIGHT>
+	                 , <&kp LEFT>
+	                 , <&kp UP>
+	                 , <&kp DOWN>
+                     ;
+	        tick = <40>;
+	        wait-ms = <0>;
+	        tap-ms = <10>;
+	        mode = <0>;
+	        // threshold = <10>
+	        // max_threshold = <200>
+	        // max_pending_activations = <10>
+	};
+	zip_keybind_keys_browser: zip_keybind_keys_browser {
+	        compatible = "zmk,input-processor-keybind";
+	        #input-processor-cells = <0>;
+			track_remainders;
+	        bindings = <&kp T>
+	                 , <&kp W>
+					 , <&kp R>
+	                 , <&kp LS(T)>
+					 ;
+	        tick = <150>;
+	        wait-ms = <100>;
+	        tap-ms = <50>;
+	        mode = <1>;
+	        // threshold = <10>
+	        // max_threshold = <200>
+	        // max_pending_activations = <10>
+    };
+
+	analog_input_listener {
+		status = "okay";
+		compatible = "zmk,input-listener";
+        device = <&anin0>;
+		symbol {
+			layers = <SYMBOL>;
+			input-processors = <&zip_keybind_keys_arrow>;
+			process-next;
+		};
+		symbol-prevent {
+			layers = <SYMBOL>;
+			input-processors = <&zip_xy_scaler 0 1>;
+		};
+		arrow_num {
+			layers = <ARROW_NUM>;
+			input-processors = <&zip_keybind_keys_f_a_o>;
+			process-next;
+		};
+		arrow_num-prevent {
+			layers = <ARROW_NUM>;
+			input-processors = <&zip_xy_scaler 0 1>;
+		};
+		qwerty {
+			layers = <QWERTY>;
+			input-processors = <&zip_keybind_keys_browser>;
+			process-next;
+		};
+		qwerty-prevent {
+			layers = <QWERTY>;
+			input-processors = <&zip_xy_scaler 0 1>;
+		};
+		default {
+			layers = <QWE>;
+			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
+							 , <&zip_xy_scaler 1 30>
+							 , <&zip_xy_to_scroll_mapper>
+							 ;
+		};
+	};
+
+	trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball_split>;
+		symbol {
+			layers = <SYMBOL>;
+			input-processors = <&zip_keybind_keys_arrow>;
+			process-next;
+		};
+		symbol-prevent {
+			layers = <SYMBOL>;
+			input-processors = <&zip_xy_scaler 0 1>;
+		};
+		arrow_num {
+			layers = <ARROW_NUM>;
+			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
+							 , <&zip_xy_scaler 1 30>
+							 , <&zip_xy_to_scroll_mapper>
+							 ;
+        };
+        automouse {
+			layers = <QWE>;
+			input-processors = <&zip_temp_layer MOUSE 2000>;
+			process-next;
+        };
+    };
+};
+
+&zip_temp_layer {
+    excluded-positions = <20 21 22 32>;
+};
+
+&trackball_split {
+    status = "okay";     /* 無効化していたのを有効に戻す */
+    device = <&anin0>;   /* 右側のアナログ入力を転送対象に指定 */
+};
+
+&right_encoder {
+    status = "okay";
+};

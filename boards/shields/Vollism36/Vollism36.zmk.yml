@@ -1,0 +1,11 @@
+file_format: "1"
+id: Vollism36
+name: Vollism36
+type: shield
+url: https://github.com/Reinmuth66/zmk-config-Vollism36
+requires: [seeeduino_xiao_ble]
+features:
+  - keys
+siblings:
+  - Vollism36_L
+  - Vollism36_R

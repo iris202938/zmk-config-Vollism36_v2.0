@@ -1,0 +1,5 @@
+config SHIELD_VOLLISM36_L
+    def_bool $(shields_list_contains,Vollism36_L)
+    
+config SHIELD_VOLLISM36_R
+    def_bool $(shields_list_contains,Vollism36_R)
