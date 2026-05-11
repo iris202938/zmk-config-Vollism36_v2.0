@@ -21,6 +21,17 @@
     };
 };
 
+/* 40行目付近に挿入 */
+/ {
+    input_processors {
+        sensor_rotation: sensor_rotation {
+            compatible = "zmk,input-processor-sensor-rotation";
+            #input-processor-cells = <0>;
+            rotation-angle = <255>;
+        };
+    };
+};
+
 &kscan0 {
         col-gpios
             = <&xiao_d 1 GPIO_ACTIVE_HIGH>
@@ -68,10 +79,10 @@
     };
 };
 
-/* 自分のトラックボール用のリスナー */
 &trackball_listener {
     status = "okay";
     device = <&trackball>;
+    input-processors = <&sensor_rotation>; /* これを追記 */
 };
 
 /* 右から飛んでくるアナログスティック信号用のリスナー */
