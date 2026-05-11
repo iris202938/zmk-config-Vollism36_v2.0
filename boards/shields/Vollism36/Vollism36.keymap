@@ -214,7 +214,7 @@
             &mt LSHFT Q     &kp W           &kp E           &kp R           &kp T                                           &kp Y           &kp U           &kp I           &kp O           &mt RSHFT P
             &mt LCTRL A     &kp S           &kp D           &kp F                                                           &kp H           &kp J           &kp K           &kp L           &mt RCTRL SEMI
             &mt LGUI Z      &kp X           &kp C           &kp V                                           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt RALT SLASH
-                                            &kp G           &kp LBKT        &mt LSHFT SPACE &lt LWR TAB     &lt RSE ENTER   &mt RSHFT SPACE &kp RBKT
+                                            &kp G           &kp LBKT        &mt LSHFT SPACE &lt QWERTY TAB  &lt ARROW_NUM ENTER &mt RSHFT SPACE &kp RBKT
             >;
             sensor-bindings = <&inc_dec_kp LC(PG_UP) LC(PG_DN) &inc_dec_kp LC(PG_UP) LC(PG_DN)>;            
         };
