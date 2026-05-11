@@ -83,6 +83,14 @@
     };
 };
 
-&trackball_split {
-	device = <&trackball>;
+// &trackball_split {
+// 	device = <&trackball>;
+// };
+
+/ {
+    /* 参照ではなく、新しくノードを定義する形にします */
+    trackball_split: trackball_split {
+        compatible = "zmk,input-split";
+        device = <&trackball>;
+    };
 };
