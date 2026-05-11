@@ -198,7 +198,8 @@
 };
 
 &trackball_listener {
-    status = "okay";
+    // status = "okay";
+	status = "disabled";  /* okay から disabled に変更 */
 };
 
 &right_encoder {
