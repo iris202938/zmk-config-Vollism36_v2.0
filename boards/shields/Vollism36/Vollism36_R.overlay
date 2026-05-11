@@ -197,15 +197,6 @@
     excluded-positions = <20 21 22 32>;
 };
 
-// /* 右側（R）でも入力転送機能を無効化する */
-// &{/split_inputs/trackball_split@0} {
-//     status = "disabled";
-// };
-
-// &trackball_listener {
-//     // status = "okay";
-// 	status = "disabled";  /* okay から disabled に変更 */
-// };
 &trackball_split {
     status = "okay";     /* 無効化していたのを有効に戻す */
     device = <&anin0>;   /* 右側のアナログ入力を転送対象に指定 */
