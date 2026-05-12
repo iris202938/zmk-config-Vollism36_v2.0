@@ -5124,96 +5124,96 @@
                 , <&kp  LANG2>;
         };
 
-        // bt0_lQWE: bt0_lQWE { // Bluetoothプロファイル0を選択し、レイヤーQWEを有効化
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     bindings = <&to QWE &bt BT_SEL 0 &to QWE>;
-        // };
-        // bt0_lNIC: bt0_lNIC { // Bluetoothプロファイル0を選択し、レイヤーNICを有効化
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     bindings = <&to QWE &bt BT_SEL 0 &to NIC>;
-        // };
-        // bt1_lNIC: bt1_lNIC { // Bluetoothプロファイル1を選択し、レイヤーNICを有効化
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     bindings = <&to QWE &bt BT_SEL 1 &to NIC>;
-        // };
-        // bt1_lNICL: bt1_lNICL { // Bluetoothプロファイル1を選択し、レイヤーNICLを有効化
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     bindings = <&to QWE &bt BT_SEL 1 &to NICL>;
-        // };
-        // bt1_lWIN: bt1_lWIN { // Bluetoothプロファイル1を選択し、レイヤーWINを有効化
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     bindings = <&to QWE &bt BT_SEL 1 &to WIN>;
-        // };
-        // bt2_lLIN: bt2_lLIN { // Bluetoothプロファイル2を選択し、レイヤーLINを有効化
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     bindings = <&to QWE &bt BT_SEL 2 &to LIN>;
-        // };
-        // bt2_lWIN: bt2_lWIN { // Bluetoothプロファイル2を選択し、レイヤーWINを有効化
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     bindings = <&to QWE &bt BT_SEL 2 &to WIN>;
-        // };
-        // bt2_lNICL: bt2_lNICL { // Bluetoothプロファイル2を選択し、レイヤーNICLを有効化
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     bindings = <&to QWE &bt BT_SEL 2 &to NICL>;
-        // };
-        // bt3_lLIN: bt3_lLIN { // Bluetoothプロファイル3を選択し、レイヤーLINを有効化
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     bindings = <&to QWE &bt BT_SEL 3 &to LIN>;
-        // };
-        // bt3_lCAD: bt3_lCAD { // Bluetoothプロファイル3を選択し、レイヤーCADを有効化
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     bindings = <&to QWE &bt BT_SEL 3 &to CAD>;
-        // };
-        // bt3_lWIN: bt3_lWIN { // Bluetoothプロファイル3を選択し、レイヤーWINを有効化
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     bindings = <&to QWE &bt BT_SEL 3 &to WIN>;
-        // };
-        // bt3_lNICL: bt3_lNICL { // Bluetoothプロファイル3を選択し、レイヤーNICLを有効化
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     bindings = <&to QWE &bt BT_SEL 3 &to NICL>;
-        // };
-        // bt4_lNIC: bt4_lNIC { // Bluetoothプロファイル4を選択し、レイヤーNICを有効化
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     bindings = <&to QWE &bt BT_SEL 4 &to NIC>;
-        // };
-        // bt4_lLIN: bt4_lLIN { // Bluetoothプロファイル4を選択し、レイヤーLINを有効化
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     bindings = <&to QWE &bt BT_SEL 4 &to LIN>;
-        // };
-        // bt4_lNICL: bt4_lNICL { // Bluetoothプロファイル4を選択し、レイヤーNICLを有効化
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     bindings = <&to QWE &bt BT_SEL 4 &to NICL>;
-        // };
-        // usb_lLIN: usb_lLIN { // USB接続を選択し、レイヤーLINを有効化
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     bindings = <&to QWE &out OUT_USB &to LIN>;
-        // };
-        // usb_lCAD: usb_lCAD { // USB接続を選択し、レイヤーCADを有効化
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     bindings = <&to QWE &out OUT_USB &to CAD>;
-        // };
-        // usb_lWIN: usb_lWIN { // USB接続を選択し、レイヤーWINを有効化
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     bindings = <&to QWE &out OUT_USB &to WIN>;
-        // };
+        bt0_lQWE: bt0_lQWE { // Bluetoothプロファイル0を選択し、レイヤーQWEを有効化
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to QWE &bt BT_SEL 0 &to QWE>;
+        };
+        bt0_lNIC: bt0_lNIC { // Bluetoothプロファイル0を選択し、レイヤーNICを有効化
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to QWE &bt BT_SEL 0 &to NIC>;
+        };
+        bt1_lNIC: bt1_lNIC { // Bluetoothプロファイル1を選択し、レイヤーNICを有効化
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to QWE &bt BT_SEL 1 &to NIC>;
+        };
+        bt1_lNICL: bt1_lNICL { // Bluetoothプロファイル1を選択し、レイヤーNICLを有効化
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to QWE &bt BT_SEL 1 &to NICL>;
+        };
+        bt1_lWIN: bt1_lWIN { // Bluetoothプロファイル1を選択し、レイヤーWINを有効化
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to QWE &bt BT_SEL 1 &to WIN>;
+        };
+        bt2_lLIN: bt2_lLIN { // Bluetoothプロファイル2を選択し、レイヤーLINを有効化
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to QWE &bt BT_SEL 2 &to LIN>;
+        };
+        bt2_lWIN: bt2_lWIN { // Bluetoothプロファイル2を選択し、レイヤーWINを有効化
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to QWE &bt BT_SEL 2 &to WIN>;
+        };
+        bt2_lNICL: bt2_lNICL { // Bluetoothプロファイル2を選択し、レイヤーNICLを有効化
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to QWE &bt BT_SEL 2 &to NICL>;
+        };
+        bt3_lLIN: bt3_lLIN { // Bluetoothプロファイル3を選択し、レイヤーLINを有効化
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to QWE &bt BT_SEL 3 &to LIN>;
+        };
+        bt3_lCAD: bt3_lCAD { // Bluetoothプロファイル3を選択し、レイヤーCADを有効化
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to QWE &bt BT_SEL 3 &to CAD>;
+        };
+        bt3_lWIN: bt3_lWIN { // Bluetoothプロファイル3を選択し、レイヤーWINを有効化
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to QWE &bt BT_SEL 3 &to WIN>;
+        };
+        bt3_lNICL: bt3_lNICL { // Bluetoothプロファイル3を選択し、レイヤーNICLを有効化
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to QWE &bt BT_SEL 3 &to NICL>;
+        };
+        bt4_lNIC: bt4_lNIC { // Bluetoothプロファイル4を選択し、レイヤーNICを有効化
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to QWE &bt BT_SEL 4 &to NIC>;
+        };
+        bt4_lLIN: bt4_lLIN { // Bluetoothプロファイル4を選択し、レイヤーLINを有効化
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to QWE &bt BT_SEL 4 &to LIN>;
+        };
+        bt4_lNICL: bt4_lNICL { // Bluetoothプロファイル4を選択し、レイヤーNICLを有効化
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to QWE &bt BT_SEL 4 &to NICL>;
+        };
+        usb_lLIN: usb_lLIN { // USB接続を選択し、レイヤーLINを有効化
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to QWE &out OUT_USB &to LIN>;
+        };
+        usb_lCAD: usb_lCAD { // USB接続を選択し、レイヤーCADを有効化
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to QWE &out OUT_USB &to CAD>;
+        };
+        usb_lWIN: usb_lWIN { // USB接続を選択し、レイヤーWINを有効化
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to QWE &out OUT_USB &to WIN>;
+        };
 
         // =========================================================================
         // --- 2. Ctrl + A (<Key1> + Ctrl + A) ---
@@ -6681,7 +6681,7 @@
         //         = <&macro_tap &kp LANG2 &kp INT5 &to LIN>
         //         ;
         // };
-        
+
 		// ハイコントラスト切り替え (Win: Shift + Alt + PrintScreen)
         m_hi_con: m_hi_con {
             compatible = "zmk,behavior-macro";
