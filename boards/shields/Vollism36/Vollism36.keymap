@@ -5202,7 +5202,8 @@
         usb_lLIN: usb_lLIN { // USB接続を選択し、レイヤーLINを有効化
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to QWE &out OUT_USB &to LIN>;
+            // bindings = <&to QWE &out OUT_USB &to LIN>;
+            bindings = <&to 0 &out OUT_USB &to 2>;
         };
         usb_lCAD: usb_lCAD { // USB接続を選択し、レイヤーCADを有効化
             compatible = "zmk,behavior-macro";
