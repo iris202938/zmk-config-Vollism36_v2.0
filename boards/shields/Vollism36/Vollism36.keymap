@@ -1,6 +1,8 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <behaviors/rgbled_widget.dtsi>
 #include <input/processors.dtsi>
@@ -5202,8 +5204,7 @@
         usb_lLIN: usb_lLIN { // USB接続を選択し、レイヤーLINを有効化
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            // bindings = <&to QWE &out OUT_USB &to LIN>;
-            bindings = <&to 0 &out OUT_USB &to 2>;
+            bindings = <&to QWE &out OUT_USB &to LIN>;
         };
         usb_lCAD: usb_lCAD { // USB接続を選択し、レイヤーCADを有効化
             compatible = "zmk,behavior-macro";
