@@ -4314,7 +4314,7 @@
         // td_lt_num_l2: tap_dance_layer_tap_num_l2 {  // タップでLANG2、ホールドでNUMレイヤ、ダブルタップでNUMレイヤ保持
         //     compatible = "zmk,behavior-tap-dance";
         //     #binding-cells = <0>;
-        //     tapping-term-ms = <190>;
+        //     tapping-term-ms = <190>; 
         //     bindings = <&lt NUM LANG2>, <&to NUM>;
         // };
         // td_lt_mov_i2: tap_dance_layer_tap_mov_i2 {  // タップでINT2、ホールドでMOVレイヤ、ダブルタップでMOVレイヤ保持
