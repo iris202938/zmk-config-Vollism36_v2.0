@@ -12,24 +12,25 @@
 #define NIC 1
 #define LIN 2
 #define NICL 3
-#define WIN 4
-#define LWR 5
-#define LWRL 6
-#define LWRW 7
-#define RSE 8
-#define RSEL 9
-#define RSEW 10
-#define ADJ 11
-#define ADJL 12
-#define ADJW 13
-#define MOV 14
-#define MOVL 15
-#define MOVW 16
-#define NUM 17
-#define NUML 18
-#define NUMW 19
-#define WINS 20
-#define BLE 21
+#define CAD 4
+#define WIN 5
+#define LWR 6
+#define LWRL 7
+#define LWRW 8
+#define RSE 9
+#define RSEL 10
+#define RSEW 11
+#define ADJ 12
+#define ADJL 13
+#define ADJW 14
+#define MOV 15
+#define MOVL 16
+#define MOVW 17
+#define NUM 18
+#define NUML 19
+#define NUMW 20
+#define WINS 21
+#define BLE 22
 
 &mt {
     flavor = "hold-preferred";
@@ -6812,6 +6813,17 @@
             &macro_U        &macro_SI	    &macro_TE       &macro_KE                                                       &macro_HA       &macro_TO       &macro_KI       &macro_I        &macro_NN
             &macro_JPTEN    &macro_HI	    &macro_SU       &macro_HU                                       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN
                                             &macro_SE       &lt_bl NUML ESC &kp SPACE       &lt LWRL TAB    &lt RSEL ENTER  &kp LS(SPACE)   &lt_bl MOVL ESC
+            >;
+            sensor-bindings = <&history_encoder &history_encoder>;
+        };
+
+        CAD {
+            bindings = <
+        // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
+            &td_Q           &td_W           &td_E           &td_R           &td_T                                           &td_Y           &td_U           &td_I           &td_O           &td_P
+            &td_A           &td_S           &td_D           &td_F                                                           &td_H           &td_J           &td_K           &td_L           &td_SEMI
+            &td_Z           &td_X           &td_C           &td_V                                           &td_B           &td_N           &td_M           &td_COMMA       &td_DOT         &td_SLASH
+                                            &td_G           &lt_bl NUMW INT5 &kp SPACE      &lt LWRW TAB    &lt RSEW ENTER	&mt RSHFT ESC   &lt_bl MOVW INT4 // INT4はALT+変換のAHKマクロ用
             >;
             sensor-bindings = <&history_encoder &history_encoder>;
         };
