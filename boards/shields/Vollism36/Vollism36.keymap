@@ -4643,10 +4643,6 @@
             // 1-Tap: 通常キー, 2-Taps: 1G , 3-Taps: 1/4G
             bindings = <&all_ht RGUI SLASH>, <&ctrl_alt_j>, <&ctrl_alt_k>;
         };
-    };
-
-
-
 
         history_back: history_back {
 			compatible = "zmk,behavior-mod-morph";
