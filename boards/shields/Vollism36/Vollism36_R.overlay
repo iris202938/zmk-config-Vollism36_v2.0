@@ -205,7 +205,7 @@
         };
         automouse {
 			layers = <QWE>;
-			input-processors = <&zip_temp_layer MOUSE 2000>;
+			input-processors = <&zip_temp_layer MOV 2000>;
 			process-next;
         };
     };
