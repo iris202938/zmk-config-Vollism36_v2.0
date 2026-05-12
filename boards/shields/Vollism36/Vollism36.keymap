@@ -6503,8 +6503,8 @@
                 = <&macro_tap &kp TAB>
                 , <&macro_tap &kp TAB>
                 , <&macro_tap &kp TAB>
-            , <&macro_tap &kp KP_MINUS>
-            , <&macro_tap &kp N1>
+                , <&macro_tap &kp KP_MINUS>
+                , <&macro_tap &kp N1>
                 ;
         };
         k_tab_minus_2: k_tab_minus_2 { // カウントアップ数-2
@@ -6653,34 +6653,35 @@
                 ;
         };
 
-        ng_on: ng_on {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LANGUAGE_1 &kp INTERNATIONAL_4 &to 1>
-                ;
-        };
-        ng_off: ng_off {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LANGUAGE_2 &kp INTERNATIONAL_5 &to 0>
-                ;
-        };
-        ng_onl: ng_onl {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LANG1 &kp INT4 &to NGNL>
-                ;
-        };
-        ng_offl: ng_offl {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LANG2 &kp INT5 &to LIN>
-                ;
-        };
+        // ng_on: ng_on {
+        //     compatible = "zmk,behavior-macro";
+        //     #binding-cells = <0>;
+        //     bindings
+        //         = <&macro_tap &kp LANGUAGE_1 &kp INTERNATIONAL_4 &to 1>
+        //         ;
+        // };
+        // ng_off: ng_off {
+        //     compatible = "zmk,behavior-macro";
+        //     #binding-cells = <0>;
+        //     bindings
+        //         = <&macro_tap &kp LANGUAGE_2 &kp INTERNATIONAL_5 &to 0>
+        //         ;
+        // };
+        // ng_onl: ng_onl {
+        //     compatible = "zmk,behavior-macro";
+        //     #binding-cells = <0>;
+        //     bindings
+        //         = <&macro_tap &kp LANG1 &kp INT4 &to NGNL>
+        //         ;
+        // };
+        // ng_offl: ng_offl {
+        //     compatible = "zmk,behavior-macro";
+        //     #binding-cells = <0>;
+        //     bindings
+        //         = <&macro_tap &kp LANG2 &kp INT5 &to LIN>
+        //         ;
+        // };
+        
 		// ハイコントラスト切り替え (Win: Shift + Alt + PrintScreen)
         m_hi_con: m_hi_con {
             compatible = "zmk,behavior-macro";
