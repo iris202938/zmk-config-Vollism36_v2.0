@@ -698,49 +698,49 @@
 
         combo_JPRKAGIL {
             timeout-ms = <50>;
-            key-positions = <14 31>; // 旧 17 37
+            key-positions = <29 31>; // 旧 17 37
             layers = <RSE>; 
             bindings = <&macro_JPRKAGIL>;
         };
 
         combo_JPLKADOL {
             timeout-ms = <50>;
-            key-positions = <15 31>; // 旧 18 37
+            key-positions = <14 31>; // 旧 18 37
             layers = <RSE>; 
             bindings = <&macro_JPLKADOL>;
         };
 
         combo_JPRKADOL {
             timeout-ms = <50>;
-            key-positions = <16 31>; // 旧 19 37
+            key-positions = <15 31>; // 旧 19 37
             layers = <RSE>; 
             bindings = <&macro_JPRKADOL>;
         };
 
         combo_JPLMARUL {
             timeout-ms = <50>;
-            key-positions = <17 31>; // 旧 20 37
+            key-positions = <16 31>; // 旧 20 37
             layers = <RSE>; 
             bindings = <&macro_JPLMARUL>;
         };
 
         combo_JPRMARUL {
             timeout-ms = <50>;
-            key-positions = <18 31>; // 旧 21 37
+            key-positions = <17 31>; // 旧 21 37
             layers = <RSE>; 
             bindings = <&macro_JPRMARUL>;
         };
 
         combo_JPLDKAGIL {
             timeout-ms = <50>;
-            key-positions = <19 31>; // 旧 22 37
+            key-positions = <18 31>; // 旧 22 37
             layers = <RSE>; 
             bindings = <&macro_JPLDKAGIL>;
         };
 
         combo_JPRDKAGIL {
             timeout-ms = <50>;
-            key-positions = <19 31>; // 旧 23 37 (右端のキーを36キー版の右端へ集約)
+            key-positions = <18 31>; // 旧 23 37 (右端のキーを36キー版の右端へ集約)
             layers = <RSE>; 
             bindings = <&macro_JPRDKAGIL>;
         };
@@ -845,105 +845,105 @@
 
         combo_MO {
             timeout-ms = <50>;
-            key-positions = <14 31>; // 旧 17 37
+            key-positions = <29 31>; // 旧 17 37
             layers = <NIC NICL>;
             bindings = <&macro_MO>;
         };
 
         combo_BA {
             timeout-ms = <50>;
-            key-positions = <15 31>; // 旧 18 37
+            key-positions = <14 31>; // 旧 18 37
             layers = <NIC NICL>;
             bindings = <&macro_BA>;
         };
 
         combo_DO {
             timeout-ms = <50>;
-            key-positions = <16 31>; // 旧 19 37
+            key-positions = <15 31>; // 旧 19 37
             layers = <NIC NICL>;
             bindings = <&macro_DO>;
         };
 
         combo_GI {
             timeout-ms = <50>;
-            key-positions = <17 31>; // 旧 20 37
+            key-positions = <16 31>; // 旧 20 37
             layers = <NIC NICL>;
             bindings = <&macro_GI>;
         };
 
         combo_PO {
             timeout-ms = <50>;
-            key-positions = <18 31>; // 旧 21 37
+            key-positions = <17 31>; // 旧 21 37
             layers = <NIC NICL>;
             bindings = <&macro_PO>;
         };
 
         combo_ZL {
             timeout-ms = <50>;
-            key-positions = <19 31>; // 旧 22 37
+            key-positions = <18 31>; // 旧 22 37
             layers = <NIC NICL>;
             bindings = <&macro_ZL>; // ●を出したい
         };
 
         combo_XU {
             timeout-ms = <50>;
-            key-positions = <20 31>; // 旧 25 37
+            key-positions = <19 31>; // 旧 25 37
             layers = <NIC NICL>;
             bindings = <&macro_XU>;
         };
 
         combo_JPMINUS2 {
             timeout-ms = <50>;
-            key-positions = <21 31>; // 旧 26 37
+            key-positions = <20 31>; // 旧 26 37
             layers = <NIC NICL>;
             bindings = <&macro_JPMINUS2>;
         };
 
         combo_RO {
             timeout-ms = <50>;
-            key-positions = <22 31>; // 旧 27 37
+            key-positions = <21 31>; // 旧 27 37
             layers = <NIC NICL>;
             bindings = <&macro_RO>;
         };
 
         combo_YA {
             timeout-ms = <50>;
-            key-positions = <23 31>; // 旧 28 37
+            key-positions = <22 31>; // 旧 28 37
             layers = <NIC NICL>;
             bindings = <&macro_YA>;
         };
 
         combo_XI {
             timeout-ms = <50>;
-            key-positions = <24 31>; // 旧 29 37
+            key-positions = <23 31>; // 旧 29 37
             layers = <NIC NICL>;
             bindings = <&macro_XI>;
         };
 
         combo_PU {
             timeout-ms = <50>;
-            key-positions = <25 31>; // 旧 30 37
+            key-positions = <24 31>; // 旧 30 37
             layers = <NIC NICL>;
             bindings = <&macro_PU>;
         };
 
         combo_ZO {
             timeout-ms = <50>;
-            key-positions = <26 31>; // 旧 31 37
+            key-positions = <25 31>; // 旧 31 37
             layers = <NIC NICL>;
             bindings = <&macro_ZO>;
         };
 
         combo_PE {
             timeout-ms = <50>;
-            key-positions = <27 31>; // 旧 32 37
+            key-positions = <26 31>; // 旧 32 37
             layers = <NIC NICL>;
             bindings = <&macro_PE>;
         };
 
         combo_BO {
             timeout-ms = <50>;
-            key-positions = <28 31>; // 旧 33 37
+            key-positions = <27 31>; // 旧 33 37
             layers = <NIC NICL>;
             bindings = <&macro_BO>;
         };
@@ -1125,105 +1125,105 @@
 
         combo_ZE {
             timeout-ms = <50>;
-            key-positions = <14 34>; // 旧 17 40
+            key-positions = <29 34>; // 旧 17 40
             layers = <NIC NICL>;
             bindings = <&macro_ZE>;
         };
 
         combo_MI {
             timeout-ms = <50>;
-            key-positions = <15 34>; // 旧 18 40
+            key-positions = <14 34>; // 旧 18 40
             layers = <NIC NICL>;
             bindings = <&macro_MI>;
         };
 
         combo_O {
             timeout-ms = <50>;
-            key-positions = <16 34>; // 旧 19 40
+            key-positions = <15 34>; // 旧 19 40
             layers = <NIC NICL>;
             bindings = <&macro_O>;
         };
 
         combo_NO {
             timeout-ms = <50>;
-            key-positions = <17 34>; // 旧 20 40
+            key-positions = <16 34>; // 旧 20 40
             layers = <NIC NICL>;
             bindings = <&macro_NO>;
         };
 
         combo_XYO {
             timeout-ms = <50>;
-            key-positions = <18 34>; // 旧 21 40
+            key-positions = <17 34>; // 旧 21 40
             layers = <NIC NICL>;
             bindings = <&macro_XYO>;
         };
 
         combo_XTU {
             timeout-ms = <50>;
-            key-positions = <19 34>; // 旧 22 40
+            key-positions = <18 34>; // 旧 22 40
             layers = <NIC NICL>;
             bindings = <&macro_XTU>;
         };
         
         combo_JPCOMMA2 {
             timeout-ms = <50>;
-            key-positions = <20 34>; // 旧 25 40
+            key-positions = <19 34>; // 旧 25 40
             layers = <NIC NICL>;
             bindings = <&macro_JPCOMMA2>;
         };
 
         combo_BI {
             timeout-ms = <50>;
-            key-positions = <21 34>; // 旧 26 40
+            key-positions = <20 34>; // 旧 26 40
             layers = <NIC NICL>;
             bindings = <&macro_BI>;
         };
 
         combo_ZU {
             timeout-ms = <50>;
-            key-positions = <22 34>; // 旧 27 40
+            key-positions = <21 34>; // 旧 27 40
             layers = <NIC NICL>;
             bindings = <&macro_ZU>;
         };
 
         combo_BU {
             timeout-ms = <50>;
-            key-positions = <23 34>; // 旧 28 40
+            key-positions = <22 34>; // 旧 28 40
             layers = <NIC NICL>;
             bindings = <&macro_BU>;
         };
 
         combo_BE {
             timeout-ms = <50>;
-            key-positions = <24 34>; // 旧 29 40
+            key-positions = <23 34>; // 旧 29 40
             layers = <NIC NICL>;
             bindings = <&macro_BE>;
         };
 
         combo_NU {
             timeout-ms = <50>;
-            key-positions = <25 34>; // 旧 30 40
+            key-positions = <24 34>; // 旧 30 40
             layers = <NIC NICL>;
             bindings = <&macro_NU>;
         };
 
         combo_YU {
             timeout-ms = <50>;
-            key-positions = <26 34>; // 旧 31 40
+            key-positions = <25 34>; // 旧 31 40
             layers = <NIC NICL>;
             bindings = <&macro_YU>;
         };
 
         combo_MU {
             timeout-ms = <50>;
-            key-positions = <27 34>; // 旧 32 40
+            key-positions = <26 34>; // 旧 32 40
             layers = <NIC NICL>;
             bindings = <&macro_MU>;
         };
 
         combo_WA {
             timeout-ms = <50>;
-            key-positions = <28 34>; // 旧 33 40
+            key-positions = <27 34>; // 旧 33 40
             layers = <NIC NICL>;
             bindings = <&macro_WA>;
         };
