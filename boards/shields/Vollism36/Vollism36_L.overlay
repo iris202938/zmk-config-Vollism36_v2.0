@@ -87,8 +87,7 @@
 
     trackball: trackball@0 {
         status = "okay";
-        // compatible = "pixart,pmw3610-alt"; /* ここを -alt に変更 */
-        compatible = "pixart,pmw3610"; /* -alt を取って元に戻す */
+        compatible = "pixart,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&xiao_d 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
@@ -98,11 +97,10 @@
 &trackball_listener {
     status = "okay";
     device = <&trackball>;
-    input-processors = <&sensor_rotation>; /* これを追記 */
+    input-processors = <&sensor_rotation>;
 };
 
 /* 右から飛んでくるアナログスティック信号用のリスナー */
-/* もしdtsi側に定義がなければ、新規で作成します */
 / {
     peripheral_listener: peripheral_listener {
         compatible = "zmk,input-listener";
