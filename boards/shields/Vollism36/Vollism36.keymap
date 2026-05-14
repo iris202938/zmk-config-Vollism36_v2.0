@@ -6781,7 +6781,7 @@
             &mt LGUI Z      &kp X           &kp C           &kp V                                           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt RALT SLASH
                                             &kp G           &lt_bl NUM LBKT &mt LSHFT SPACE &lt LWR TAB     &lt RSE ENTER   &mt RSHFT SPACE &lt_bl MOV RBKT
             >;
-            sensor-bindings = <&inc_dec_kp LC(PG_UP) LC(PG_DN) &inc_dec_kp LC(PG_UP) LC(PG_DN)>;            
+            sensor-bindings = <&inc_dec_kp LC(PG_UP) LC(PG_DN) &inc_dec_kp LC(PG_UP) LC(PG_DN)>;
         };
 
         NIC { 
@@ -6792,7 +6792,7 @@
             &macro_JPTEN    &macro_HI	    &macro_SU       &macro_HU                                       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN
                                             &macro_SE       &lt_bl NUM LBKT &kp SPACE       &lt LWR TAB     &lt RSE ENTER   &kp LS(SPACE)   &lt_bl MOV RBKT
             >;
-            sensor-bindings = <&history_encoder &history_encoder>;
+            sensor-bindings = <&inc_dec_kp LC(PG_UP) LC(PG_DN) &inc_dec_kp LC(PG_UP) LC(PG_DN)>;
         };
 
         LIN {
@@ -6803,7 +6803,7 @@
             &mt_s LALT Z    &kp X           &kp C           &kp V                                           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt_s RGUI SLASH
                                             &kp G           &lt_bl NUML ESC &mt LSHFT SPACE &lt LWRL TAB	&lt RSEL ENTER	&mt RSHFT SPACE &lt_bl MOVL ESC
             >;
-            sensor-bindings = <&history_encoder &history_encoder>;
+            sensor-bindings = <&inc_dec_kp LC(PG_UP) LC(PG_DN) &inc_dec_kp LC(PG_UP) LC(PG_DN)>;
         };
 
         NICL { 
@@ -6814,7 +6814,7 @@
             &macro_JPTEN    &macro_HI	    &macro_SU       &macro_HU                                       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN
                                             &macro_SE       &lt_bl NUML ESC &kp SPACE       &lt LWRL TAB    &lt RSEL ENTER  &kp LS(SPACE)   &lt_bl MOVL ESC
             >;
-            sensor-bindings = <&history_encoder &history_encoder>;
+            sensor-bindings = <&inc_dec_kp LC(PG_UP) LC(PG_DN) &inc_dec_kp LC(PG_UP) LC(PG_DN)>;
         };
 
         CAD {
@@ -6825,7 +6825,7 @@
             &td_Z           &td_X           &td_C           &td_V                                           &td_B           &td_N           &td_M           &td_COMMA       &td_DOT         &td_SLASH
                                             &td_G           &lt_bl NUMW INT5 &kp SPACE      &lt LWRW TAB    &lt RSEW ENTER	&mt RSHFT ESC   &lt_bl MOVW INT4 // INT4はALT+変換のAHKマクロ用
             >;
-            sensor-bindings = <&history_encoder &history_encoder>;
+            sensor-bindings = <&inc_dec_kp LC(PG_UP) LC(PG_DN) &inc_dec_kp LC(PG_UP) LC(PG_DN)>;
         };
 
         WIN {
@@ -6836,7 +6836,7 @@
             &kp Z           &kp X           &kp C           &kp V                                           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &kp SLASH
                                             &kp G           &lt_bl NUMW ESC &kp SPACE      &lt LWRW TAB     &lt RSEW ENTER	&kp INT4        &lt_bl MOVW ESC
             >;
-            sensor-bindings = <&inc_dec_kp LC(MINUS) LC(PLUS) &inc_dec_kp LC(MINUS) LC(PLUS)>;
+            sensor-bindings = <&inc_dec_kp LC(PG_UP) LC(PG_DN) &inc_dec_kp LC(PG_UP) LC(PG_DN)>;
         };
 
         LWR {
@@ -6913,7 +6913,7 @@
             &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP                                       &kp LS(LEFT)    &kp LS(DOWN) &kp LS(LG(LEFT)) &kp LS(LA(LEFT)) &kp LS(LA(RIGHT)) &kp LS(LG(RIGHT))
                                             &kp G           &to QWE         &grave_uc       &trans          &trans          &tilde_uc	    &to CAD
             >;
-            sensor-bindings = <&inc_dec_kp LC(MINUS) LC(PLUS) &inc_dec_kp LC(MINUS) LC(PLUS)>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         ADJL {
@@ -6924,7 +6924,7 @@
             &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP                                       &kp LS(LEFT)    &kp LS(DOWN)    &kp LS(HOME) &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)
                                             &kp G           &to QWE         &grave_uc       &trans          &trans          &tilde_uc	    &to CAD
             >;
-            sensor-bindings = <&inc_dec_kp LC(MINUS) LC(PLUS) &inc_dec_kp LC(MINUS) LC(PLUS)>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         ADJW {
@@ -6935,7 +6935,7 @@
             &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP                                       &kp LS(LEFT)    &kp LS(DOWN)    &kp LS(HOME) &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)
                                             &kp G           &to QWE         &grave_uc       &trans          &trans          &tilde_uc	    &to CAD
             >;
-            sensor-bindings = <&inc_dec_kp LC(MINUS) LC(PLUS) &inc_dec_kp LC(MINUS) LC(PLUS)>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         MOV {
