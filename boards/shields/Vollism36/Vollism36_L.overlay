@@ -45,9 +45,8 @@
             #input-processor-cells = <0>;
             rotation-angle = <255>;
         };
-    };
-    
-    xy_to_keys: xy_to_keys {
+
+        xy_to_keys: xy_to_keys {
             compatible = "zmk,input-processor-keybind";
             #input-processor-cells = <0>;
             bindings = <&kp RIGHT>, <&kp LEFT>, <&kp UP>, <&kp DOWN>;
@@ -57,6 +56,7 @@
 			wait-ms = <0>; // 待機時間
 			tap-ms = <50>; // タップ時間
         };
+    };
 };
 
 &kscan0 {
@@ -73,16 +73,16 @@
     spi0_default: spi0_default {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                <NRF_PSEL(SPIM_MISO, 0, 4)>;
+                    <NRF_PSEL(SPIM_MOSI, 0, 4)>,
+                    <NRF_PSEL(SPIM_MISO, 0, 4)>;
         };
     };
 
     spi0_sleep: spi0_sleep {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                <NRF_PSEL(SPIM_MISO, 0, 4)>;
+                    <NRF_PSEL(SPIM_MOSI, 0, 4)>,
+                    <NRF_PSEL(SPIM_MISO, 0, 4)>;
             low-power-enable;
         };
     };
@@ -120,7 +120,7 @@
         /* ここにスティック用のレイヤー設定などを記述 */
         default {
             layers = <QWE>;
-            input-processors = <&zip_xy_scaler 1 30>;
+            input-processors = <&zip_xy_scaler 10 30>;
         };
     };
 };
