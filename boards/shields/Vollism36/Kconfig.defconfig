@@ -1,14 +1,14 @@
-if SHIELD_VOLLISM36_L
+if SHIELD_VOLLISM36_V2.0_L
 
 config ZMK_KEYBOARD_NAME
-    default "Vollism36"
+    default "Vollism36_V2.0"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 endif
 
-if SHIELD_VOLLISM36_L || SHIELD_VOLLISM36_R
+if SHIELD_VOLLISM36_V2.0_L || SHIELD_VOLLISM36_V2.0_R
 
 config ZMK_SPLIT
     default y
