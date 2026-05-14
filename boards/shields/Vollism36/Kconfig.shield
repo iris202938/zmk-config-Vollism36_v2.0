@@ -1,5 +1,5 @@
-config SHIELD_VOLLISM36_V2.0_L
-    def_bool $(shields_list_contains,Vollism36_V2.0_L)
+config SHIELD_VOLLISM36_L
+    def_bool $(shields_list_contains,Vollism36_L)
     
-config SHIELD_VOLLISM36_V2.0_R
-    def_bool $(shields_list_contains,Vollism36_V2.0_R)
+config SHIELD_VOLLISM36_R
+    def_bool $(shields_list_contains,Vollism36_R)
