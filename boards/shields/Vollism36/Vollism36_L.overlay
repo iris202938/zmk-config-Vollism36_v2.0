@@ -46,6 +46,17 @@
             rotation-angle = <255>;
         };
     };
+    
+    xy_to_keys: xy_to_keys {
+            compatible = "zmk,input-processor-keybind";
+            #input-processor-cells = <0>;
+            bindings = <&kp RIGHT>, <&kp LEFT>, <&kp UP>, <&kp DOWN>;
+            threshold = <2>; // 方向キーが勝手に入る場合はしきい値を少し上げる
+            mode = <1>;
+            tick = <40>; // ティック間隔
+			wait-ms = <0>; // 待機時間
+			tap-ms = <50>; // タップ時間
+        };
 };
 
 &kscan0 {
