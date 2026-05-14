@@ -26,6 +26,9 @@ manifest:
       # remote: sayu-hub
       remote: iris202938
       revision: main
+    - name: zmk-input-processor-keybind
+      remote: zettaface
+      revision: main
     - name: zmk-rgbled-widget
       remote: iris202938
       revision: main
