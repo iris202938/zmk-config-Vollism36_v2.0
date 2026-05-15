@@ -6661,35 +6661,6 @@
                 ;
         };
 
-        // ng_on: ng_on {
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     bindings
-        //         = <&macro_tap &kp LANGUAGE_1 &kp INTERNATIONAL_4 &to 1>
-        //         ;
-        // };
-        // ng_off: ng_off {
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     bindings
-        //         = <&macro_tap &kp LANGUAGE_2 &kp INTERNATIONAL_5 &to 0>
-        //         ;
-        // };
-        // ng_onl: ng_onl {
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     bindings
-        //         = <&macro_tap &kp LANG1 &kp INT4 &to NGNL>
-        //         ;
-        // };
-        // ng_offl: ng_offl {
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     bindings
-        //         = <&macro_tap &kp LANG2 &kp INT5 &to LIN>
-        //         ;
-        // };   
-
 		// ハイコントラスト切り替え (Win: Shift + Alt + PrintScreen)
         m_hi_con: m_hi_con {
             compatible = "zmk,behavior-macro";
@@ -6775,7 +6746,6 @@
         };
     };
 
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -6809,7 +6779,7 @@
             &mt_s LALT Z    &kp X           &kp C           &kp V                                           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt_s RGUI SLASH
                                             &kp G           &lt_bl NUML ESC &mt LSHFT SPACE &lt LWRL TAB	&lt RSEL ENTER	&mt RSHFT SPACE &lt_bl MOVL ESC
             >;
-            sensor-bindings = <&inc_dec_kp LC(PG_UP) LC(PG_DN) &inc_dec_kp LC(PG_UP) LC(PG_DN)>;
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         NICL { 
