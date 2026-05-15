@@ -85,6 +85,7 @@
 			wait-ms = <0>; // 待機時間
 			tap-ms = <50>; // タップ時間
         };
+    };
 };
 
 &trackball_listener {
