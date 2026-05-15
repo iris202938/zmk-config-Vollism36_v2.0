@@ -4667,7 +4667,7 @@
             compatible = "zmk,behavior-sensor-rotate-key";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-            // タップ時間などを調整したい場合はここにプロパティを追加
+            tap-ms = <20>; 
         };
     };
 
