@@ -332,7 +332,6 @@
             input-processors = <&sensor_rotation>;
         };
     };
-};
 
 &spi0 {
     status = "okay";
