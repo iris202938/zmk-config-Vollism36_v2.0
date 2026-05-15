@@ -108,7 +108,246 @@
 &trackball_listener {
     status = "okay";
     device = <&trackball>;
-    input-processors = <&sensor_rotation>;
+
+        /* ==========================================================
+        Layer 22: BLE (通常マウス)
+        ========================================================== */
+        l_ble {
+            layers = <BLE>;
+            input-processors = <&sensor_rotation>;
+        };
+
+        /* ==========================================================
+        Layer 21: WINS (通常マウス)
+        ========================================================== */
+        l_wins {
+            layers = <WINS>;
+            input-processors = <&sensor_rotation>;
+        };
+
+        /* ==========================================================
+        Layer 20: NUMW (スクロール)
+        ========================================================== */
+        l_numw {
+            layers = <NUMW>;
+            input-processors = 
+                <&sensor_rotation>,
+                <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
+                <&zip_xy_scaler 1 30>,
+                <&zip_xy_to_scroll_mapper>,
+                <&zip_xy_scaler 0 1>; 
+        };
+
+        /* ==========================================================
+        Layer 19: NUML (通常マウス)
+        ========================================================== */
+        l_numl {
+            layers = <NUML>;
+            input-processors = <&sensor_rotation>;
+        };
+
+        /* ==========================================================
+        Layer 18: NUM (通常マウス)
+        ========================================================== */
+        l_num {
+            layers = <NUM>;
+            input-processors = <&sensor_rotation>;
+        };
+
+        /* ==========================================================
+        Layer 17: MOVW (方向キー変換)
+        ========================================================== */
+        l_movw {
+            layers = <MOVW>; 
+            input-processors = 
+                <&sensor_rotation>, 
+                <&zip_xy_scaler 200 100>, 
+                <&xy_to_keys>;
+            process-next;
+        };
+
+        l_movw_prevent {
+            layers = <MOVW>;
+            input-processors = <&zip_xy_scaler 0 1>;
+        };
+
+        /* ==========================================================
+        Layer 16: MOVL (方向キー変換)
+        ========================================================== */
+        l_movl {
+            layers = <MOVL>; 
+            input-processors = 
+                <&sensor_rotation>, 
+                <&zip_xy_scaler 200 100>, 
+                <&xy_to_keys>;
+            process-next;
+        };
+
+        l_movl_prevent {
+            layers = <MOVL>;
+            input-processors = <&zip_xy_scaler 0 1>;
+        };
+
+        /* ==========================================================
+        Layer 15: MOV (方向キー変換)
+        ========================================================== */
+        l_mov {
+            layers = <MOV>; 
+            input-processors = 
+                <&sensor_rotation>, 
+                <&zip_xy_scaler 200 100>, 
+                <&xy_to_keys>;
+            process-next;
+        };
+
+        l_mov_prevent {
+            layers = <MOV>;
+            input-processors = <&zip_xy_scaler 0 1>;
+        };
+
+        /* ==========================================================
+        Layer 14: ADJW (通常マウス)
+        ========================================================== */
+        l_adjw {
+            layers = <ADJW>;
+            input-processors = <&sensor_rotation>;
+        };
+
+        /* ==========================================================
+        Layer 13: ADJL (通常マウス)
+        ========================================================== */
+        l_adjl {
+            layers = <ADJL>;
+            input-processors = <&sensor_rotation>;
+        };
+
+        /* ==========================================================
+        Layer 12: ADJ (通常マウス)
+        ========================================================== */
+        l_adj {
+            layers = <ADJ>;
+            input-processors = <&sensor_rotation>;
+        };
+
+        /* ==========================================================
+        Layer 11: RSEW (スクロール)
+        ========================================================== */
+        l_rsew {
+            layers = <RSEW>;
+            input-processors = 
+                <&sensor_rotation>,
+                <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
+                <&zip_xy_scaler 1 30>,
+                <&zip_xy_to_scroll_mapper>,
+                <&zip_xy_scaler 0 1>; 
+        };
+
+        /* ==========================================================
+        Layer 10: RSEL (スクロール)
+        ========================================================== */
+        l_rsel {
+            layers = <RSEL>;
+            input-processors = 
+                <&sensor_rotation>,
+                <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
+                <&zip_xy_scaler 1 30>,
+                <&zip_xy_to_scroll_mapper>,
+                <&zip_xy_scaler 0 1>; 
+        };
+
+        /* ==========================================================
+        Layer 9: RSE (スクロール)
+        ========================================================== */
+        l_rse {
+            layers = <RSE>;
+            input-processors = 
+                <&sensor_rotation>,
+                <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
+                <&zip_xy_scaler 1 30>,
+                <&zip_xy_to_scroll_mapper>,
+                <&zip_xy_scaler 0 1>; 
+        };
+
+        /* ==========================================================
+        Layer 8: LWRW (通常マウス)
+        ========================================================== */
+        l_lwrw {
+            layers = <LWRW>;
+            input-processors = <&sensor_rotation>;
+        };
+
+        /* ==========================================================
+        Layer 7: LWRL (通常マウス)
+        ========================================================== */
+        l_lwrl {
+            layers = <LWRL>;
+            input-processors = <&sensor_rotation>;
+        };
+
+        /* ==========================================================
+        Layer 6: LWR (通常マウス)
+        ========================================================== */
+        l_lwr {
+            layers = <LWR>;
+            input-processors = <&sensor_rotation>;
+        };
+
+        /* ==========================================================
+        Layer 5: WIN (方向キー変換)
+        ========================================================== */
+        l_win {
+            layers = <WIN>; 
+            input-processors = 
+                <&sensor_rotation>, 
+                <&zip_xy_scaler 200 100>, 
+                <&xy_to_keys>;
+            process-next;
+        };
+
+        l_win_prevent {
+            layers = <WIN>;
+            input-processors = <&zip_xy_scaler 0 1>;
+        };
+
+        /* ==========================================================
+        Layer 4: CAD (通常マウス)
+        ========================================================== */
+        l_cad {
+            layers = <CAD>;
+            input-processors = <&sensor_rotation>;
+        };
+
+        /* ==========================================================
+        Layer 3: NICL (通常マウス)
+        ========================================================== */
+        l_nicl {
+            layers = <NICL>;
+            input-processors = <&sensor_rotation>;
+        };
+
+        /* ==========================================================
+        Layer 2: LIN (通常マウス)
+        ========================================================== */
+        l_lin {
+            layers = <LIN>;
+            input-processors = <&sensor_rotation>;
+        };
+
+        /* ==========================================================
+        Layer 1: NIC (通常マウス)
+        ========================================================== */
+        l_nic {
+            layers = <NIC>;
+            input-processors = <&sensor_rotation>;
+        };
+
+        /* ==========================================================
+        Layer 0: QWE (通常マウス)
+        ========================================================== */
+        l_qwe {
+            layers = <QWE>;
+            input-processors = <&sensor_rotation>;
+        };
 };
 
 /* 右から飛んでくるアナログスティック信号用のリスナー */
