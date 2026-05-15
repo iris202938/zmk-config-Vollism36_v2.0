@@ -4664,7 +4664,7 @@
             bindings = <&history_back>, <&history_forward>;
         };
         encoder_msc_down_up: encoder_msc_down_up {
-            compatible = "zmk,behavior-sensor-rotate-key";
+            compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
             tap-ms = <20>; 
