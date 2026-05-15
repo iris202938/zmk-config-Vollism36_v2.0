@@ -6684,6 +6684,13 @@
         //         ;
         // };
 
+        encoder_msc_down_up: encoder_msc_down_up {
+            compatible = "zmk,behavior-sensor-rotate-key";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+            // タップ時間などを調整したい場合はここにプロパティを追加
+        };
+
 		// ハイコントラスト切り替え (Win: Shift + Alt + PrintScreen)
         m_hi_con: m_hi_con {
             compatible = "zmk,behavior-macro";
