@@ -4663,6 +4663,12 @@
             #sensor-binding-cells = <0>;
             bindings = <&history_back>, <&history_forward>;
         };
+        encoder_msc_down_up: encoder_msc_down_up {
+            compatible = "zmk,behavior-sensor-rotate-key";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+            // タップ時間などを調整したい場合はここにプロパティを追加
+        };
     };
 
     macros {
@@ -6682,14 +6688,7 @@
         //     bindings
         //         = <&macro_tap &kp LANG2 &kp INT5 &to LIN>
         //         ;
-        // };
-
-        encoder_msc_down_up: encoder_msc_down_up {
-            compatible = "zmk,behavior-sensor-rotate-key";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-            // タップ時間などを調整したい場合はここにプロパティを追加
-        };
+        // };   
 
 		// ハイコントラスト切り替え (Win: Shift + Alt + PrintScreen)
         m_hi_con: m_hi_con {
