@@ -6781,7 +6781,7 @@
             &mt LGUI Z      &kp X           &kp C           &kp V                                           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt RALT SLASH
                                             &kp G           &lt_bl NUM LBKT &mt LSHFT SPACE &lt LWR TAB     &lt RSE ENTER   &mt RSHFT SPACE &lt_bl MOV RBKT
             >;
-            sensor-bindings = <&inc_dec_kp LC(PG_UP) LC(PG_DN) &inc_dec_kp LC(PG_UP) LC(PG_DN)>;
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         NIC { 
