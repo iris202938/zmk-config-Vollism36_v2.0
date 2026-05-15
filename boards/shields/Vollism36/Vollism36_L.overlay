@@ -75,16 +75,16 @@
             rotation-angle = <255>;
         };
 
-        xy_to_keys: xy_to_keys {
-            compatible = "zmk,input-processor-keybind";
-            #input-processor-cells = <0>;
-            bindings = <&kp RIGHT>, <&kp LEFT>, <&kp UP>, <&kp DOWN>;
-            threshold = <2>; // 方向キーが勝手に入る場合はしきい値を少し上げる
-            mode = <1>;
-            tick = <40>; // ティック間隔
-			wait-ms = <0>; // 待機時間
-			tap-ms = <50>; // タップ時間
-        };
+        // xy_to_keys: xy_to_keys {
+        //     compatible = "zmk,input-processor-keybind";
+        //     #input-processor-cells = <0>;
+        //     bindings = <&kp RIGHT>, <&kp LEFT>, <&kp UP>, <&kp DOWN>;
+        //     threshold = <2>; // 方向キーが勝手に入る場合はしきい値を少し上げる
+        //     mode = <1>;
+        //     tick = <40>; // ティック間隔
+		// 	wait-ms = <0>; // 待機時間
+		// 	tap-ms = <50>; // タップ時間
+        // };
     };
 };
 
@@ -140,53 +140,53 @@
         /* ==========================================================
         Layer 17: MOVW (方向キー変換)
         ========================================================== */
-        l_movw {
-            layers = <MOVW>; 
-            input-processors = 
-                <&sensor_rotation>, 
-                <&zip_xy_scaler 200 100>, 
-                <&xy_to_keys>;
-            process-next;
-        };
+        // l_movw {
+        //     layers = <MOVW>; 
+        //     input-processors = 
+        //         <&sensor_rotation>, 
+        //         <&zip_xy_scaler 200 100>, 
+        //         <&xy_to_keys>;
+        //     process-next;
+        // };
 
-        l_movw_prevent {
-            layers = <MOVW>;
-            input-processors = <&zip_xy_scaler 0 1>;
-        };
+        // l_movw_prevent {
+        //     layers = <MOVW>;
+        //     input-processors = <&zip_xy_scaler 0 1>;
+        // };
 
         /* ==========================================================
         Layer 16: MOVL (方向キー変換)
         ========================================================== */
-        l_movl {
-            layers = <MOVL>; 
-            input-processors = 
-                <&sensor_rotation>, 
-                <&zip_xy_scaler 200 100>, 
-                <&xy_to_keys>;
-            process-next;
-        };
+        // l_movl {
+        //     layers = <MOVL>; 
+        //     input-processors = 
+        //         <&sensor_rotation>, 
+        //         <&zip_xy_scaler 200 100>, 
+        //         <&xy_to_keys>;
+        //     process-next;
+        // };
 
-        l_movl_prevent {
-            layers = <MOVL>;
-            input-processors = <&zip_xy_scaler 0 1>;
-        };
+        // l_movl_prevent {
+        //     layers = <MOVL>;
+        //     input-processors = <&zip_xy_scaler 0 1>;
+        // };
 
         /* ==========================================================
         Layer 15: MOV (方向キー変換)
         ========================================================== */
-        l_mov {
-            layers = <MOV>; 
-            input-processors = 
-                <&sensor_rotation>, 
-                <&zip_xy_scaler 200 100>, 
-                <&xy_to_keys>;
-            process-next;
-        };
+        // l_mov {
+        //     layers = <MOV>; 
+        //     input-processors = 
+        //         <&sensor_rotation>, 
+        //         <&zip_xy_scaler 200 100>, 
+        //         <&xy_to_keys>;
+        //     process-next;
+        // };
 
-        l_mov_prevent {
-            layers = <MOV>;
-            input-processors = <&zip_xy_scaler 0 1>;
-        };
+        // l_mov_prevent {
+        //     layers = <MOV>;
+        //     input-processors = <&zip_xy_scaler 0 1>;
+        // };
 
         /* ==========================================================
         Layer 14: ADJW (通常マウス)
@@ -278,19 +278,19 @@
         /* ==========================================================
         Layer 5: WIN (方向キー変換)
         ========================================================== */
-        l_win {
-            layers = <WIN>; 
-            input-processors = 
-                <&sensor_rotation>, 
-                <&zip_xy_scaler 200 100>, 
-                <&xy_to_keys>;
-            process-next;
-        };
+        // l_win {
+        //     layers = <WIN>; 
+        //     input-processors = 
+        //         <&sensor_rotation>, 
+        //         <&zip_xy_scaler 200 100>, 
+        //         <&xy_to_keys>;
+        //     process-next;
+        // };
 
-        l_win_prevent {
-            layers = <WIN>;
-            input-processors = <&zip_xy_scaler 0 1>;
-        };
+        // l_win_prevent {
+        //     layers = <WIN>;
+        //     input-processors = <&zip_xy_scaler 0 1>;
+        // };
 
         /* ==========================================================
         Layer 4: CAD (通常マウス)
