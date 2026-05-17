@@ -215,20 +215,15 @@
     excluded-positions = <20 21 22 32>;
 };
 
-/* 右側（周辺機器側）の通信設定：アナログスティック（anin0）を転送対象として登録 */
-&joystick_split {
+&trackball_split {
     status = "okay";
-    device = <&anin0>; 
+    device = <&anin0>;   /* 右側のアナログ入力を転送対象に指定 */
 };
 
-/* 
-  左手側のトラックボール用通信ノード（trackball_split）は、
-  右手側では使用しない（デバイスが存在しない）ため、status を "disabled" にして無効化します。
-  これでシステムチェックの「空っぽエラー」を回避できます。
-*/
-&trackball_split {
-    status = "disabled";
-};
+// &joystick_split {
+// 	device = <&anin0>;
+// 	input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>;
+// };
 
 &right_encoder {
     status = "okay";
