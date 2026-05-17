@@ -6876,7 +6876,7 @@
             &mt_s LSHFT F1  &kp F2          &kp F3          &kp F4          &kp F5         		         		            &kp F6          &kp F7    	    &kp F8          &kp F9          &mt_s RSHFT F10
             &mt_s LCTRL N1  &kp N2          &kp N3          &kp N4      		     		                                &kp N6          &kp N7    	    &kp N8          &kp N9          &mt_s RCTRL N0
             &mt_s LALT INT1 &kp BSLH        &kp INT3        &kp SLASH   		     		                &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &mt GUI RC(V)
-                                            &kp N5           &kp LSHFT       &kp SPACE       &htC_it5 ADJW 0 &trans          &sk_gui         &kp RSHFT
+                                            &kp N5          &kp LSHFT       &kp SPACE       &htC_it5 ADJW 0 &trans          &sk_gui         &kp RSHFT
             >;
             sensor-bindings = <&inc_dec_kp LC(MINUS) LC(PLUS) &inc_dec_kp LC(MINUS) LC(PLUS)>;
         };
