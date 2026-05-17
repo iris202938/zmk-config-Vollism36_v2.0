@@ -330,10 +330,10 @@
         /* ==========================================================
         Layer 0: QWE (通常マウス)
         ========================================================== */
-        l_qwe {
-            layers = <QWE>;
-            input-processors = <&sensor_rotation>;
-        };
+        // l_qwe {
+        //     layers = <QWE>;
+        //     input-processors = <&sensor_rotation>;
+        // };
     };
 
 &spi0 {
