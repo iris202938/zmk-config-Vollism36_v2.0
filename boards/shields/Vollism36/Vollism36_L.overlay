@@ -330,10 +330,10 @@
         /* ==========================================================
         Layer 0: QWE (通常マウス)
         ========================================================== */
-        // l_qwe {
-        //     layers = <QWE>;
-        //     input-processors = <&sensor_rotation>;
-        // };
+        l_qwe {
+            layers = <QWE>;
+            input-processors = <&sensor_rotation>;
+        };
     };
 
 &spi0 {
@@ -353,25 +353,25 @@
     };
 };
 
-// /* 右から飛んでくるアナログスティック信号用のリスナー */
-// / {
-    // peripheral_listener: peripheral_listener {
-    //     compatible = "zmk,input-listener";
-    //     device = <&trackball_split>; /* 右から転送されてくる仮想デバイスを指定 */
-        
-    //     /* ここにスティック用のレイヤー設定などを記述 */
-    //     default {
-    //         layers = <QWE>;
-    //         input-processors = <&zip_xy_scaler 10 30>;
-    //     };
-    // };
+/* 右から飛んでくるアナログスティック信号用のリスナー */
+/ {
     peripheral_listener: peripheral_listener {
         compatible = "zmk,input-listener";
-        device = <&joystick_split>; /* 右から転送されてくる仮想デバイスを指定 */
+        device = <&trackball_split>; /* 右から転送されてくる仮想デバイスを指定 */
         
         /* ここにスティック用のレイヤー設定などを記述 */
         default {
             layers = <QWE>;
             input-processors = <&zip_xy_scaler 10 30>;
         };
+    };
+    // peripheral_listener: peripheral_listener {
+    //     compatible = "zmk,input-listener";
+    //     device = <&joystick_split>; /* 右から転送されてくる仮想デバイスを指定 */
+        
+    //     /* ここにスティック用のレイヤー設定などを記述 */
+    //     default {
+    //         layers = <QWE>;
+    //         input-processors = <&zip_xy_scaler 10 30>;
+    //     };
 };
