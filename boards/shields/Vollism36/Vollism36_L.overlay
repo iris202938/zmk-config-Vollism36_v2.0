@@ -353,8 +353,8 @@
     };
 };
 
-/* 右から飛んでくるアナログスティック信号用のリスナー */
-/ {
+// /* 右から飛んでくるアナログスティック信号用のリスナー */
+// / {
     // peripheral_listener: peripheral_listener {
     //     compatible = "zmk,input-listener";
     //     device = <&trackball_split>; /* 右から転送されてくる仮想デバイスを指定 */
