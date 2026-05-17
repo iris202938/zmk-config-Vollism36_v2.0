@@ -3,14 +3,32 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define QWE 0
-#define QWERTY 1
-#define ARROW_NUM 2
-#define SYMBOL 3
-#define FUNCTION 4
-#define MOUSE 5
-#define SYSTEM 6
+#define NIC 1
+#define LIN 2
+#define NICL 3
+#define CAD 4
+#define WIN 5
+#define LWR 6
+#define LWRL 7
+#define LWRW 8
+#define RSE 9
+#define RSEL 10
+#define RSEW 11
+#define ADJ 12
+#define ADJL 13
+#define ADJW 14
+#define MOV 15
+#define MOVL 16
+#define MOVW 17
+#define NUM 18
+#define NUML 19
+#define NUMW 20
+#define WINS 21
+#define BLE 22
 
 / {
     /* 既存の定義（input_processorsなど）と同じ階層に追加 */
@@ -75,55 +93,55 @@
 	};
 
 	zip_keybind_keys_f_a_o: zip_keybind_keys_four_arithmetic_operations {
-	        compatible = "zmk,input-processor-keybind";
-	        #input-processor-cells = <0>;
-			track_remainders;
-	        bindings = <&kp MINUS>
-	                 , <&kp PLUS>
-	                 , <&kp ASTERISK>
-	                 , <&kp SLASH>
-					 ;
-	        tick = <150>;
-	        wait-ms = <100>;
-	        tap-ms = <50>;
-	        mode = <1>;
-	        // threshold = <10>
-	        // max_threshold = <200>
-	        // max_pending_activations = <10>
+		compatible = "zmk,input-processor-keybind";
+		#input-processor-cells = <0>;
+		track_remainders;
+		bindings = <&kp MINUS>
+				, <&kp PLUS>
+				, <&kp ASTERISK>
+				, <&kp SLASH>
+				;
+		tick = <150>;
+		wait-ms = <100>;
+		tap-ms = <50>;
+		mode = <1>;
+	    // threshold = <10>
+	    // max_threshold = <200>
+	    // max_pending_activations = <10>
     };
 	zip_keybind_keys_arrow: zip_keybind_keys_arrow {
-	        compatible = "zmk,input-processor-keybind";
-	        #input-processor-cells = <0>;
-		    track_remainders;
-	        bindings = <&kp RIGHT>
-	                 , <&kp LEFT>
-	                 , <&kp UP>
-	                 , <&kp DOWN>
-                     ;
-	        tick = <40>;
-	        wait-ms = <0>;
-	        tap-ms = <10>;
-	        mode = <0>;
-	        // threshold = <10>
-	        // max_threshold = <200>
-	        // max_pending_activations = <10>
+		compatible = "zmk,input-processor-keybind";
+		#input-processor-cells = <0>;
+		track_remainders;
+		bindings = <&kp RIGHT>
+					, <&kp LEFT>
+					, <&kp UP>
+					, <&kp DOWN>
+					;
+		tick = <40>;
+		wait-ms = <0>;
+		tap-ms = <10>;
+		mode = <0>;
+		// threshold = <10>
+		// max_threshold = <200>
+		// max_pending_activations = <10>
 	};
 	zip_keybind_keys_browser: zip_keybind_keys_browser {
-	        compatible = "zmk,input-processor-keybind";
-	        #input-processor-cells = <0>;
-			track_remainders;
-	        bindings = <&kp T>
-	                 , <&kp W>
-					 , <&kp R>
-	                 , <&kp LS(T)>
-					 ;
-	        tick = <150>;
-	        wait-ms = <100>;
-	        tap-ms = <50>;
-	        mode = <1>;
-	        // threshold = <10>
-	        // max_threshold = <200>
-	        // max_pending_activations = <10>
+		compatible = "zmk,input-processor-keybind";
+		#input-processor-cells = <0>;
+		track_remainders;
+		bindings = <&kp T>
+					, <&kp W>
+					, <&kp R>
+					, <&kp LS(T)>
+					;
+		tick = <150>;
+		wait-ms = <100>;
+		tap-ms = <50>;
+		mode = <1>;
+		// threshold = <10>
+		// max_threshold = <200>
+		// max_pending_activations = <10>
     };
 
 	analog_input_listener {
@@ -131,38 +149,38 @@
 		compatible = "zmk,input-listener";
         device = <&anin0>;
 		symbol {
-			layers = <SYMBOL>;
+			layers = <WIN>;
 			input-processors = <&zip_keybind_keys_arrow>;
 			process-next;
 		};
 		symbol-prevent {
-			layers = <SYMBOL>;
+			layers = <WIN>;
 			input-processors = <&zip_xy_scaler 0 1>;
 		};
 		arrow_num {
-			layers = <ARROW_NUM>;
+			layers = <NUM>;
 			input-processors = <&zip_keybind_keys_f_a_o>;
 			process-next;
 		};
 		arrow_num-prevent {
-			layers = <ARROW_NUM>;
+			layers = <NUM>;
 			input-processors = <&zip_xy_scaler 0 1>;
 		};
 		qwerty {
-			layers = <QWERTY>;
+			layers = <LIN>;
 			input-processors = <&zip_keybind_keys_browser>;
 			process-next;
 		};
 		qwerty-prevent {
-			layers = <QWERTY>;
+			layers = <LIN>;
 			input-processors = <&zip_xy_scaler 0 1>;
 		};
 		default {
 			layers = <QWE>;
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
-							 , <&zip_xy_scaler 1 30>
-							 , <&zip_xy_to_scroll_mapper>
-							 ;
+							, <&zip_xy_scaler 1 30>
+							, <&zip_xy_to_scroll_mapper>
+							;
 		};
 	};
 
@@ -170,24 +188,24 @@
         compatible = "zmk,input-listener";
         device = <&trackball_split>;
 		symbol {
-			layers = <SYMBOL>;
+			layers = <WIN>;
 			input-processors = <&zip_keybind_keys_arrow>;
 			process-next;
 		};
 		symbol-prevent {
-			layers = <SYMBOL>;
+			layers = <WIN>;
 			input-processors = <&zip_xy_scaler 0 1>;
 		};
 		arrow_num {
-			layers = <ARROW_NUM>;
+			layers = <NUM>;
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
-							 , <&zip_xy_scaler 1 30>
-							 , <&zip_xy_to_scroll_mapper>
-							 ;
+							, <&zip_xy_scaler 1 30>
+							, <&zip_xy_to_scroll_mapper>
+							;
         };
         automouse {
 			layers = <QWE>;
-			input-processors = <&zip_temp_layer MOUSE 2000>;
+			input-processors = <&zip_temp_layer MOV 2000>;
 			process-next;
         };
     };
@@ -198,9 +216,14 @@
 };
 
 &trackball_split {
-    status = "okay";     /* 無効化していたのを有効に戻す */
+    status = "okay";
     device = <&anin0>;   /* 右側のアナログ入力を転送対象に指定 */
 };
+
+// &joystick_split {
+// 	device = <&anin0>;
+// 	input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>;
+// };
 
 &right_encoder {
     status = "okay";
