@@ -215,15 +215,15 @@ l/#include "Vollism36.dtsi"
     excluded-positions = <20 21 22 32>;
 };
 
-// &trackball_split {
-//     status = "okay";
-//     device = <&anin0>;   /* 右側のアナログ入力を転送対象に指定 */
-// };
-
-&joystick_split {
-	device = <&anin0>;
-	input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>;
+&trackball_split {
+    status = "okay";
+    device = <&anin0>;   /* 右側のアナログ入力を転送対象に指定 */
 };
+
+// &joystick_split {
+// 	device = <&anin0>;
+// 	input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>;
+// };
 
 &right_encoder {
     status = "okay";
