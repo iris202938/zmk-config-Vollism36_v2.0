@@ -471,7 +471,7 @@
         };
         combo_alt_comma { // 移動左90度回転[AHK]
             bindings = <&alt_comma>;
-            key-positions = <33 27 28>;
+            key-positions = <33 26 28>;
             layers = <CAD>;
             timeout-ms = <80>;
         };
