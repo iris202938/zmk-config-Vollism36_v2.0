@@ -6992,4 +6992,9 @@
             sensor-bindings = <&inc_dec_kp LC(MINUS) LC(PLUS) &inc_dec_kp LC(MINUS) LC(PLUS)>;
         };
     };
+    v_sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&right_encoder>; /* 右側のエンコーダーをここに登録 */
+        triggers-per-rotation = <20>;
+    };
 };
