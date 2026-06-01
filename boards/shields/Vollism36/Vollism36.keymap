@@ -6912,7 +6912,7 @@
             &mt_s LGUI Z    &kp LG(LBKT)    &mkp MB3        &kp LG(RBKT)                                    &kp LC(TAB)     &kp LC(Z)       &kp LS(LC(TAB)) &kp LA(LEFT)    &kp LA(RIGHT)   &kp LC(TAB)
                                             &msc SCRL_DOWN  &kp LG(C)       &kp LG(V)       &mkp MB2        &kp ENTER       &mkp MB1        &to QWE
             >;
-            sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
+            sensor-bindings = <&inc_dec_kp LS(LEFT) LS(RIGHT)>;
         };
 
         MOVL {
@@ -6923,7 +6923,7 @@
             &mt_s LALT Z    &kp LA(LEFT)    &mkp MB3        &kp LA(RIGHT)                                   &kp LC(TAB)     &kp LC(Z)       &kp LC(PG_UP)   &kp LG(LBKT)    &kp LG(RBKT)    &kp LC(PG_DN)
                                             &msc SCRL_DOWN  &kp LC(C)       &kp LC(V)       &mkp MB2        &kp ENTER       &mkp MB1        &to LIN
             >;
-            sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
+            sensor-bindings = <&inc_dec_kp LS(LEFT) LS(RIGHT)>;
         };
 
         MOVW {
@@ -6934,7 +6934,7 @@
             &mt_s LALT Z    &kp LA(LEFT)    &mkp MB3        &kp LA(RIGHT)                                   &kp LC(TAB)     &kp LC(Z)       &kp LC(PG_UP)   &kp LG(LBKT)    &kp LG(RBKT)    &kp LC(PG_DN)
                                             &msc SCRL_DOWN  &kp LC(C)       &kp LC(V)       &mkp MB2        &kp ENTER       &mkp MB1        &to CAD
             >;
-            sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
+            sensor-bindings = <&inc_dec_kp LS(LEFT) LS(RIGHT)>;
         };
 
         NUM {
