@@ -213,22 +213,22 @@
 	trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball_split>;
-		symbol {
-			layers = <WIN>;
-			input-processors = <&zip_keybind_keys_arrow>;
-			process-next;
-		};
-		symbol-prevent {
-			layers = <WIN>;
-			input-processors = <&zip_xy_scaler 0 1>;
-		};
-		arrow_num {
-			layers = <NUM>;
-			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
-							, <&zip_xy_scaler 1 30>
-							, <&zip_xy_to_scroll_mapper>
-							;
-        };
+		// symbol {
+		// 	layers = <WIN>;
+		// 	input-processors = <&zip_keybind_keys_arrow>;
+		// 	process-next;
+		// };
+		// symbol-prevent {
+		// 	layers = <WIN>;
+		// 	input-processors = <&zip_xy_scaler 0 1>;
+		// };
+		// arrow_num {
+		// 	layers = <NUM>;
+		// 	input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
+		// 					, <&zip_xy_scaler 1 30>
+		// 					, <&zip_xy_to_scroll_mapper>
+		// 					;
+        // };
         automouse {
 			layers = <QWE>;
 			input-processors = <&zip_temp_layer MOV 2000>;
