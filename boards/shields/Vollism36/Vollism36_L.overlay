@@ -386,6 +386,23 @@
 			wait-ms = <0>; // 待機時間
 			tap-ms = <50>; // タップ時間
 	};
+    zip_keybind_keys_freecad: zip_keybind_keys_freecad {
+		compatible = "zmk,input-processor-keybind";
+		#input-processor-cells = <0>;
+		track_remainders;
+		bindings = <&kp N3>
+				, <&kp N6>
+				, <&kp N2>
+				, <&kp N5>
+				;
+		tick = <150>;
+		wait-ms = <100>;
+		tap-ms = <50>;
+		mode = <1>;
+		// threshold = <10>
+		// max_threshold = <200>
+		// max_pending_activations = <10>
+    };
 
     peripheral_listener: peripheral_listener {
         compatible = "zmk,input-listener";
@@ -421,7 +438,7 @@
 		};
 		r_layer19 {
 			layers = <NUML>; // レイヤー19がアクティブな場合
-			input-processors = <&zip_keybind_keys_directionL>; // zip_keybind_keys_directionL を使用
+			input-processors = <&zip_keybind_keys_freecad>; // zip_keybind_keys_freecad を使用
 			process-next; // 他のプロセッサも処理を継続
 		};
 		r_layer19-prevent {
