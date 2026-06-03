@@ -143,6 +143,23 @@
 		// max_threshold = <200>
 		// max_pending_activations = <10>
     };
+	zip_keybind_keys_freecad: zip_keybind_keys_freecad {
+		compatible = "zmk,input-processor-keybind";
+		#input-processor-cells = <0>;
+		track_remainders;
+		bindings = <&kp N3>
+				, <&kp N6>
+				, <&kp N2>
+				, <&kp N5>
+				;
+		tick = <150>;
+		wait-ms = <100>;
+		tap-ms = <50>;
+		mode = <1>;
+		// threshold = <10>
+		// max_threshold = <200>
+		// max_pending_activations = <10>
+    };
 
 	analog_input_listener {
 		status = "okay";
@@ -155,6 +172,15 @@
 		};
 		symbol-prevent {
 			layers = <WIN>;
+			input-processors = <&zip_xy_scaler 0 1>;
+		};
+		freecad_numl {
+			layers = <NUML>;
+			input-processors = <&zip_keybind_keys_freecad>;
+			process-next;
+		};
+		freecad_numl-prevent {
+			layers = <NUML>;
 			input-processors = <&zip_xy_scaler 0 1>;
 		};
 		arrow_num {
