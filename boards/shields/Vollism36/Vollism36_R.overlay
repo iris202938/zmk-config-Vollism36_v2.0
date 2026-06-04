@@ -229,11 +229,11 @@
 		// 					, <&zip_xy_to_scroll_mapper>
 		// 					;
         // };
-        automouse {
-			layers = <QWE>;
-			input-processors = <&zip_temp_layer MOV 2000>;
-			process-next;
-        };
+        // automouse {
+		// 	layers = <QWE>;
+		// 	input-processors = <&zip_temp_layer MOV 2000>;
+		// 	process-next;
+        // };
     };
 };
 
