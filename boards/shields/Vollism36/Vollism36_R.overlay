@@ -237,9 +237,9 @@
     };
 };
 
-&zip_temp_layer {
-    excluded-positions = <20 21 22 32>;
-};
+// &zip_temp_layer {
+//     excluded-positions = <20 21 22 32>;
+// };
 
 &trackball_split {
     status = "okay";
