@@ -301,12 +301,12 @@
         //     timeout-ms = <80>;
         // };
         ins {
-            bindings = <&kp KP_INS>;
+            bindings = <&kp INS>;
             key-positions = <8 9>;
             layers = <ADJ ADJL ADJW>;
             timeout-ms = <80>;
         };
-        file_f {
+        file_f {s
             bindings = <&file_f>;
             key-positions = <1 2>;
             layers = <CAD>;
