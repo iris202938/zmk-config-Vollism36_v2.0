@@ -6904,7 +6904,7 @@
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &mt_s LSHFT F11 &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP                                    &kp CAPS        &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp LS(UP)
-            &mt_s out OUT_BLE    &usb_lCAD       &bt3_lCAD       &kp LS(RIGHT)                                                   &kp INT5        &file_r         &pr_pg          &nx_pg          &file_f
+            &mt_s OUT_BLE    &usb_lCAD       &bt3_lCAD       &kp LS(RIGHT)                                                   &kp INT5        &file_r         &pr_pg          &nx_pg          &file_f
             &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP                                       &kp LS(LEFT)    &kp LS(DOWN)    &kp LS(HOME) &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)
                                             &kp G           &to QWE         &grave_uc       &trans          &trans          &tilde_uc	    &to CAD
             >;
