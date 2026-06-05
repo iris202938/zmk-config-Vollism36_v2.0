@@ -306,7 +306,7 @@
             layers = <ADJ ADJL ADJW>;
             timeout-ms = <80>;
         };
-        file_f {s
+        file_f {
             bindings = <&file_f>;
             key-positions = <1 2>;
             layers = <CAD>;
