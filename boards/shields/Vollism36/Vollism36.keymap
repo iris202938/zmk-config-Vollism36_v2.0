@@ -300,6 +300,12 @@
         //     layers = <ADJ ADJL ADJW>;
         //     timeout-ms = <80>;
         // };
+        ins {
+            bindings = <&kp KP_INS>;
+            key-positions = <8 9>;
+            layers = <ADJ ADJL ADJW>;
+            timeout-ms = <80>;
+        };
         file_f {
             bindings = <&file_f>;
             key-positions = <1 2>;
