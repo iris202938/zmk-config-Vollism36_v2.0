@@ -4659,12 +4659,19 @@
             #sensor-binding-cells = <0>;
             bindings = <&history_back>, <&history_forward>;
         };
+        // encoder_msc_down_up: encoder_msc_down_up {
+        //     compatible = "zmk,behavior-sensor-rotate";
+        //     #sensor-binding-cells = <0>;
+        //     bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+        //     tap-ms = <20>; 
+        //     // time-to-live-ms = <20>;
+        // };
         encoder_msc_down_up: encoder_msc_down_up {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+            /* &msc を使わず、ダイレクトに入力イベントコードを叩く */
+            bindings = <&input_relay INPUT_REL_WHEEL_DOWN>, <&input_relay INPUT_REL_WHEEL_UP>;
             tap-ms = <20>; 
-            // time-to-live-ms = <20>;
         };
     };
 
@@ -6849,8 +6856,7 @@
             &mt_s LALT Z    &kp X           &kp C           &kp V                                           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt_s RGUI SLASH
                                             &kp G           &lt_bl NUML ESC &mt LSHFT SPACE &lt LWRL TAB	&lt RSEL ENTER	&mt RSHFT SPACE &lt_bl MOVL ESC
             >;
-            // sensor-bindings = <&encoder_msc_down_up>;
-            sensor-bindings = <&msc SCRL_DOWN SCRL_UP>;
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         NICL { 
