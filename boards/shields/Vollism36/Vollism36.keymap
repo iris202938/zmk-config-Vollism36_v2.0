@@ -6849,7 +6849,7 @@
             &mt_s LALT Z    &kp X           &kp C           &kp V                                           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt_s RGUI SLASH
                                             &kp G           &lt_bl NUML ESC &mt LSHFT SPACE &lt LWRL TAB	&lt RSEL ENTER	&mt RSHFT SPACE &lt_bl MOVL ESC
             >;
-            sensor-bindings = <&inc_dec_&msc SCRL_DOWN SCRL_UP>;
+            sensor-bindings = <&inc_dec_msc SCRL_DOWN SCRL_UP>;
         };
 
         NICL { 
