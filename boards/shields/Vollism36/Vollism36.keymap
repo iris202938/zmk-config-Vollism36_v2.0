@@ -1226,7 +1226,7 @@
 
         combo_XO {
             timeout-ms = <50>;
-            key-positions = <29 34>; // 旧 34 40
+            key-positions = <28 34>; // 修正
             layers = <NIC NICL>;
             bindings = <&macro_XO>;
         };
@@ -6857,7 +6857,7 @@
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &macro_JPPERIOD &macro_KA       &macro_TA       &macro_KO       &macro_SA                                       &macro_RA       &macro_TI       &macro_KU       &macro_TU       &macro_JPCOMMA1
             &macro_U        &macro_SI	    &macro_TE       &macro_KE                                                       &macro_HA       &macro_TO       &macro_KI       &macro_I        &macro_NN
-            &macro_JPTEN    &macro_HI	    &macro_SU       &macro_HU                                       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN
+            &macro_JPTEN    &macro_HI	    &macro_SU       &macro_HU                                       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_f
                                             &macro_SE       &lt_bl NUML ESC &kp SPACE       &lt LWRL TAB    &lt RSEL ENTER  &kp LS(SPACE)   &lt_bl MOVL ESC
             >;
             sensor-bindings = <&inc_dec_kp LC(PG_UP) LC(PG_DN)>;
