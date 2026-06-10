@@ -573,21 +573,20 @@
 							, <&zip_xy_scaler 16 100> // スケーリング（16/100）
 							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
-		r_lin {
+        r_lin {
 			layers = <LIN>; // レイヤー2がアクティブな場合
-			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
-							, <&zip_xy_scaler 12 100> // スケーリング（12/100）
-							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
+			input-processors = <&zip_keybind_keys_freecad>; // zip_keybind_keys_freecad を使用
+			process-next; // 他のプロセッサも処理を継続
 		};
-		// r_nic {
-		// 	layers = <NIC>; // レイヤー2がアクティブな場合
-		// 	input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
-		// 					, <&zip_xy_scaler 8 100> // スケーリング（8/100）
-		// 					, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
-		// };
-		r_nic-prevent {
-			layers = <NIC>; // レイヤー1がアクティブな場合
+		r_lin-prevent {
+			layers = <LIN>; // レイヤー2がアクティブな場合
 			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+		};
+		r_nic {
+			layers = <NIC>; // レイヤー2がアクティブな場合
+			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
+							, <&zip_xy_scaler 8 100> // スケーリング（8/100）
+							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
 		r_default {
 			layers = <QWE>; // レイヤー0（デフォルト）がアクティブな場合
