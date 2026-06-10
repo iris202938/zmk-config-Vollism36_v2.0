@@ -279,7 +279,7 @@
         };
 
         /* ==========================================================
-        Layer 5: WIN (方向キー変換)
+        Layer 5: WIN (通常マウス)
         ========================================================== */
         l_win {
             layers = <WIN>;
@@ -346,15 +346,254 @@
 
 /* 右から飛んでくるアナログスティック信号用のリスナー */
 / {
+    zip_keybind_keys_directionL: zip_keybind_keys_directionL {
+			compatible = "zmk,input-processor-keybind";
+			#input-processor-cells = <0>;
+		track_remainders;
+			bindings 
+                = <&kp RIGHT>
+				, <&kp LEFT>
+				, <&kp UP>
+				, <&kp DOWN>
+				;
+			tick = <150>;
+			wait-ms = <100>;
+			tap-ms = <50>;
+			mode = <1>;
+	};
+	zip_keybind_keys_directionM: zip_keybind_keys_directionM {
+			compatible = "zmk,input-processor-keybind";
+			#input-processor-cells = <0>;
+		track_remainders;
+			bindings
+                = <&kp RIGHT>
+				, <&kp LEFT>
+				, <&kp UP>
+				, <&kp DOWN>
+				;
+			tick = <100>; // ティック間隔
+			wait-ms = <5>; // 待機時間
+			tap-ms = <40>; // タップ時間
+	};
+	zip_keybind_keys_directionH: zip_keybind_keys_directionH {
+			compatible = "zmk,input-processor-keybind";
+			#input-processor-cells = <0>;
+		// track_remainders;
+			bindings
+                = <&kp RIGHT>
+				, <&kp LEFT>
+				, <&kp UP>
+				, <&kp DOWN>
+				;
+			tick = <50>; // ティック間隔
+			wait-ms = <0>; // 待機時間
+			tap-ms = <50>; // タップ時間
+	};
+    zip_keybind_keys_freecad: zip_keybind_keys_freecad {
+		compatible = "zmk,input-processor-keybind";
+		#input-processor-cells = <0>;
+		track_remainders;
+		bindings
+            = <&kp N3>
+			, <&kp N6>
+			, <&kp N2>
+			, <&kp N5>
+			;
+		tick = <150>;
+		wait-ms = <100>;
+		tap-ms = <50>;
+		mode = <1>;
+		// threshold = <10>
+		// max_threshold = <200>
+		// max_pending_activations = <10>
+    };
+
     peripheral_listener: peripheral_listener {
         compatible = "zmk,input-listener";
         device = <&trackball_split>; /* 右から転送されてくる仮想デバイスを指定 */
         
         /* ここにスティック用のレイヤー設定などを記述 */
-        default {
-            layers = <QWE>;
-            input-processors = <&zip_xy_scaler 10 30>;
-        };
+        // r_layer22 {
+		// 	layers = <BLE>; // レイヤー22がアクティブな場合
+		// 	input-processors = <&zip_keybind_keys_ecad_rble>; // zip_keybind_keys_ecad_rble を使用
+		// 	process-next; // 他のプロセッサも処理を継続
+		// };
+		// r_layer22-prevent {
+		// 	layers = <BLE>; // レイヤー22がアクティブな場合
+		// 	input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+		// };
+		r_layer21 {
+			layers = <WINS>; // レイヤー21がアクティブな場合
+			input-processors = <&zip_keybind_keys_directionH>; // zip_keybind_keys_directionH を使用
+			process-next;
+		};
+		r_layer21-prevent {
+			layers = <WINS>; // レイヤー21がアクティブな場合
+			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+		};
+		r_layer20 {
+			layers = <NUMW>; // レイヤー20がアクティブな場合
+			input-processors = <&zip_keybind_keys_directionL>; // zip_keybind_keys_directionL を使用
+			process-next; // 他のプロセッサも処理を継続
+		};
+		r_layer20-prevent {
+			layers = <NUMW>; // レイヤー20がアクティブな場合
+			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+		};
+		r_layer19 {
+			layers = <NUML>; // レイヤー19がアクティブな場合
+			input-processors = <&zip_keybind_keys_freecad>; // zip_keybind_keys_freecad を使用
+			process-next; // 他のプロセッサも処理を継続
+		};
+		r_layer19-prevent {
+			layers = <NUML>; // レイヤー19がアクティブな場合
+			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+		};
+		r_layer18 {
+			layers = <NUM>; // レイヤー18がアクティブな場合
+			input-processors = <&zip_keybind_keys_directionL>; // zip_keybind_keys_directionL を使用
+			process-next; // 他のプロセッサも処理を継続
+		};
+		r_layer18-prevent {
+			layers = <NUM>; // レイヤー18がアクティブな場合
+			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+		};
+		// r_layer17 {
+		// 	layers = <MOVW>; // レイヤー17がアクティブな場合
+		// 	input-processors = <&zip_keybind_keys_ecad_rmovw>; // zip_keybind_keys_ecad_rmovw を使用
+		// 	process-next; // 他のプロセッサも処理を継続
+		// };
+		// r_layer17-prevent {
+		// 	layers = <MOVW>; // レイヤー17がアクティブな場合
+		// 	input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+		// };
+		r_layer16 {
+			layers = <MOVL>; // レイヤー16がアクティブな場合
+			input-processors = <&zip_keybind_keys_directionM>; // zip_keybind_keys_directionM を使用
+			process-next; // 他のプロセッサも処理を継続
+		};
+		r_layer16-prevent {
+			layers = <MOVL>; // レイヤー16がアクティブな場合
+			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+		};
+		r_layer15 {
+			layers = <MOV>; // レイヤー15がアクティブな場合
+			input-processors = <&zip_keybind_keys_directionM>; // zip_keybind_keys_directionM を使用
+			process-next; // 他のプロセッサも処理を継続
+		};
+		r_layer15-prevent {
+			layers = <MOV>; // レイヤー15がアクティブな場合
+			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+		};
+		// r_layer14_w {
+		// 	layers = <ADJW>; // レイヤー14がアクティブな場合
+		// 	input-processors = <&zip_keybind_keys_ecad_radjw>; // zip_keybind_keys_ecad_radjw を使用
+		// 	process-next; // 他のプロセッサも処理を継続
+		// };
+		// r_layer14_w-prevent {
+		// 	layers = <ADJW>; // レイヤー14がアクティブな場合
+		// 	input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+		// };
+		r_mouse_speed_full_l {
+			layers = <ADJL>; // レイヤー13がアクティブな場合
+			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
+							, <&zip_xy_scaler 80 100>; // 速度を80/100に設定 (乗数80, 除数100)
+		};
+		r_mouse_speed_full {
+			layers = <ADJ>; // レイヤー12がアクティブな場合
+			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
+							, <&zip_xy_scaler 80 100>; // 速度を80/100に設定 (乗数80, 除数100)
+		};
+		// r_layer11 {
+		// 	layers = <RSEW>; // レイヤー11がアクティブな場合
+		// 	input-processors = <&zip_keybind_keys_ecad_rsew>; // zip_keybind_keys_ecad_rsew を使用
+		// 	process-next; // 他のプロセッサも処理を継続
+		// };
+		// r_layer11-prevent {
+		// 	layers = <RSEW>; // レイヤー11がアクティブな場合
+		// 	input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+		// };
+		r_layer10_l {
+			layers = <RSEL>; // レイヤー10がアクティブな場合
+			input-processors = <&zip_keybind_keys_directionM>; // zip_keybind_keys_directionM を使用
+			process-next; // 他のプロセッサも処理を継続
+		};
+		r_layer10_l-prevent {
+			layers = <RSEL>; // レイヤー10がアクティブな場合
+			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+		};
+		r_layer9 {
+			layers = <RSE>; // レイヤー9がアクティブな場合
+			input-processors = <&zip_keybind_keys_directionM>; // zip_keybind_keys_directionM を使用
+			process-next; // 他のプロセッサも処理を継続
+		};
+		r_layer9-prevent {
+			layers = <RSE>; // レイヤー9がアクティブな場合
+			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+		};
+		r_scroll_w {
+			layers = <LWRW>; // レイヤー8がアクティブな場合
+			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
+							, <&zip_xy_scaler 18 100> // スケーリング（18/100）
+							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
+		};
+		r_scroll_l {
+			layers = <LWRL>; // レイヤー7がアクティブな場合
+			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
+							, <&zip_xy_scaler 18 100> // スケーリング（18/100）
+							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
+		};
+		r_scroll {
+			layers = <LWR>; // レイヤー6がアクティブな場合
+			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
+							, <&zip_xy_scaler 8 100> // スケーリング（8/100）
+							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
+		};
+		r_layer5 {
+			layers = <WIN>; // レイヤー5がアクティブな場合
+			input-processors = <&zip_keybind_keys_directionH>; // zip_keybind_keys_directionH を使用
+			process-next;
+		};
+		r_layer5-prevent {
+			layers = <WIN>; // レイヤー5がアクティブな場合
+			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+		};
+		r_cad {
+			layers = <CAD>; // レイヤー4がアクティブな場合
+			input-processors = <&zip_keybind_keys_directionH>; // zip_keybind_keys_directionH を使用
+			process-next;
+		};
+		r_cad-prevent {
+			layers = <CAD>; // レイヤー4がアクティブな場合
+			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+		};
+		r_nicl {
+			layers = <NICL>; // レイヤー3がアクティブな場合
+			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
+							, <&zip_xy_scaler 16 100> // スケーリング（16/100）
+							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
+		};
+        r_lin {
+			layers = <LIN>; // レイヤー2がアクティブな場合
+			input-processors = <&zip_keybind_keys_freecad>; // zip_keybind_keys_freecad を使用
+			process-next; // 他のプロセッサも処理を継続
+		};
+		r_lin-prevent {
+			layers = <LIN>; // レイヤー2がアクティブな場合
+			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+		};
+		r_nic {
+			layers = <NIC>; // レイヤー2がアクティブな場合
+			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
+							, <&zip_xy_scaler 8 100> // スケーリング（8/100）
+							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
+		};
+		r_default {
+			layers = <QWE>; // レイヤー0（デフォルト）がアクティブな場合
+			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
+							, <&zip_xy_scaler 4 100> // スケーリング（4/100）
+							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
+		};
     };
     // peripheral_listener: peripheral_listener {
     //     compatible = "zmk,input-listener";
