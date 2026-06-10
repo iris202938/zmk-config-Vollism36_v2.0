@@ -350,11 +350,12 @@
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
-			bindings = <&kp RIGHT>
-					  ,<&kp LEFT>
-					  ,<&kp UP>
-					  ,<&kp DOWN>
-					  ;
+			bindings 
+                = <&kp RIGHT>
+				, <&kp LEFT>
+				, <&kp UP>
+				, <&kp DOWN>
+				;
 			tick = <150>;
 			wait-ms = <100>;
 			tap-ms = <50>;
@@ -364,11 +365,12 @@
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
-			bindings = <&kp RIGHT>
-					 , <&kp LEFT>
-					 , <&kp UP>
-					 , <&kp DOWN>
-					 ;
+			bindings
+                = <&kp RIGHT>
+				, <&kp LEFT>
+				, <&kp UP>
+				, <&kp DOWN>
+				;
 			tick = <100>; // ティック間隔
 			wait-ms = <5>; // 待機時間
 			tap-ms = <40>; // タップ時間
@@ -377,11 +379,12 @@
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		// track_remainders;
-			bindings = <&kp RIGHT>
-					  ,<&kp LEFT>
-					  ,<&kp UP>
-					  ,<&kp DOWN>
-					  ;
+			bindings
+                = <&kp RIGHT>
+				, <&kp LEFT>
+				, <&kp UP>
+				, <&kp DOWN>
+				;
 			tick = <50>; // ティック間隔
 			wait-ms = <0>; // 待機時間
 			tap-ms = <50>; // タップ時間
@@ -390,11 +393,12 @@
 		compatible = "zmk,input-processor-keybind";
 		#input-processor-cells = <0>;
 		track_remainders;
-		bindings = <&kp N3>
-				, <&kp N6>
-				, <&kp N2>
-				, <&kp N5>
-				;
+		bindings
+            = <&kp N3>
+			, <&kp N6>
+			, <&kp N2>
+			, <&kp N5>
+			;
 		tick = <150>;
 		wait-ms = <100>;
 		tap-ms = <50>;
