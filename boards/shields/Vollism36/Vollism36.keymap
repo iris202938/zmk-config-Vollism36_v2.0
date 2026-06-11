@@ -946,7 +946,7 @@
                 bindings = <&macro_BO>;
             };
 
-            combo_EX {
+            combo_EXCLA {
                 timeout-ms = <50>;
                 key-positions = <28 31>; // 新規
                 layers = <NIC NICL>;
