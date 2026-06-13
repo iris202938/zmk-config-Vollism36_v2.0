@@ -358,6 +358,18 @@
                     layers = <QWE LIN CAD RSE RSEL RSEW>;
                     bindings = <&m_xl_rename>;
                 };
+                combo_exl_group_close { // Excelのグループ化/閉じる
+                    timeout-ms = <80>;
+                    key-positions = <10 14>; // A,Hのキー位置に書き換えてください
+                    layers = <ADJL ADJW>;
+                    bindings = <&exl_group_close>;
+                };
+                combo_exl_group_open { // Excelのグループ化/開く
+                    timeout-ms = <80>;
+                    key-positions = <10 15>; // A,Jのキー位置に書き換えてください
+                    layers = <ADJL ADJW>;
+                    bindings = <&exl_group_open>;
+                };
                 combo_ADJ_ss1 { // ADJレイヤーでのスクリーンショット1
                     timeout-ms = <80>;
                     key-positions = <3 6>; // R,Uのキー位置に書き換えてください
