@@ -70,6 +70,27 @@
     };
 };
 
+/* ==========================================================
+   1. 拡張インプットプロセッサの定義
+   ========================================================== */
+/ {
+    /* トラックボールの動きを「Ctrl付きスクロール」に変換する設定 */
+    zip_scroll_ctrl: zip_scroll_ctrl {
+        compatible = "zmk,input-processor-xy-to-scroll";
+        #input-processor-cells = <0>;
+        // ボールが動いた時だけ自動でLeft-Ctrlを付与する
+        modifiers = <MOD_LCTL>; 
+    };
+
+    /* トラックボールの動きを「Shift付きスクロール」に変換する設定 */
+    zip_scroll_shift: zip_scroll_shift {
+        compatible = "zmk,input-processor-xy-to-scroll";
+        #input-processor-cells = <0>;
+        // ボールが動いた時だけ自動でLeft-Shiftを付与する
+        modifiers = <MOD_LSHIFT>;
+    };
+};
+
 / {
     input_processors {
         sensor_rotation: sensor_rotation {
@@ -151,20 +172,36 @@
         };
 
         /* ==========================================================
-        Layer 17: MOVW (方向キー変換)
+        Layer 17: MOVW (MOD-Mスクロール変換)
         ========================================================== */
-        l_movw {
+        /* 上下(Y軸)の動きを検出し、Ctrl＋スクロールにする */
+        l_movw_vertical {
             layers = <MOVW>; 
             input-processors = 
                 <&sensor_rotation>, 
-                <&zip_xy_scaler 200 100>, 
-                <&xy_to_keys>;
+                // X軸の動きを0にし、Y軸（上下）の動きだけを200%（速度調整用）で通す
+                <&zip_xy_scaler 0 200>, 
+                <&zip_scroll_ctrl>;
             process-next;
         };
 
+        /* 左右(X軸)の動きを検出し、Shift＋スクロールにする */
+        l_movw_horizontal {
+            layers = <MOVW>; 
+            input-processors = 
+                <&sensor_rotation>, 
+                // Y軸の動きを0にし、X軸（左右）の動きだけを200%で通す
+                <&zip_xy_scaler 200 0>,
+                // ★ECADの仕様に合わせるため、左右(X)の動きを上下(Y)のスクロール信号に変換
+                <&xy_transform XY_TO_YX>,
+                <&zip_scroll_shift>;
+            process-next;
+        };
+
+        /* 既存の prevent 処理（干渉防止用にあれば残す） */
         l_movw_prevent {
             layers = <MOVW>;
-            input-processors = <&zip_xy_scaler 0 1>;
+            input-processors = <&zip_xy_scaler 0 0>;
         };
 
         /* ==========================================================
