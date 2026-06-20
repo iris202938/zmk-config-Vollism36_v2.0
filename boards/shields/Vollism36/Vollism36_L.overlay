@@ -87,7 +87,7 @@
         compatible = "zmk,input-processor-xy-to-scroll";
         #input-processor-cells = <0>;
         // ボールが動いた時だけ自動でLeft-Shiftを付与する
-        modifiers = <MOD_LSHFT>;
+        modifiers = <MOD_LSFT>;
     };
 };
 
