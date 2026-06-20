@@ -76,17 +76,14 @@
 / {
     /* トラックボールの動きを「Ctrl付きスクロール」に変換する設定 */
     zip_scroll_ctrl: zip_scroll_ctrl {
-        compatible = "zmk,input-processor-xy-to-scroll";
+        compatible = "zmk,input-processor-to-scroll"; // 「xy-」を削除
         #input-processor-cells = <0>;
-        // ボールが動いた時だけ自動でLeft-Ctrlを付与する
         modifiers = <MOD_LCTL>; 
     };
-
     /* トラックボールの動きを「Shift付きスクロール」に変換する設定 */
     zip_scroll_shift: zip_scroll_shift {
-        compatible = "zmk,input-processor-xy-to-scroll";
+        compatible = "zmk,input-processor-to-scroll"; // 「xy-」を削除
         #input-processor-cells = <0>;
-        // ボールが動いた時だけ自動でLeft-Shiftを付与する
         modifiers = <MOD_LSFT>;
     };
 };
