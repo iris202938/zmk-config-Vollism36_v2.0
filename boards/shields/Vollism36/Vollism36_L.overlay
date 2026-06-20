@@ -193,7 +193,7 @@
                 // Y軸の動きを0にし、X軸（左右）の動きだけを200%で通す
                 <&zip_xy_scaler 200 0>,
                 // ★ECADの仕様に合わせるため、左右(X)の動きを上下(Y)のスクロール信号に変換
-                <&xy_transform XY_TO_YX>,
+                <&zip_xy_transform 4>,
                 <&zip_scroll_shift>;
             process-next;
         };
