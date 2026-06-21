@@ -70,52 +70,6 @@
     };
 };
 
-/* ==========================================================
-   1. 拡張インプットプロセッサの定義（完全修正版）
-   ========================================================== */
-/ {
-    /* A. 動いた時だけCtrl/Shiftを付与してスクロールするマクロ */
-    macros {
-        scr_ctrl_up: scr_ctrl_up {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTRL>, <&macro_tap &msc SCRL_UP>, <&macro_release &kp LCTRL>;
-        };
-        scr_ctrl_dn: scr_ctrl_dn {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTRL>, <&macro_tap &msc SCRL_DOWN>, <&macro_release &kp LCTRL>;
-        };
-        scr_shft_up: scr_shft_up {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LSHIFT>, <&macro_tap &msc SCRL_UP>, <&macro_release &kp LSHIFT>;
-        };
-        scr_shft_dn: scr_shft_dn {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LSHIFT>, <&macro_tap &msc SCRL_DOWN>, <&macro_release &kp LSHIFT>;
-        };
-    };
-
-    /* B. トラックボールの動きを上記のマクロに変換するプロセッサ */
-    // ※このモジュールの配列順序は <右 左 下 上> になります
-    
-    xy_to_ctrl_scroll: xy_to_ctrl_scroll {
-        compatible = "zmk,input-processor-keybind"; // ★正しい識別名に修正
-        #input-processor-cells = <0>;
-        mode = <1>; // ★4方向（上下左右）変換モードを有効化
-        bindings = <&none>, <&none>, <&scr_ctrl_dn>, <&scr_ctrl_up>; // 下・上にマクロを配置
-    };
-
-    xy_to_shift_scroll: xy_to_shift_scroll {
-        compatible = "zmk,input-processor-keybind"; // ★正しい識別名に修正
-        #input-processor-cells = <0>;
-        mode = <1>; // ★4方向（上下左右）変換モードを有効化
-        bindings = <&scr_shft_dn>, <&scr_shft_up>, <&none>, <&none>; // 右・左にマクロを配置
-    };
-};
-
 / {
     input_processors {
         sensor_rotation: sensor_rotation {
@@ -197,28 +151,20 @@
         };
 
         /* ==========================================================
-        Layer 17: MOVW (スクロール変換)
+        Layer 17: MOVW (方向キー変換)
            ========================================================== */
-        /* 上下(Y軸)の動きを検出し、Ctrl＋スクロールにする */
-        l_movw_vertical {
-            layers = <MOVW>; 
+        l_movl {
+            layers = <MOVL>; 
             input-processors = 
                 <&sensor_rotation>, 
-                // 左右(X)の動きを完全に遮断し、上下(Y)だけを通す
-                <&zip_xy_scaler 0 100>, 
-                <&xy_to_ctrl_scroll>;
+                <&zip_xy_scaler 200 100>, 
+                <&xy_to_keys>;
             process-next;
         };
 
-        /* 左右(X軸)の動きを検出し、Shift＋スクロールにする */
-        l_movw_horizontal {
-            layers = <MOVW>; 
-            input-processors = 
-                <&sensor_rotation>, 
-                // 上下(Y)の動きを完全に遮断し、左右(X)だけを通す
-                <&zip_xy_scaler 100 0>,
-                <&xy_to_shift_scroll>;
-            process-next;
+        l_movl_prevent {
+            layers = <MOVL>;
+            input-processors = <&zip_xy_scaler 0 1>;
         };
 
         /* ==========================================================
