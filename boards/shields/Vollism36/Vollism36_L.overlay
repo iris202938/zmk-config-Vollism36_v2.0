@@ -71,7 +71,7 @@
 };
 
 /* ==========================================================
-   1. 拡張インプットプロセッサの定義（修正版）
+   1. 拡張インプットプロセッサの定義（完全修正版）
    ========================================================== */
 / {
     /* A. 動いた時だけCtrl/Shiftを付与してスクロールするマクロ */
@@ -99,16 +99,20 @@
     };
 
     /* B. トラックボールの動きを上記のマクロに変換するプロセッサ */
+    // ※このモジュールの配列順序は <右 左 下 上> になります
+    
     xy_to_ctrl_scroll: xy_to_ctrl_scroll {
-        compatible = "zmk,input-processor-xy-to-keys"; 
+        compatible = "zmk,input-processor-keybind"; // ★正しい識別名に修正
         #input-processor-cells = <0>;
-        bindings = <&none>, <&scr_ctrl_dn>, <&none>, <&scr_ctrl_up>;
+        mode = <1>; // ★4方向（上下左右）変換モードを有効化
+        bindings = <&none>, <&none>, <&scr_ctrl_dn>, <&scr_ctrl_up>; // 下・上にマクロを配置
     };
 
     xy_to_shift_scroll: xy_to_shift_scroll {
-        compatible = "zmk,input-processor-xy-to-keys"; 
+        compatible = "zmk,input-processor-keybind"; // ★正しい識別名に修正
         #input-processor-cells = <0>;
-        bindings = <&scr_shft_dn>, <&none>, <&scr_shft_up>, <&none>; 
+        mode = <1>; // ★4方向（上下左右）変換モードを有効化
+        bindings = <&scr_shft_dn>, <&scr_shft_up>, <&none>, <&none>; // 右・左にマクロを配置
     };
 };
 
