@@ -334,7 +334,8 @@
         ========================================================== */
         l_qwe {
             layers = <QWE>;
-            input-processors = <&sensor_rotation>;
+            input-processors = <&sensor_rotation>
+                             ,<&zip_xy_scaler 4 100>; // スケーリング（4/100）
         };
     };
 
