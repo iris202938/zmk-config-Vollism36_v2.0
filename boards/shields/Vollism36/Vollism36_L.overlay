@@ -75,7 +75,8 @@
         sensor_rotation: sensor_rotation {
             compatible = "zmk,input-processor-sensor-rotation";
             #input-processor-cells = <0>;
-            rotation-angle = <255>;
+            // rotation-angle = <255>;
+            rotation-angle = <270>;
         };
 
         xy_to_keys: xy_to_keys {
@@ -601,8 +602,9 @@
 		r_default {
             layers = <QWE>;
             input-processors = <&sensor_rotation>
-                            ,  <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
-                            ,  <&zip_xy_scaler 4 100>; // スケーリング（4/100）
+                            , <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
+                            , <&zip_xy_scaler 4 100> // スケーリング（4/100）
+                            , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
         };
     };
     // peripheral_listener: peripheral_listener {
