@@ -599,11 +599,11 @@
 							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
 		r_default {
-			layers = <QWE>; // レイヤー0（デフォルト）がアクティブな場合
-			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
-							, <&zip_xy_scaler 4 100> // スケーリング（4/100）
-							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
-		};
+            layers = <QWE>;
+            input-processors = <&sensor_rotation>
+                            ,  <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
+                            ,  <&zip_xy_scaler 4 100>; // スケーリング（4/100）
+        };
     };
     // peripheral_listener: peripheral_listener {
     //     compatible = "zmk,input-listener";
