@@ -599,7 +599,7 @@
 							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
         r_lin {
-		// 	layers = <LIN>; // レイヤー2がアクティブな場合
+			layers = <LIN>; // レイヤー2がアクティブな場合
 		// 	input-processors = <&zip_keybind_keys_freecad>; // zip_keybind_keys_freecad を使用
 		// 	process-next; // 他のプロセッサも処理を継続
 		// };
