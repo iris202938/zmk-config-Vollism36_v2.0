@@ -521,12 +521,14 @@
 		// };
 		r_mouse_speed_full_l {
 			layers = <ADJL>; // レイヤー13がアクティブな場合
-			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
+			input-processors = <&sensor_rotation>
+                            , <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
 							, <&zip_xy_scaler 80 100>; // 速度を80/100に設定 (乗数80, 除数100)
 		};
 		r_mouse_speed_full {
 			layers = <ADJ>; // レイヤー12がアクティブな場合
-			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
+            input-processors = <&sensor_rotation>
+                            , <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
 							, <&zip_xy_scaler 80 100>; // 速度を80/100に設定 (乗数80, 除数100)
 		};
 		// r_layer11 {
@@ -558,19 +560,22 @@
 		};
 		r_scroll_w {
 			layers = <LWRW>; // レイヤー8がアクティブな場合
-			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
+			input-processors = <&sensor_rotation>
+                            , <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
 							, <&zip_xy_scaler 18 100> // スケーリング（18/100）
 							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
 		r_scroll_l {
 			layers = <LWRL>; // レイヤー7がアクティブな場合
-			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
+			input-processors = <&sensor_rotation>
+                            , <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
 							, <&zip_xy_scaler 18 100> // スケーリング（18/100）
 							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
 		r_scroll {
 			layers = <LWR>; // レイヤー6がアクティブな場合
-			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
+			input-processors = <&sensor_rotation>
+                            , <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
 							, <&zip_xy_scaler 8 100> // スケーリング（8/100）
 							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
@@ -594,7 +599,8 @@
 		};
 		r_nicl {
 			layers = <NICL>; // レイヤー3がアクティブな場合
-			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
+			input-processors = <&sensor_rotation>
+                            , <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
 							, <&zip_xy_scaler 16 100> // スケーリング（16/100）
 							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
@@ -613,7 +619,8 @@
 		};
 		r_nic {
 			layers = <NIC>; // レイヤー2がアクティブな場合
-			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
+			input-processors = <&sensor_rotation>
+                            , <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
 							, <&zip_xy_scaler 8 100> // スケーリング（8/100）
 							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
