@@ -573,9 +573,10 @@
 		};
         r_lin {
 			layers = <LIN>; // レイヤー2がアクティブな場合
-            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
-                            , <&zip_xy_scaler 4 100> // スケーリング（4/100）
-                            , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
+            input-processors = <&zip_xy_scaler 40 100>; // 速度を40/100に設定 (乗数40, 除数100)
+            // input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
+            //                 , <&zip_xy_scaler 4 100> // スケーリング（4/100）
+            //                 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
 		r_nic {
 			layers = <NIC>; // レイヤー2がアクティブな場合
