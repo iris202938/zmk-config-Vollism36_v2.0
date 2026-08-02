@@ -440,12 +440,13 @@
         /* ここにスティック用のレイヤー設定などを記述 */
         r_layer22 {
 			layers = <BLE>; // レイヤー22がアクティブな場合
-			input-processors = <&zip_keybind_keys_directionH>; // zip_keybind_keys_directionH を使用
-			process-next; // 他のプロセッサも処理を継続
-		};
-		r_layer22-prevent {
-			layers = <BLE>; // レイヤー22がアクティブな場合
-			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+            input-processors = <&zip_xy_scaler 40 100>; // 速度を40/100に設定 (乗数40, 除数100)
+		// 	input-processors = <&zip_keybind_keys_directionH>; // zip_keybind_keys_directionH を使用
+		// 	process-next; // 他のプロセッサも処理を継続
+		// };
+		// r_layer22-prevent {
+		// 	layers = <BLE>; // レイヤー22がアクティブな場合
+		// 	input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
 		r_layer21 {
 			layers = <WINS>; // レイヤー21がアクティブな場合
