@@ -2983,13 +2983,15 @@
                         <&kp LC(C)>,            // コピー (Ctrl + C)
                         <&kp TAB>;              // 確定＆右のセルへ移動
                 };
-                mb3_mb1: mb3_mb1 { //FreeCADのマウスボタン3+1
+                mb3_mb1: mb3_mb1 { //FreeCADのマウスボタン3+1 (トグル動作例)
                     compatible = "zmk,behavior-macro";
-                    wait-ms = <40>;
                     #binding-cells = <0>;
                     bindings
-                        = <&mkp MB3 &mkp MB1>
-                        ;
+                        = <&macro_press &mkp MB3>
+                        , <&macro_press &mkp MB1>
+                        , <&macro_pause_for_release>
+                        , <&macro_release &mkp MB3>
+                        , <&macro_release &mkp MB1>;
                 };
                 // // HiMacroから変換：コピー ➔ 画面切り替え ➔ 貼り付け ➔ 元の画面に戻る
                 // ecl_transfer: ecl_transfer {
