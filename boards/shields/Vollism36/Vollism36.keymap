@@ -2992,6 +2992,7 @@
                         = <&macro_press   &kp LSFT>
                         , <&macro_tap     &kp SPACE>
                         , <&macro_release &kp LSFT>
+                        , <&macro_wait_ms 80>        // ← ここで80ミリ秒待機を追加
                         , <&macro_press   &kp LCTRL>
                         , <&macro_tap     &kp KP_PLUS>
                         , <&macro_release &kp LCTRL>
