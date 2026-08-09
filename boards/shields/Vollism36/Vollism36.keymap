@@ -376,6 +376,12 @@
                     layers = <ADJL ADJW>;
                     bindings = <&excel_move_row_cut>;
                 };
+                combo_excel_move_row_copy { // Excelの行選択コピー
+                    timeout-ms = <80>;
+                    key-positions = <17 18>;
+                    layers = <ADJL ADJW>;
+                    bindings = <&excel_move_row_copy>;
+                };
                 combo_excel_move_row_paste { // Excelの行選択貼付
                     timeout-ms = <80>;
                     key-positions = <27 28>;
@@ -3007,6 +3013,21 @@
                         , <&macro_wait_time 100> // ここで100ミリ秒待機
                         , <&macro_press   &kp LCTRL>
                         , <&macro_tap     &kp X>
+                        , <&macro_release &kp LCTRL>
+                        ;
+                };
+                excel_move_row_copy: excel_move_row_copy { // Excelの行選択コピー
+                    compatible = "zmk,behavior-macro";
+                    #binding-cells = <0>;
+                    wait-ms = <40>;
+                    tap-ms = <40>;
+                    bindings
+                        = <&macro_press   &kp LSFT>
+                        , <&macro_tap     &kp SPACE>
+                        , <&macro_release &kp LSFT>
+                        , <&macro_wait_time 100> // ここで100ミリ秒待機
+                        , <&macro_press   &kp LCTRL>
+                        , <&macro_tap     &kp C>
                         , <&macro_release &kp LCTRL>
                         ;
                 };
