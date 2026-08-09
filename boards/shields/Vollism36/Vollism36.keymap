@@ -370,6 +370,18 @@
                     layers = <ADJL ADJW>;
                     bindings = <&exl_group_open>;
                 };
+                combo_excel_move_row_cut { // Excelの行選択切取り
+                    timeout-ms = <80>;
+                    key-positions = <8 9>;
+                    layers = <ADJL ADJW>;
+                    bindings = <&excel_move_row_cut>;
+                };
+                combo_excel_move_row_paste { // Excelの行選択貼付
+                    timeout-ms = <80>;
+                    key-positions = <27 28>;
+                    layers = <ADJL ADJW>;
+                    bindings = <&excel_move_row_paste>;
+                };
                 combo_ADJ_ss1 { // ADJレイヤーでのスクリーンショット1
                     timeout-ms = <80>;
                     key-positions = <3 6>; // R,Uのキー位置に書き換えてください
@@ -2998,7 +3010,7 @@
                         , <&macro_release &kp LCTRL>
                         ;
                 };
-                excel_move_row_past: excel_move_row_past { // Excelの行移動(下に挿入)
+                excel_move_row_paste: excel_move_row_paste { // Excelの行移動(下に挿入)
                     compatible = "zmk,behavior-macro";
                     #binding-cells = <0>;
                     wait-ms = <40>;
