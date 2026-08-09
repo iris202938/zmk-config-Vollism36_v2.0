@@ -3042,7 +3042,9 @@
                         , <&macro_release &kp LSFT>
                         , <&macro_wait_time 100> // ここで100ミリ秒待機
                         , <&macro_press   &kp LCTRL>
+                        // , <&macro_press   &kp LSFT>
                         , <&macro_tap     &kp KP_PLUS>
+                        // , <&macro_release &kp LSFT>
                         , <&macro_release &kp LCTRL>
                         ;
                 };
