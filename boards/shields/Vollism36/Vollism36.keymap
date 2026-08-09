@@ -2988,7 +2988,7 @@
                     wait-ms = <40>;
                     #binding-cells = <0>;
                     bindings
-                        = <&kp LSFT SPACE>    // 1. 行全体を選択
+                        = <&kp LSFT SPACE>,    // 1. 行全体を選択
                         &kp LC(LSFT(PLUS))  // 2. 切り取った行を挿入 (※キー定義を見直す必要がある場合があります)
                         ;
                 };
