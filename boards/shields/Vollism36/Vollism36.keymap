@@ -2986,11 +2986,15 @@
                 excel_move_row: excel_move_row {
                     compatible = "zmk,behavior-macro";
                     #binding-cells = <0>;
-                    wait-ms = <30>;
-                    tap-ms = <30>;
-                    bindings =
-                        <&kp LSFT SPACE>,    // 1. 行全体を選択
-                        <&kp LC(PLUS)>  // 2. 切り取った行を挿入 (※キー定義を見直す必要がある場合があります)
+                    wait-ms = <40>;
+                    tap-ms = <40>;
+                    bindings
+                        = <&macro_press   &kp LSFT>
+                        , <&macro_tap     &kp SPACE>
+                        , <&macro_release &kp LSFT>
+                        , <&macro_press   &kp LCTRL>
+                        , <&macro_tap     &kp PLUS>
+                        , <&macro_release &kp LCTRL>
                         ;
                 };
                 mb3_mb1: mb3_mb1 { //FreeCADのマウスボタン3+1 (トグル動作例)
