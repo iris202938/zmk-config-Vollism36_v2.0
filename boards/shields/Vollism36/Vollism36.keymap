@@ -2983,6 +2983,14 @@
                         <&kp LC(C)>,            // コピー (Ctrl + C)
                         <&kp TAB>;              // 確定＆右のセルへ移動
                 };
+                excel_move_row: excel_move_row {
+                    compatible = "zmk,behavior-macro";
+                    wait-ms = <40>;
+                    #binding-cells = <0>;
+                    bindings
+                        = <&kp LSFT SPACE>  // 1. 行全体を選択
+                        , &kp LC(LSFT PLUS);   // 2. 切り取った行を挿入 (Insert Cut Cells)
+                };
                 mb3_mb1: mb3_mb1 { //FreeCADのマウスボタン3+1 (トグル動作例)
                     compatible = "zmk,behavior-macro";
                     #binding-cells = <0>;
