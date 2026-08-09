@@ -2993,7 +2993,7 @@
                         , <&macro_tap     &kp SPACE>
                         , <&macro_release &kp LSFT>
                         , <&macro_press   &kp LCTRL>
-                        , <&macro_tap     &kp PLUS>
+                        , <&macro_tap     &kp KP_PLUS>
                         , <&macro_release &kp LCTRL>
                         ;
                 };
