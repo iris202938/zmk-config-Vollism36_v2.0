@@ -2983,7 +2983,7 @@
                         <&kp LC(C)>,            // コピー (Ctrl + C)
                         <&kp TAB>;              // 確定＆右のセルへ移動
                 };
-                excel_move_row: excel_move_row {
+                excel_move_row_cut: excel_move_row_cut { // Excelの行選択切取り
                     compatible = "zmk,behavior-macro";
                     #binding-cells = <0>;
                     wait-ms = <40>;
@@ -2992,7 +2992,22 @@
                         = <&macro_press   &kp LSFT>
                         , <&macro_tap     &kp SPACE>
                         , <&macro_release &kp LSFT>
-                        , <&macro_wait_time 80> // ここで80ミリ秒待機
+                        , <&macro_wait_time 100> // ここで100ミリ秒待機
+                        , <&macro_press   &kp LCTRL>
+                        , <&macro_tap     &kp X>
+                        , <&macro_release &kp LCTRL>
+                        ;
+                };
+                excel_move_row_past: excel_move_row_past { // Excelの行移動(下に挿入)
+                    compatible = "zmk,behavior-macro";
+                    #binding-cells = <0>;
+                    wait-ms = <40>;
+                    tap-ms = <40>;
+                    bindings
+                        = <&macro_press   &kp LSFT>
+                        , <&macro_tap     &kp SPACE>
+                        , <&macro_release &kp LSFT>
+                        , <&macro_wait_time 100> // ここで100ミリ秒待機
                         , <&macro_press   &kp LCTRL>
                         , <&macro_tap     &kp KP_PLUS>
                         , <&macro_release &kp LCTRL>
