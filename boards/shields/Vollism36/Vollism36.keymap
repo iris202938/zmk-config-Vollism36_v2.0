@@ -5049,7 +5049,7 @@
                     &mt_s LALT Z    &kp LA(LEFT)    &mkp MB3        &kp LA(RIGHT)                                   &kp LC(TAB)     &kp LC(Z)       &kp LC(PG_UP)   &kp LG(LBKT)    &kp LG(RBKT)    &kp LC(PG_DN)
                                                     &msc SCRL_DOWN  &cp_tab         &cp_enter       &mkp MB2        &kp ENTER       &mkp MB1        &to LIN
                     >;
-                    sensor-bindings = <&history_encoder>;
+                    sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
                 };
 
                 MOVW {
