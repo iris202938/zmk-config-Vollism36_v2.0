@@ -174,18 +174,20 @@
         Layer 16: MOVL (方向キー変換)
         ========================================================== */
         l_movl {
-            layers = <MOVL>; 
-            input-processors = 
-                <&sensor_rotation>, 
-                <&zip_xy_scaler 200 100>, 
-                <&xy_to_keys>;
-            process-next;
+            layers = <MOVL>;
+            input-processors = <&sensor_rotation>
+                             , <&zip_xy_scaler 30 100>; // スケーリング（30/100）
+            // input-processors = 
+            //     <&sensor_rotation>, 
+            //     <&zip_xy_scaler 200 100>, 
+            //     <&xy_to_keys>;
+            // process-next;
         };
 
-        l_movl_prevent {
-            layers = <MOVL>;
-            input-processors = <&zip_xy_scaler 0 1>;
-        };
+        // l_movl_prevent {
+        //     layers = <MOVL>;
+        //     input-processors = <&zip_xy_scaler 0 1>;
+        // };
 
         /* ==========================================================
         Layer 15: MOV (方向キー変換)
