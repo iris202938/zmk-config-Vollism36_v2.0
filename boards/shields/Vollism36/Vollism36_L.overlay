@@ -578,6 +578,7 @@
         r_lin {
 			layers = <LIN>; // レイヤー2がアクティブな場合
             input-processors = <&zip_keybind_keys_directionM>; // zip_keybind_keys_directionM を使用
+            process-next;
             // input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
             //                 , <&zip_xy_scaler 4 100> // スケーリング（4/100）
             //                 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
