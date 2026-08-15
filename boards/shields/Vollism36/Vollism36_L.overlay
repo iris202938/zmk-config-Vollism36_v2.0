@@ -376,7 +376,7 @@
     zip_keybind_keys_directionL: zip_keybind_keys_directionL {
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
-		track_remainders;
+		// track_remainders;
 			bindings 
                 = <&kp RIGHT>
 				, <&kp LEFT>
@@ -391,7 +391,7 @@
 	zip_keybind_keys_directionM: zip_keybind_keys_directionM {
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
-		track_remainders;
+		// track_remainders;
 			bindings
                 = <&kp RIGHT>
 				, <&kp LEFT>
