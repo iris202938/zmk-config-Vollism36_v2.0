@@ -443,7 +443,6 @@
 				, <&mb3_mb1>
 				, <&mb3_mb1>
 				, <&mb3_mb1>
-                
 				;
 			tick = <1>;
 			wait-ms = <1>;
