@@ -68,6 +68,16 @@
             low-power-enable;
         };
     };
+    mb3_mb1: mb3_mb1 { //FreeCADのマウスボタン3+1 (トグル動作例)
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &mkp MB3>
+            , <&macro_press &mkp MB1>
+            , <&macro_pause_for_release>
+            , <&macro_release &mkp MB3>
+            , <&macro_release &mkp MB1>;
+    };
 };
 
 / {
