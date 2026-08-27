@@ -582,7 +582,7 @@
 		};
 		r_cad-prevent {
 			layers = <CAD>; // レイヤー4がアクティブな場合
-			input-processors = <&zip_xy_scaler 16 100> // スケーリング（16/100）
+			input-processors = <&zip_xy_scaler 16 100>; // スケーリング（16/100）
 		};
 		r_nicl {
 			layers = <NICL>; // レイヤー3がアクティブな場合
