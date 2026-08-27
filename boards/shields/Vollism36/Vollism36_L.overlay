@@ -575,15 +575,15 @@
 			layers = <WIN>; // レイヤー5がアクティブな場合
 			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
-		// r_cad {
-		// 	layers = <CAD>; // レイヤー4がアクティブな場合
-		// 	input-processors = <&zip_keybind_keys_freecad_3d>; // zip_keybind_keys_freecad_3d を使用
-		// 	process-next;
-		// };
-		// r_cad-prevent {
-		// 	layers = <CAD>; // レイヤー4がアクティブな場合
-		// 	input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
-		// };
+		r_cad {
+			layers = <CAD>; // レイヤー4がアクティブな場合
+			input-processors = <&zip_keybind_keys_freecad_3d>; // zip_keybind_keys_freecad_3d を使用
+			process-next;
+		};
+		r_cad-prevent {
+			layers = <CAD>; // レイヤー4がアクティブな場合
+			input-processors = <&zip_xy_scaler 16 100> // スケーリング（16/100）
+		};
 		r_nicl {
 			layers = <NICL>; // レイヤー3がアクティブな場合
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
