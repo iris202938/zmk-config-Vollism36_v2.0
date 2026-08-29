@@ -424,6 +424,12 @@
                     layers = <MOVL MOVW>;
                     bindings = <&excel_ruled_line_fat_drawing>;
                 };
+                combo_excel_clear_cf { // Excelの条件付き書式のクリア(選択範囲)
+                    timeout-ms = <80>;
+                    key-positions = <14 17 21>; // H,L,Cのキー位置に書き換えてください
+                    layers = <MOVL MOVW>;
+                    bindings = <&excel_clear_cf>;
+                };
 
                 combo_lefthand_enter { // 左手のみでEnterを押す
                     timeout-ms = <80>;
@@ -3188,7 +3194,7 @@
                 excel_ruled_line_fat_drawing: excel_ruled_line_fat_drawing { // Excelの罫線太い外枠
                     compatible = "zmk,behavior-macro";
                     #binding-cells = <0>;
-                    wait-ms = <40>;
+                    wait-ms = <40>;excel_ruled_line_fat_drawing
                     tap-ms = <40>;
                     bindings
                         = <&macro_tap   &kp LALT>
