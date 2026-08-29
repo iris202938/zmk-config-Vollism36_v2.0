@@ -3197,6 +3197,19 @@
                         , <&macro_tap   &kp T>
                         ;
                 };
+                excel_clear_cf: excel_clear_cf { // Excelの条件付き書式のクリア(選択範囲)
+                    compatible = "zmk,behavior-macro";
+                    #binding-cells = <0>;
+                    wait-ms = <40>;
+                    tap-ms = <40>;
+                    bindings
+                        = <&macro_tap   &kp LALT>
+                        , <&macro_tap     &kp H>
+                        , <&macro_tap     &kp L>
+                        , <&macro_tap     &kp C>
+                        , <&macro_tap     &kp S>
+                        ;
+                };
                 mb3_mb1: mb3_mb1 { //FreeCADのマウスボタン3+1 (トグル動作例)
                     compatible = "zmk,behavior-macro";
                     #binding-cells = <0>;
