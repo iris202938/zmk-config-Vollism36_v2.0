@@ -435,19 +435,19 @@
 		// max_pending_activations = <10>
     };
     zip_keybind_keys_freecad_3d: zip_keybind_keys_freecad_3d {
-			compatible = "zmk,input-processor-keybind";
-			#input-processor-cells = <0>;
+        compatible = "zmk,input-processor-keybind";
+        #input-processor-cells = <0>;
 		// track_remainders;
-			bindings 
-                = <&mb3_mb1>
-				, <&mb3_mb1>
-				, <&mb3_mb1>
-				, <&mb3_mb1>
-				;
-			tick = <1>;
-			wait-ms = <1>;
-			tap-ms = <500>;
-			mode = <1>;
+        bindings 
+            = <&mb3_mb1>
+            , <&mb3_mb1>
+            , <&mb3_mb1>
+            , <&mb3_mb1>
+            ;
+        tick = <10>;       // 少しだけ持たせる（1だと重すぎる場合があるため10〜50程度に調整）
+        wait-ms = <10>;    // 待ち時間を短く
+        tap-ms = <20>;     // 500から大幅に小さくし、スティックを離したら即座に離す（例: 20〜50）
+        mode = <1>;
 	};
 
     peripheral_listener: peripheral_listener {
@@ -582,7 +582,7 @@
 		};
 		r_cad-prevent {
 			layers = <CAD>; // レイヤー4がアクティブな場合
-			input-processors = <&zip_xy_scaler 16 100>; // スケーリング（16/100）
+			input-processors = <&zip_xy_scaler 32 100>; // スケーリング（32/100）
 		};
 		r_nicl {
 			layers = <NICL>; // レイヤー3がアクティブな場合
