@@ -5027,7 +5027,7 @@
                                                     &kp G           &lt_bl NUML ESC &mt LSHFT SPACE &lt LWRL TAB	&lt RSEL ENTER	&mt RSHFT SPACE &lt_bl MOVL ESC
                     >;
                     sensor-bindings = <&inc_dec_kp LC(PG_DN) LC(PG_UP)>;
-                    // sensor-bindings = <&msc (MOVE_Y(-20))>, <&msc (MOVE_Y(20))>;
+                    // bindings = <&msc (MOVE_Y(-20))>, <&msc (MOVE_Y(20))>;
                 };
 
                 NICL { 
