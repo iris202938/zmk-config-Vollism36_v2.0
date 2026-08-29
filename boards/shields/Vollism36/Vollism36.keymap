@@ -534,6 +534,12 @@
                     layers = <QWE LIN CAD WINS>;
                     timeout-ms = <80>;
                 };
+                mb3_mb1 {
+                    bindings = <&mb3_mb1>;
+                    key-positions = <26 27 28>;
+                    layers = <LIN>;
+                    timeout-ms = <80>;
+                };
                 int5_g_c {
                     bindings = <&int5_g>;
                     key-positions = <18 28>;
