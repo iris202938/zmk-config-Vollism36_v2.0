@@ -3209,7 +3209,7 @@
                     wait-ms = <40>;
                     tap-ms = <40>;
                     bindings
-                        = <&macro_tap   &kp LALT>
+                        = <&macro_tap     &kp LALT>
                         , <&macro_tap     &kp H>
                         , <&macro_tap     &kp L>
                         , <&macro_tap     &kp C>
