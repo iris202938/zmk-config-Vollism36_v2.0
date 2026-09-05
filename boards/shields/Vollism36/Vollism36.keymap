@@ -5186,7 +5186,7 @@
                     &kp LS(LC(TAB)) &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP                                    &lt BLE LC(Y)   &kp LC(A)       &kp UP          &kp LC(E)       &kp PG_UP
                     &mt_s LCTRL MB1 &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT                                                 &lt BLE BSPC    &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN
                     &mt_s LGUI Z    &kp LG(LBKT)    &mkp MB3        &kp LG(RBKT)                                    &kp LC(TAB)     &kp LC(Z)       &kp LS(LC(TAB)) &kp LA(LEFT)    &kp LA(RIGHT)   &kp LC(TAB)
-                                                    &msc SCRL_DOWN  &kp LG(C)       &kp LG(V)       &mkp MB2        &kp ENTER       &mkp MB1        &to QWE
+                                                    &msc SCRL_DOWN  &kp LG(C)       &kp LG(V)       &mkp MB2        &lt RSE ENTER   &mkp MB1        &to QWE
                     >;
                     sensor-bindings = <&history_encoder>;
                 };
@@ -5197,7 +5197,7 @@
                     &kp LS(LC(TAB)) &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP                                    &lt BLE LC(Y)   &kp HOME        &kp UP          &kp END         &kp PG_UP
                     &mt_s LCTRL MB1 &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT                                                 &lt BLE BSPC    &kp LEFT        &kp DOWN        &kp RIGHT       &mt_s RCTRL PG_DN
                     &mt_s LALT Z    &kp LA(LEFT)    &mkp MB3        &kp LA(RIGHT)                                   &kp LC(TAB)     &kp LC(Z)       &kp LC(PG_UP)   &kp LG(LBKT)    &kp LG(RBKT)    &kp LC(PG_DN)
-                                                    &msc SCRL_DOWN  &cp_tab         &cp_enter       &mkp MB2        &kp ENTER       &mkp MB1        &to LIN
+                                                    &msc SCRL_DOWN  &cp_tab         &cp_enter       &mkp MB2        &lt RSEL ENTER  &mkp MB1        &to LIN
                     >;
                     sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
                 };
@@ -5208,7 +5208,7 @@
                     &kp LS(LC(TAB)) &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP                                    &lt BLE LC(Y)   &kp HOME        &kp UP          &kp END         &kp PG_UP
                     &mt_s LCTRL MB1 &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT                                                 &lt BLE BSPC    &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN
                     &mt_s LALT Z    &kp LA(LEFT)    &mkp MB3        &kp LA(RIGHT)                                   &kp LC(TAB)     &kp LC(Z)       &kp LC(PG_UP)   &kp LG(LBKT)    &kp LG(RBKT)    &kp LC(PG_DN)
-                                                    &msc SCRL_DOWN  &cp_tab         &cp_enter       &mkp MB2        &kp ENTER       &mkp MB1        &to CAD
+                                                    &msc SCRL_DOWN  &cp_tab         &cp_enter       &mkp MB2        &lt RSEW ENTER  &mkp MB1        &to CAD
                     >;
                     sensor-bindings = <&history_encoder>;
                 };
