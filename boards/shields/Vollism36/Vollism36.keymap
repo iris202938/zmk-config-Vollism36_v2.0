@@ -5010,13 +5010,6 @@
                     tapping-term-ms = <170>; // ここを個別に設定
                     bindings = <&kp>, <&kp>;
                 };
-                l_t: l_t {
-                    compatible = "zmk,behavior-hold-tap";
-                    #binding-cells = <2>;
-                    flavor = "balanced";
-                    tapping-term-ms = <170>;
-                    bindings = <&mo>, <&kp>;
-                };
             };
 
             keymap {
@@ -5193,7 +5186,7 @@
                     &kp LS(LC(TAB)) &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP                                    &lt BLE LC(Y)   &kp LC(A)       &kp UP          &kp LC(E)       &kp PG_UP
                     &mt_s LCTRL MB1 &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT                                                 &lt BLE BSPC    &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN
                     &mt_s LGUI Z    &kp LG(LBKT)    &mkp MB3        &kp LG(RBKT)                                    &kp LC(TAB)     &kp LC(Z)       &kp LS(LC(TAB)) &kp LA(LEFT)    &kp LA(RIGHT)   &kp LC(TAB)
-                                                    &msc SCRL_DOWN  &kp LG(C)       &kp LG(V)       &mkp MB2        &l_t RSE ENTER  &mkp MB1        &to QWE
+                                                    &msc SCRL_DOWN  &kp LG(C)       &kp LG(V)       &mkp MB2        &kp ENTER       &mkp MB1        &to QWE
                     >;
                     sensor-bindings = <&history_encoder>;
                 };
@@ -5204,7 +5197,7 @@
                     &kp LS(LC(TAB)) &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP                                    &lt BLE LC(Y)   &kp HOME        &kp UP          &kp END         &kp PG_UP
                     &mt_s LCTRL MB1 &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT                                                 &lt BLE BSPC    &kp LEFT        &kp DOWN        &kp RIGHT       &mt_s RCTRL PG_DN
                     &mt_s LALT Z    &kp LA(LEFT)    &mkp MB3        &kp LA(RIGHT)                                   &kp LC(TAB)     &kp LC(Z)       &kp LC(PG_UP)   &kp LG(LBKT)    &kp LG(RBKT)    &kp LC(PG_DN)
-                                                    &msc SCRL_DOWN  &cp_tab         &cp_enter       &mkp MB2        &l_t RSEL ENTER &mkp MB1        &to LIN
+                                                    &msc SCRL_DOWN  &cp_tab         &cp_enter       &mkp MB2        &kp ENTER       &mkp MB1        &to LIN
                     >;
                     sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
                 };
@@ -5215,7 +5208,7 @@
                     &kp LS(LC(TAB)) &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP                                    &lt BLE LC(Y)   &kp HOME        &kp UP          &kp END         &kp PG_UP
                     &mt_s LCTRL MB1 &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT                                                 &lt BLE BSPC    &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN
                     &mt_s LALT Z    &kp LA(LEFT)    &mkp MB3        &kp LA(RIGHT)                                   &kp LC(TAB)     &kp LC(Z)       &kp LC(PG_UP)   &kp LG(LBKT)    &kp LG(RBKT)    &kp LC(PG_DN)
-                                                    &msc SCRL_DOWN  &cp_tab         &cp_enter       &mkp MB2        &l_t RSEW ENTER &mkp MB1        &to CAD
+                                                    &msc SCRL_DOWN  &cp_tab         &cp_enter       &mkp MB2        &kp ENTER       &mkp MB1        &to CAD
                     >;
                     sensor-bindings = <&history_encoder>;
                 };
@@ -5226,7 +5219,7 @@
                     &mt_s LSHFT PG_UP &kp LC(A)     &kp UP          &kp LC(E)       &lt BLE CARET                                   &kp KP_SLASH    &kp KP_N7       &kp KP_N8       &kp KP_N9       &kp KP_MULTIPLY
                     &mt_s LCTRL PG_DN &kp LEFT      &kp DOWN        &kp RIGHT                                                       &kp BSPC        &kp KP_N4       &kp KP_N5       &kp KP_N6       &kp KP_MINUS
                     &alt_left	    &alt_down       &alt_up         &alt_right                                      &kp EQUAL       &kp KP_N0       &kp KP_N1       &kp KP_N2       &kp KP_N3       &kp KP_PLUS
-                                                    &lt BLE DEL     &t_lang2        &cp_tab	        &l_t LWR TAB    &l_t RSE KP_ENTER &kp UNDER     &kp SPACE
+                                                    &lt BLE DEL     &t_lang2        &cp_tab	        &kp TAB         &kp KP_ENTER    &kp UNDER       &kp SPACE
                     >;
                     sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
                 };
@@ -5237,7 +5230,7 @@
                     &mt_s LSHFT PG_UP &kp HOME      &kp UP          &kp END         &lt BLE CARET                                   &kp KP_SLASH    &kp KP_N7       &kp KP_N8       &kp KP_N9       &kp KP_MULTIPLY
                     &mt_s LCTRL PG_DN &kp LEFT      &kp DOWN        &kp RIGHT                                                       &kp BSPC        &kp KP_N4       &kp KP_N5       &kp KP_N6       &kp KP_MINUS
                     &alt_left	    &alt_down       &alt_up         &alt_right                                      &kp EQUAL       &kp KP_N0       &kp KP_N1       &kp KP_N2       &kp KP_N3       &kp KP_PLUS
-                                                    &lt BLE DEL     &t_int5         &cp_tab	        &l_t LWRL TAB	&l_t RSEL KP_ENTER &kp UNDER    &kp SPACE
+                                                    &lt BLE DEL     &t_int5         &cp_tab	        &kp TAB	        &kp KP_ENTER    &kp UNDER       &kp SPACE
                     >;
                     sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
                 };
@@ -5248,7 +5241,7 @@
                     &mt_s LSHFT PG_UP &kp HOME      &kp UP          &kp END         &lt BLE CARET                                   &kp KP_SLASH    &kp KP_N7       &kp KP_N8       &kp KP_N9       &kp KP_MULTIPLY
                     &mt_s LCTRL PG_DN &kp LEFT      &kp DOWN        &kp RIGHT                                                       &kp BSPC        &kp KP_N4       &kp KP_N5       &kp KP_N6       &kp KP_MINUS
                     &alt_left	    &alt_down       &alt_up         &alt_right                                      &kp EQUAL       &kp KP_N0       &kp KP_N1       &kp KP_N2       &kp KP_N3       &kp KP_PLUS
-                                                    &lt BLE DEL     &tC_int5        &cp_tab	        &l_t LWRW TAB    &l_t RSEW KP_ENTER &kp UNDER   &kp SPACE
+                                                    &lt BLE DEL     &tC_int5        &cp_tab	        &kp TAB         &kp KP_ENTER    &kp UNDER       &kp SPACE
                     >;
                     sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
                 };
