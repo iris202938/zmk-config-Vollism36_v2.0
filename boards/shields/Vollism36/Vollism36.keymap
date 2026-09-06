@@ -5045,7 +5045,7 @@
                     &mt_s LALT Z    &kp X           &kp C           &kp V                                           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt_s LGUI SLASH
                                                     &kp G           &lt_bl NUML ESC &mt LSHFT SPACE &lt LWRL TAB	&lt RSEL ENTER	&mt RSHFT SPACE &lt_bl MOVL ESC
                     >;
-                    sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
+                    sensor-bindings = <&inc_dec_kp LC(PG_DN) LC(PG_UP)>;
                 };
 
                 NICL { 
@@ -5067,7 +5067,7 @@
                     &td_Z           &td_X           &td_C           &td_V                                           &td_B           &td_N           &td_M           &td_COMMA       &td_DOT         &td_SLASH
                                                     &td_G           &lt_bl NUMW INT5 &kp SPACE      &lt LWRW TAB    &lt RSEW ENTER	&mt RSHFT ESC   &lt_bl MOVW INT4 // INT4はALT+変換のAHKマクロ用
                     >;
-                    sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
+                    sensor-bindings = <&inc_dec_kp LC(PG_DN) LC(PG_UP)>;
                 };
 
                 WIN {
