@@ -5067,7 +5067,7 @@
                     &td_Z           &td_X           &td_C           &td_V                                           &td_B           &td_N           &td_M           &td_COMMA       &td_DOT         &td_SLASH
                                                     &td_G           &lt_bl NUMW INT5 &kp SPACE      &lt LWRW TAB    &lt RSEW ENTER	&mt RSHFT ESC   &lt_bl MOVW INT4 // INT4はALT+変換のAHKマクロ用
                     >;
-                    sensor-bindings = <&inc_dec_kp LC(PG_UP) LC(PG_DN)>;
+                    sensor-bindings = <&inc_dec_kp LC(PG_DN) LC(PG_UP)>;
                 };
 
                 WIN {
@@ -5230,7 +5230,7 @@
                     &mt_s LSHFT PG_UP &kp HOME      &kp UP          &kp END         &lt BLE CARET                                   &kp KP_SLASH    &kp KP_N7       &kp KP_N8       &kp KP_N9       &kp KP_MULTIPLY
                     &mt_s LCTRL PG_DN &kp LEFT      &kp DOWN        &kp RIGHT                                                       &kp BSPC        &kp KP_N4       &kp KP_N5       &kp KP_N6       &kp KP_MINUS
                     &alt_left	    &alt_down       &alt_up         &alt_right                                      &kp EQUAL       &kp KP_N0       &kp KP_N1       &kp KP_N2       &kp KP_N3       &kp KP_PLUS
-                                                    &lt BLE DEL     &t_int5         &cp_tab	        &kp TAB         &kp KP_ENTER    &kp UNDER       &kp SPACE
+                                                    &lt BLE DEL     &t_int5         &cp_tab	        &kp TAB	        &kp KP_ENTER    &kp UNDER       &kp SPACE
                     >;
                     sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
                 };
