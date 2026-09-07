@@ -34,7 +34,8 @@
         #define NUML 19
         #define NUMW 20
         #define WINS 21
-        #define BLE 22
+        #define AML 22
+        #define BLE 23
 
         &mt {
             flavor = "hold-preferred";
@@ -5255,6 +5256,17 @@
                                                     &kp G           &kp LSHFT       &kp SPACE       &kp TAB         &kp ENTER	    &kp INT4        &kp RCTRL
                     >;
                     sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
+                };
+                
+                AML {
+                    bindings = <
+                // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
+                    &kp LSHFT       &none           &none           &none           &none                                           &none           &none           &none           &none           &kp RSHFT
+                    &kp LCTRL       &none           &none           &mkp MB3                                                        &none           &none           &none           &none           &kp RCTRL
+                    &kp LALT        &none           &mkp MB1        &none                                           &none           &none           &mkp MB1        &mkp MB3        &mkp MB2        &kp LGUI
+                                                    &none           &none           &none           &mkp MB2        &none           &none           &kp RSHFT
+                    >;
+                    sensor-bindings = <&inc_dec_kp LC(PG_DN) LC(PG_UP)>;
                 };
 
                 BLE {

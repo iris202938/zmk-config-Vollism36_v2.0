@@ -31,7 +31,8 @@
 #define NUML 19
 #define NUMW 20
 #define WINS 21
-#define BLE 22
+#define AML 22
+#define BLE 23
 
 / {
     aliases {
@@ -95,10 +96,10 @@
 &trackball_listener {
     status = "okay";
     device = <&trackball>;
-    input-processors = <&zip_temp_layer LWRL 10000>;
+    input-processors = <&zip_temp_layer AML 10000>;
 
         /* ==========================================================
-        Layer 22: BLE (通常マウス)
+        Layer 23: BLE (通常マウス)
         ========================================================== */
         l_ble {
             layers = <BLE>;
@@ -369,15 +370,25 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&xiao_d 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        automouse-layer = <LWRL>; /* 自動マウスレイヤーをLWRLに設定 */
+        automouse-layer = <AML>; /* 自動マウスレイヤーをAMLに設定 */
     };
 };
 
 &zip_temp_layer {
     excluded-positions = <
-        20 // X
-        21 // C
-        22 // V
+        0 // LSHFT
+        9 // RSHFT
+        10 // LCTRL
+        18 // RCTRL
+        19 // LALT
+        28 // LGUI
+        35 // RSHFT
+        21 // MB1
+        32 // MB2
+        13 // MB3
+        25 // MB1
+        26 // MB2
+        27 // MB3
     >;
 };
 
@@ -465,14 +476,14 @@
         device = <&trackball_split>; /* 右から転送されてくる仮想デバイスを指定 */
         
         /* ここにスティック用のレイヤー設定などを記述 */
-        r_layer22 {
-			layers = <BLE>; // レイヤー22がアクティブな場合
+        r_layer23 {
+			layers = <BLE>; // レイヤー23がアクティブな場合
             input-processors = <&zip_xy_scaler 40 100>; // 速度を40/100に設定 (乗数40, 除数100)
 		// 	input-processors = <&zip_keybind_keys_directionH>; // zip_keybind_keys_directionH を使用
 		// 	process-next; // 他のプロセッサも処理を継続
 		// };
-		// r_layer22-prevent {
-		// 	layers = <BLE>; // レイヤー22がアクティブな場合
+		// r_layer23-prevent {
+		// 	layers = <BLE>; // レイヤー23がアクティブな場合
 		// 	input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
 		r_layer21 {

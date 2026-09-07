@@ -28,7 +28,8 @@
 #define NUML 19
 #define NUMW 20
 #define WINS 21
-#define BLE 22
+#define AML 22
+#define BLE 23
 
 / {
     /* 既存の定義（input_processorsなど）と同じ階層に追加 */
