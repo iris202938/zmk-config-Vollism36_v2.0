@@ -96,7 +96,7 @@
 &trackball_listener {
     status = "okay";
     device = <&trackball>;
-    input-processors = <&zip_temp_layer AML 10000>;
+    input-processors = <&zip_temp_layer AML 20000>;
 
         /* ==========================================================
         Layer 23: BLE (通常マウス)
