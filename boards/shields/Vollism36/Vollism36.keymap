@@ -5264,7 +5264,7 @@
                     &kp LSHFT       &none           &none           &none           &none                                           &none           &none           &none           &none           &kp RSHFT
                     &kp LCTRL       &none           &none           &mkp MB3                                                        &none           &none           &none           &none           &kp RCTRL
                     &kp LALT        &none           &mkp MB1        &none                                           &none           &none           &mkp MB1        &mkp MB3        &mkp MB2        &kp LGUI
-                                                    &none           &none           &none           &mkp MB2        &none           &none           &kp RSHFT
+                                                    &none           &mkp MB2        &none           &none           &none           &none           &kp RSHFT
                     >;
                     sensor-bindings = <&inc_dec_kp LC(PG_DN) LC(PG_UP)>;
                 };
