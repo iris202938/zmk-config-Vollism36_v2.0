@@ -598,12 +598,12 @@
 		};
 		r_cad {
 			layers = <CAD>; // レイヤー4がアクティブな場合
-			input-processors = <&zip_keybind_keys_freecad_3d>; // zip_keybind_keys_freecad_3d を使用
+			input-processors = <&zip_keybind_keys_freecad>; // zip_keybind_keys_freecad を使用
 			process-next;
 		};
 		r_cad-prevent {
 			layers = <CAD>; // レイヤー4がアクティブな場合
-			input-processors = <&zip_xy_scaler 32 100>; // スケーリング（32/100）
+			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
 		r_nicl {
 			layers = <NICL>; // レイヤー3がアクティブな場合
@@ -618,7 +618,7 @@
         };
         r_lin-prevent {
 			layers = <LIN>; // レイヤー2がアクティブな場合
-			input-processors = <&zip_xy_scaler 8 100>; // スケーリング（8/100）
+			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
 		r_nic {
 			layers = <NIC>; // レイヤー2がアクティブな場合
