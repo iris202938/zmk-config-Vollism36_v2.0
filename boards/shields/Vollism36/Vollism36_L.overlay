@@ -101,11 +101,7 @@
 &trackball_listener {
     status = "okay";
     device = <&trackball>;
-
-    /* トラックボール操作時にAMLレイヤーに3秒間一時移行する設定 */
-    l_aml {
-        layers = <QWE NIC LIN WIN CAD LWR RSE ADJ MOVW MOVL MOV>; // 適用したいベースレイヤーを列挙
-        input-processors = <&zip_temp_layer AML 3000>, <&sensor_rotation>;
+        input-processors = <&sensor_rotation>;
     };
 
         /* ==========================================================
@@ -121,7 +117,7 @@
         ========================================================== */
         l_wins {
             layers = <WINS>;
-            input-processors = <&zip_xy_scaler 50 100>; // スケーリング（50/100）
+            input-processors = <&zip_temp_layer AML 3000>,<&zip_xy_scaler 50 100>; // スケーリング（50/100）
         };
 
         /* ==========================================================
@@ -181,7 +177,7 @@
         ========================================================== */
         l_movl {
             layers = <MOVL>;
-            input-processors = <&zip_xy_scaler 30 100>; // スケーリング（30/100）
+            input-processors = <&zip_temp_layer AML 3000>,<&zip_xy_scaler 30 100>; // スケーリング（30/100）
             // input-processors = 
             //     <&sensor_rotation>, 
             //     <&zip_xy_scaler 200 100>, 
@@ -223,7 +219,7 @@
         ========================================================== */
         l_adjl {
             layers = <ADJL>;
-            input-processors = <&zip_xy_scaler 50 100>; // スケーリング（50/100）
+            input-processors = <&zip_temp_layer AML 3000>,<&zip_xy_scaler 50 100>; // スケーリング（50/100）
         };
 
         /* ==========================================================
@@ -231,7 +227,7 @@
         ========================================================== */
         l_adj {
             layers = <ADJ>;
-            input-processors = <&zip_xy_scaler 60 100>; // スケーリング（60/100）
+            input-processors = <&zip_temp_layer AML 3000>,<&zip_xy_scaler 60 100>; // スケーリング（60/100）
         };
 
         /* ==========================================================
@@ -275,7 +271,7 @@
         ========================================================== */
         l_lwrw {
             layers = <LWRW>;
-            input-processors = <&zip_xy_scaler 50 100>; // スケーリング（50/100）
+            input-processors = <&zip_temp_layer AML 3000>,<&zip_xy_scaler 50 100>; // スケーリング（50/100）
         };
 
         /* ==========================================================
@@ -283,7 +279,7 @@
         ========================================================== */
         l_lwrl {
             layers = <LWRL>;
-            input-processors = <&zip_xy_scaler 50 100>; // スケーリング（50/100）
+            input-processors = <&zip_temp_layer AML 3000>,<&zip_xy_scaler 50 100>; // スケーリング（50/100）
         };
 
         /* ==========================================================
@@ -291,7 +287,7 @@
         ========================================================== */
         l_lwr {
             layers = <LWR>;
-            input-processors = <&zip_xy_scaler 60 100>; // スケーリング（60/100）
+            input-processors = <&zip_temp_layer AML 3000>,<&zip_xy_scaler 60 100>; // スケーリング（60/100）
         };
 
         /* ==========================================================
@@ -299,7 +295,7 @@
         ========================================================== */
         l_win {
             layers = <WIN>;
-            input-processors = <&zip_xy_scaler 50 100>; // スケーリング（50/100）
+            input-processors = <&zip_temp_layer AML 3000>,<&zip_xy_scaler 50 100>; // スケーリング（50/100）
         };
 
         /* ==========================================================
@@ -307,7 +303,7 @@
         ========================================================== */
         l_cad {
             layers = <CAD>;
-            input-processors = <&zip_xy_scaler 50 100>; // スケーリング（50/100）
+            input-processors = <&zip_temp_layer AML 3000>,<&zip_xy_scaler 50 100>; // スケーリング（50/100）
         };
 
         /* ==========================================================
@@ -315,7 +311,7 @@
         ========================================================== */
         l_nicl {
             layers = <NICL>;
-            input-processors = <&zip_xy_scaler 50 100>; // スケーリング（50/100）
+            input-processors = <&zip_temp_layer AML 3000>,<&zip_xy_scaler 50 100>; // スケーリング（50/100）
         };
 
         /* ==========================================================
@@ -323,7 +319,7 @@
         ========================================================== */
         l_lin {
             layers = <LIN>;
-            input-processors = <&zip_xy_scaler 50 100>; // スケーリング（50/100）
+            input-processors = <&zip_temp_layer AML 3000>,<&zip_xy_scaler 50 100>; // スケーリング（50/100）
         };
 
         /* ==========================================================
@@ -331,7 +327,7 @@
         ========================================================== */
         l_nic {
             layers = <NIC>;
-            input-processors = <&zip_xy_scaler 60 100>; // スケーリング（60/100）
+            input-processors = <&zip_temp_layer AML 3000>,<&zip_xy_scaler 60 100>; // スケーリング（60/100）
         };
 
         /* ==========================================================
@@ -339,7 +335,7 @@
         ========================================================== */
         l_qwe {
             layers = <QWE>;
-            input-processors = <&zip_xy_scaler 60 100>; // スケーリング（60/100）
+            input-processors = <&zip_temp_layer AML 3000>,<&zip_xy_scaler 60 100>; // スケーリング（60/100）
         };
     };
 
