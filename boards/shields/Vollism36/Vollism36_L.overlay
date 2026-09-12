@@ -365,12 +365,12 @@
     excluded-positions = <
         0 // LSHFT
         9 // RSHFT
-        10 // LCTRL
         18 // RCTRL
         19 // LALT
         28 // LGUI
         35 // RSHFT
         21 // MB1
+        22 // LCTRL        
         31 // MB2
         13 // MB3
         25 // MB1
