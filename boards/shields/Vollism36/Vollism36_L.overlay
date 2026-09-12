@@ -104,7 +104,7 @@
 
     /* トラックボール操作時にAMLレイヤーに3秒間一時移行する設定 */
     l_aml {
-        layers = <QWE NIC LIN WIN CAD LWR RSE ADJ MOVW MOVL MOV>; // 適用したいベースレイヤーを列挙
+        // layers = <QWE NIC LIN WIN CAD LWR RSE ADJ MOVW MOVL MOV>; // 適用したいベースレイヤーを列挙
         input-processors = <&zip_temp_layer AML 3000>, <&sensor_rotation>;
     };
 
