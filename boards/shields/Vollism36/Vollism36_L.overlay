@@ -282,11 +282,20 @@
         };
 
         /* ==========================================================
-        Layer 7: LWRL (通常マウス)
+        Layer 7: LWRL (方向キー変換)
         ========================================================== */
         l_lwrl {
             layers = <LWRL>;
-            input-processors = <&sensor_rotation>, <&zip_temp_layer AML 3000>,<&zip_xy_scaler 50 100>; // スケーリング（50/100）
+            input-processors = 
+                <&sensor_rotation>,
+                <&zip_xy_scaler 200 100>, 
+                <&xy_to_keys>;
+            process-next;
+        };
+
+        l_lwrl_prevent {
+            layers = <LWRL>;
+            input-processors = <&sensor_rotation>,<&zip_xy_scaler 0 1>;
         };
 
         /* ==========================================================
