@@ -180,7 +180,7 @@
                 combo_RALT {
                     bindings = <&kp LALT>;
                     key-positions = <27 28>;
-                    layers = <LIN CAD LWRL LWRW RSEL RSEW ADJL ADJW MOVL MOVW>;
+                    layers = <LIN CAD LWRL LWRW RSEL RSEW ADJL ADJW MOVL MOVW AML>;
                     timeout-ms = <80>;
                 };
                 combo_sl_LCTRL_LSHFT {
@@ -5262,8 +5262,8 @@
                     bindings = <
                 // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
                     &kp LSHFT       &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &kp RSHFT
-                    &kp LCTRL       &trans          &trans          &mkp MB3                                                        &trans          &trans          &trans          &trans          &kp RCTRL
-                    &kp LALT        &trans          &mkp MB1        &trans                                          &trans          &trans          &mkp MB1        &mkp MB3        &mkp MB2        &kp LGUI
+                    &trans          &trans          &trans          &mkp MB3                                                        &trans          &trans          &trans          &trans          &kp RCTRL
+                    &kp LALT        &trans          &mkp MB1        &kp LCTRL                                       &trans          &trans          &mkp MB1        &mkp MB3        &mkp MB2        &kp LGUI
                                                     &trans          &mkp MB2        &trans          &trans          &trans          &trans          &kp RSHFT
                     >;
                     sensor-bindings = <&inc_dec_kp LC(PG_DN) LC(PG_UP)>;
