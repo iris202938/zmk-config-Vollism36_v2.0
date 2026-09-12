@@ -93,10 +93,20 @@
     };
 };
 
+// &trackball_listener {
+//     status = "okay";
+//     device = <&trackball>;
+//     input-processors = <&zip_temp_layer AML 3000>;
+
 &trackball_listener {
     status = "okay";
     device = <&trackball>;
-    input-processors = <&zip_temp_layer AML 3000>;
+
+    /* トラックボール操作時にAMLレイヤーに3秒間一時移行する設定 */
+    l_aml {
+        layers = <QWE NIC LIN WIN CAD LWR RSE ADJ MOVW MOVL MOV>; // 適用したいベースレイヤーを列挙
+        input-processors = <&zip_temp_layer AML 3000>;
+    };
 
         /* ==========================================================
         Layer 23: BLE (通常マウス)
