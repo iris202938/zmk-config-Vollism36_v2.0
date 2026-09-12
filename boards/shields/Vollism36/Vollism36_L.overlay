@@ -101,14 +101,14 @@
 &trackball_listener {
     status = "okay";
     device = <&trackball>;
-        input-processors = <&sensor_rotation>;
+        // input-processors = <&sensor_rotation>;
 
         /* ==========================================================
         Layer 23: BLE (通常マウス)
         ========================================================== */
         l_ble {
             layers = <BLE>;
-            input-processors = <&zip_xy_scaler 50 100>; // スケーリング（50/100）
+            input-processors = <&sensor_rotation>,<&zip_xy_scaler 50 100>; // スケーリング（50/100）
         };
 
         /* ==========================================================
@@ -116,7 +116,7 @@
         ========================================================== */
         l_wins {
             layers = <WINS>;
-            input-processors = <&zip_temp_layer AML 3000>,<&zip_xy_scaler 50 100>; // スケーリング（50/100）
+            input-processors = <&sensor_rotation>,<&zip_temp_layer AML 3000>,<&zip_xy_scaler 50 100>; // スケーリング（50/100）
         };
 
         /* ==========================================================
@@ -125,6 +125,7 @@
         l_numw {
             layers = <NUMW>;
             input-processors = 
+                <&sensor_rotation>,
                 <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
                 <&zip_xy_scaler 1 30>,
                 <&zip_xy_to_scroll_mapper>,
@@ -137,6 +138,7 @@
         l_numl {
             layers = <NUML>;
             input-processors = 
+                <&sensor_rotation>,
                 <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
                 <&zip_xy_scaler 1 30>,
                 <&zip_xy_to_scroll_mapper>,
@@ -149,6 +151,7 @@
         l_num {
             layers = <NUM>;
             input-processors = 
+                <&sensor_rotation>,
                 <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
                 <&zip_xy_scaler 1 30>,
                 <&zip_xy_to_scroll_mapper>,
@@ -161,6 +164,7 @@
         l_movw {
             layers = <MOVW>; 
             input-processors = 
+                <&sensor_rotation>,
                 <&zip_xy_scaler 200 100>, 
                 <&xy_to_keys>;
             process-next;
@@ -168,7 +172,7 @@
 
         l_movw_prevent {
             layers = <MOVW>;
-            input-processors = <&zip_xy_scaler 0 1>;
+            input-processors = <&sensor_rotation>,<&zip_xy_scaler 0 1>;
         };
 
         /* ==========================================================
@@ -176,7 +180,7 @@
         ========================================================== */
         l_movl {
             layers = <MOVL>;
-            input-processors = <&zip_temp_layer AML 3000>,<&zip_xy_scaler 30 100>; // スケーリング（30/100）
+            input-processors = <&sensor_rotation>,<&zip_temp_layer AML 3000>,<&zip_xy_scaler 30 100>; // スケーリング（30/100）
             // input-processors = 
             //     <&sensor_rotation>, 
             //     <&zip_xy_scaler 200 100>, 
@@ -195,6 +199,7 @@
         l_mov {
             layers = <MOV>; 
             input-processors = 
+                <&sensor_rotation>,
                 <&zip_xy_scaler 200 100>, 
                 <&xy_to_keys>;
             process-next;
@@ -210,7 +215,7 @@
         ========================================================== */
         l_adjw {
             layers = <ADJW>;
-            input-processors = <&zip_xy_scaler 50 100>; // スケーリング（50/100）
+            input-processors = <&sensor_rotation>, <&zip_xy_scaler 50 100>; // スケーリング（50/100）
         };
 
         /* ==========================================================
@@ -218,7 +223,7 @@
         ========================================================== */
         l_adjl {
             layers = <ADJL>;
-            input-processors = <&zip_temp_layer AML 3000>,<&zip_xy_scaler 50 100>; // スケーリング（50/100）
+            input-processors = <&sensor_rotation>, <&zip_temp_layer AML 3000>,<&zip_xy_scaler 50 100>; // スケーリング（50/100）
         };
 
         /* ==========================================================
@@ -226,7 +231,7 @@
         ========================================================== */
         l_adj {
             layers = <ADJ>;
-            input-processors = <&zip_temp_layer AML 3000>,<&zip_xy_scaler 60 100>; // スケーリング（60/100）
+            input-processors = <&sensor_rotation>, <&zip_temp_layer AML 3000>,<&zip_xy_scaler 60 100>; // スケーリング（60/100）
         };
 
         /* ==========================================================
@@ -235,6 +240,7 @@
         l_rsew {
             layers = <RSEW>;
             input-processors = 
+                <&sensor_rotation>,
                 <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
                 <&zip_xy_scaler 1 30>,
                 <&zip_xy_to_scroll_mapper>,
@@ -247,6 +253,7 @@
         l_rsel {
             layers = <RSEL>;
             input-processors = 
+                <&sensor_rotation>,
                 <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
                 <&zip_xy_scaler 1 30>,
                 <&zip_xy_to_scroll_mapper>,
@@ -259,6 +266,7 @@
         l_rse {
             layers = <RSE>;
             input-processors = 
+                <&sensor_rotation>,
                 <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
                 <&zip_xy_scaler 1 30>,
                 <&zip_xy_to_scroll_mapper>,
@@ -270,7 +278,7 @@
         ========================================================== */
         l_lwrw {
             layers = <LWRW>;
-            input-processors = <&zip_temp_layer AML 3000>,<&zip_xy_scaler 50 100>; // スケーリング（50/100）
+            input-processors = <&sensor_rotation>, <&zip_temp_layer AML 3000>,<&zip_xy_scaler 50 100>; // スケーリング（50/100）
         };
 
         /* ==========================================================
@@ -278,7 +286,7 @@
         ========================================================== */
         l_lwrl {
             layers = <LWRL>;
-            input-processors = <&zip_temp_layer AML 3000>,<&zip_xy_scaler 50 100>; // スケーリング（50/100）
+            input-processors = <&sensor_rotation>, <&zip_temp_layer AML 3000>,<&zip_xy_scaler 50 100>; // スケーリング（50/100）
         };
 
         /* ==========================================================
@@ -286,7 +294,7 @@
         ========================================================== */
         l_lwr {
             layers = <LWR>;
-            input-processors = <&zip_temp_layer AML 3000>,<&zip_xy_scaler 60 100>; // スケーリング（60/100）
+            input-processors = <&sensor_rotation>, <&zip_temp_layer AML 3000>,<&zip_xy_scaler 60 100>; // スケーリング（60/100）
         };
 
         /* ==========================================================
@@ -294,7 +302,7 @@
         ========================================================== */
         l_win {
             layers = <WIN>;
-            input-processors = <&zip_temp_layer AML 3000>,<&zip_xy_scaler 50 100>; // スケーリング（50/100）
+            input-processors = <&sensor_rotation>, <&zip_temp_layer AML 3000>,<&zip_xy_scaler 50 100>; // スケーリング（50/100）
         };
 
         /* ==========================================================
@@ -302,7 +310,7 @@
         ========================================================== */
         l_cad {
             layers = <CAD>;
-            input-processors = <&zip_temp_layer AML 3000>,<&zip_xy_scaler 50 100>; // スケーリング（50/100）
+            input-processors = <&sensor_rotation>, <&zip_temp_layer AML 3000>,<&zip_xy_scaler 50 100>; // スケーリング（50/100）
         };
 
         /* ==========================================================
@@ -310,7 +318,7 @@
         ========================================================== */
         l_nicl {
             layers = <NICL>;
-            input-processors = <&zip_temp_layer AML 3000>,<&zip_xy_scaler 50 100>; // スケーリング（50/100）
+            input-processors = <&sensor_rotation>, <&zip_temp_layer AML 3000>,<&zip_xy_scaler 50 100>; // スケーリング（50/100）
         };
 
         /* ==========================================================
@@ -318,7 +326,7 @@
         ========================================================== */
         l_lin {
             layers = <LIN>;
-            input-processors = <&zip_temp_layer AML 3000>,<&zip_xy_scaler 50 100>; // スケーリング（50/100）
+            input-processors = <&sensor_rotation>, <&zip_temp_layer AML 3000>,<&zip_xy_scaler 50 100>; // スケーリング（50/100）
         };
 
         /* ==========================================================
@@ -326,7 +334,7 @@
         ========================================================== */
         l_nic {
             layers = <NIC>;
-            input-processors = <&zip_temp_layer AML 3000>,<&zip_xy_scaler 60 100>; // スケーリング（60/100）
+            input-processors = <&sensor_rotation>, <&zip_temp_layer AML 3000>,<&zip_xy_scaler 60 100>; // スケーリング（60/100）
         };
 
         /* ==========================================================
@@ -334,7 +342,7 @@
         ========================================================== */
         l_qwe {
             layers = <QWE>;
-            input-processors = <&zip_temp_layer AML 3000>,<&zip_xy_scaler 60 100>; // スケーリング（60/100）
+            input-processors = <&sensor_rotation>, <&zip_temp_layer AML 3000>,<&zip_xy_scaler 60 100>; // スケーリング（60/100）
         };
     };
 
