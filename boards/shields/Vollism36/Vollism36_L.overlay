@@ -163,6 +163,7 @@
         l_movw {
             layers = <MOVW>; 
             input-processors = 
+                <&sensor_rotation>,
                 <&zip_xy_scaler 200 100>, 
                 <&xy_to_keys>;
             process-next;
@@ -191,6 +192,7 @@
         l_mov {
             layers = <MOV>; 
             input-processors = 
+                <&sensor_rotation>, 
                 <&zip_xy_scaler 200 100>, 
                 <&xy_to_keys>;
             process-next;
@@ -290,6 +292,7 @@
         l_lwrl {
             layers = <LWRL>;
             input-processors = 
+                <&sensor_rotation>,
                 <&zip_xy_scaler 200 100>, 
                 <&xy_to_keys>;
             process-next;
