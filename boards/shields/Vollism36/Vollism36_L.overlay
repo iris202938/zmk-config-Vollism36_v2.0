@@ -401,19 +401,16 @@
 
 &zip_temp_layer {
     excluded-positions = <
-        0 // LSHFT
-        9 // RSHFT
         18 // RCTRL
-        19 // LALT
-        28 // LGUI
-        35 // RSHFT
         21 // MB1
         22 // LCTRL        
         31 // MB2
         13 // MB3
+        24 // MB1
         25 // MB1
         26 // MB2
         27 // MB3
+        34 // RSHFT
     >;
 };
 
