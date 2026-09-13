@@ -5261,10 +5261,10 @@
                 AML {
                     bindings = <
                 // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-                    &kp LSHFT       &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &kp RSHFT
+                    &trans          &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &trans
                     &trans          &trans          &trans          &mkp MB3                                                        &trans          &trans          &trans          &trans          &kp RCTRL
-                    &kp LALT        &trans          &mkp MB1        &kp LCTRL                                       &trans          &trans          &mkp MB1        &mkp MB3        &mkp MB2        &kp LGUI
-                                                    &trans          &mkp MB2        &trans          &trans          &trans          &trans          &kp RSHFT
+                    &trans          &trans          &mkp MB1        &kp LCTRL                                       &trans          &mkp MB1        &mkp MB1        &mkp MB3        &mkp MB2        &trans
+                                                    &trans          &trans          &mkp MB2        &trans          &trans          &kp RSHFT       &trans
                     >;
                     sensor-bindings = <&inc_dec_kp LC(PG_DN) LC(PG_UP)>;
                 };
