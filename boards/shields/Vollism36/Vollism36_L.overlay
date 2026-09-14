@@ -176,14 +176,21 @@
         };
 
         /* ==========================================================
-        Layer 16: MOVL (通常マウス)
+        Layer 16: MOVL (方向キー変換)
         ========================================================== */
         l_movl {
             layers = <MOVL>;
             input-processors = 
                 <&sensor_rotation>,
-                <&zip_temp_layer AML 3000>,
-                <&zip_xy_scaler 30 100>; // スケーリング（30/100）
+                <&zip_xy_scaler 200 100>, 
+                <&xy_to_keys>;
+            process-next;
+        };
+
+        l_movl_prevent {
+            layers = <MOVL>;
+            input-processors = 
+                <&zip_xy_scaler 0 1>;
         };
 
         /* ==========================================================
@@ -276,14 +283,21 @@
         };
 
         /* ==========================================================
-        Layer 8: LWRW (通常マウス)
+        Layer 8: LWRW (方向キー変換)
         ========================================================== */
         l_lwrw {
             layers = <LWRW>;
             input-processors = 
                 <&sensor_rotation>,
-                <&zip_temp_layer AML 3000>,
-                <&zip_xy_scaler 50 100>; // スケーリング（50/100）
+                <&zip_xy_scaler 200 100>, 
+                <&xy_to_keys>;
+            process-next;
+        };
+
+        l_lwrw_prevent {
+            layers = <LWRW>;
+            input-processors = 
+                <&zip_xy_scaler 0 1>;
         };
 
         /* ==========================================================
@@ -305,14 +319,21 @@
         };
 
         /* ==========================================================
-        Layer 6: LWR (通常マウス)
+        Layer 6: LWR (方向キー変換)
         ========================================================== */
         l_lwr {
             layers = <LWR>;
             input-processors = 
                 <&sensor_rotation>,
-                <&zip_temp_layer AML 3000>,
-                <&zip_xy_scaler 60 100>; // スケーリング（60/100）
+                <&zip_xy_scaler 200 100>, 
+                <&xy_to_keys>;
+            process-next;
+        };
+
+        l_lwr_prevent {
+            layers = <LWR>;
+            input-processors = 
+                <&zip_xy_scaler 0 1>;
         };
 
         /* ==========================================================
