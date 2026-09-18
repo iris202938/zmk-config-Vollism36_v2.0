@@ -556,7 +556,7 @@
                 int5_g_c {
                     bindings = <&int5_g>;
                     key-positions = <18 28>;
-                    layers = <CAD>;
+                    layers = <CAD AML>;
                     timeout-ms = <80>;
                 };
                 combo_symbol_call {  // シンボル一覧(AHK)
