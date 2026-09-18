@@ -104,7 +104,7 @@
             layers = <BLE>;
             input-processors = 
                 <&sensor_rotation>,
-                <&zip_xy_scaler 50 100>; // スケーリング（50/100）
+                <&zip_xy_scaler 100 100>; // スケーリング（100/100）
         };
 
         /* ==========================================================
@@ -115,7 +115,7 @@
             input-processors = 
                 <&sensor_rotation>,
                 <&zip_temp_layer AML 3000>,
-                <&zip_xy_scaler 50 100>; // スケーリング（50/100）
+                <&zip_xy_scaler 100 100>; // スケーリング（100/100）
         };
 
         /* ==========================================================
@@ -218,7 +218,7 @@
             layers = <ADJW>;
             input-processors = 
                 <&sensor_rotation>,
-                <&zip_xy_scaler 50 100>; // スケーリング（50/100）
+                <&zip_xy_scaler 100 100>; // スケーリング（100/100）
         };
 
         /* ==========================================================
@@ -229,7 +229,7 @@
             input-processors = 
                 <&sensor_rotation>,
                 <&zip_temp_layer AML 3000>,
-                <&zip_xy_scaler 50 100>; // スケーリング（50/100）
+                <&zip_xy_scaler 100 100>; // スケーリング（100/100）
         };
 
         /* ==========================================================
@@ -240,7 +240,7 @@
             input-processors = 
                 <&sensor_rotation>,
                 <&zip_temp_layer AML 3000>,
-                <&zip_xy_scaler 60 100>; // スケーリング（60/100）
+                <&zip_xy_scaler 120 100>; // スケーリング（120/100）
         };
 
         /* ==========================================================
@@ -344,7 +344,7 @@
             input-processors = 
                 <&sensor_rotation>,
                 <&zip_temp_layer AML 3000>,
-                <&zip_xy_scaler 50 100>; // スケーリング（50/100）
+                <&zip_xy_scaler 100 100>; // スケーリング（100/100）
         };
 
         /* ==========================================================
@@ -355,7 +355,7 @@
             input-processors = 
                 <&sensor_rotation>,
                 <&zip_temp_layer AML 3000>,
-                <&zip_xy_scaler 50 100>; // スケーリング（50/100）
+                <&zip_xy_scaler 100 100>; // スケーリング（100/100）
         };
 
         /* ==========================================================
@@ -366,7 +366,7 @@
             input-processors = 
                 <&sensor_rotation>,
                 <&zip_temp_layer AML 3000>,
-                <&zip_xy_scaler 50 100>; // スケーリング（50/100）
+                <&zip_xy_scaler 100 100>; // スケーリング（100/100）
         };
 
         /* ==========================================================
@@ -377,7 +377,7 @@
             input-processors = 
                 <&sensor_rotation>,
                 <&zip_temp_layer AML 3000>,
-                <&zip_xy_scaler 50 100>; // スケーリング（50/100）
+                <&zip_xy_scaler 100 100>; // スケーリング（100/100）
         };
 
         /* ==========================================================
@@ -388,7 +388,7 @@
             input-processors = 
                 <&sensor_rotation>,
                 <&zip_temp_layer AML 3000>,
-                <&zip_xy_scaler 60 100>; // スケーリング（60/100）
+                <&zip_xy_scaler 120 100>; // スケーリング（120/100）
         };
 
         /* ==========================================================
@@ -399,7 +399,7 @@
             input-processors = 
                 <&sensor_rotation>,
                 <&zip_temp_layer AML 3000>,
-                <&zip_xy_scaler 60 100>; // スケーリング（60/100）
+                <&zip_xy_scaler 120 100>; // スケーリング（120/100）
         };
     };
 
