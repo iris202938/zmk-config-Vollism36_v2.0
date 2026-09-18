@@ -168,7 +168,7 @@
                 combo_LGUI {
                     bindings = <&kp LGUI>;
                     key-positions = <19 20>;
-                    layers = <LIN CAD LWRL LWRW RSEL RSEW MOVL MOVW>;
+                    layers = <LIN CAD LWRL LWRW RSEL RSEW MOVL MOVW AML>;
                     timeout-ms = <80>;
                 };
                 combo_LALT {
