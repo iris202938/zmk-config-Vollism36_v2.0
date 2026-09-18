@@ -520,7 +520,7 @@
                 mb1_shft_cad_r {
                     bindings = <&shft_mb1>;
                     key-positions = <25 26 27>;
-                    layers = <CAD LWRW>;
+                    layers = <CAD LWRW AML>;
                     timeout-ms = <70>;
                 };
                 mb1_shft_cad_l {
