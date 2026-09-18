@@ -125,7 +125,7 @@
                 };
                 combo_esc_l {
                     timeout-ms = <75>;
-                    layers = <QWE LIN MOV CAD ADJ ADJL ADJW NUM NUML NUMW>;
+                    layers = <QWE LIN MOV CAD ADJ ADJL ADJW NUM NUML NUMW AML>;
                     key-positions = <0 10>; 
                     bindings = <&kp ESC>;
                 };
