@@ -283,57 +283,30 @@
         };
 
         /* ==========================================================
-        Layer 8: LWRW (方向キー変換)
+        Layer 8: LWRW (通常マウス)
         ========================================================== */
         l_lwrw {
             layers = <LWRW>;
-            input-processors = 
-                <&sensor_rotation>,
-                <&zip_xy_scaler 200 100>, 
-                <&xy_to_keys>;
-            process-next;
-        };
-
-        l_lwrw_prevent {
-            layers = <LWRW>;
-            input-processors = 
-                <&zip_xy_scaler 0 1>;
+            input-processors = <&sensor_rotation>
+                            , <&zip_xy_scaler 80 100>; // スケーリング（80/100）
         };
 
         /* ==========================================================
-        Layer 7: LWRL (方向キー変換)
+        Layer 7: LWRL (通常マウス)
         ========================================================== */
         l_lwrl {
             layers = <LWRL>;
-            input-processors = 
-                <&sensor_rotation>,
-                <&zip_xy_scaler 200 100>, 
-                <&xy_to_keys>;
-            process-next;
-        };
-
-        l_lwrl_prevent {
-            layers = <LWRL>;
-            input-processors = 
-                <&zip_xy_scaler 0 1>;
+            input-processors = <&sensor_rotation>
+                            , <&zip_xy_scaler 80 100>; // スケーリング（80/100）
         };
 
         /* ==========================================================
-        Layer 6: LWR (方向キー変換)
+        Layer 6: LWR (通常マウス)
         ========================================================== */
         l_lwr {
             layers = <LWR>;
-            input-processors = 
-                <&sensor_rotation>,
-                <&zip_xy_scaler 200 100>, 
-                <&xy_to_keys>;
-            process-next;
-        };
-
-        l_lwr_prevent {
-            layers = <LWR>;
-            input-processors = 
-                <&zip_xy_scaler 0 1>;
+            input-processors = <&sensor_rotation>
+                            , <&zip_xy_scaler 80 100>; // スケーリング（80/100）
         };
 
         /* ==========================================================
