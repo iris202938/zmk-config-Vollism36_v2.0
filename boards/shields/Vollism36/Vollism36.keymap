@@ -34,7 +34,8 @@
         #define NUML 19
         #define NUMW 20
         #define WINS 21
-        #define BLE 22
+        #define AML 22
+        #define BLE 23
 
         &mt {
             flavor = "hold-preferred";
@@ -124,7 +125,7 @@
                 };
                 combo_esc_l {
                     timeout-ms = <75>;
-                    layers = <QWE LIN MOV CAD ADJ ADJL ADJW NUM NUML NUMW>;
+                    layers = <QWE LIN MOV CAD ADJ ADJL ADJW NUM NUML NUMW AML>;
                     key-positions = <0 10>; 
                     bindings = <&kp ESC>;
                 };
@@ -167,7 +168,7 @@
                 combo_LGUI {
                     bindings = <&kp LGUI>;
                     key-positions = <19 20>;
-                    layers = <LIN CAD LWRL LWRW RSEL RSEW MOVL MOVW>;
+                    layers = <LIN CAD LWRL LWRW RSEL RSEW MOVL MOVW AML>;
                     timeout-ms = <80>;
                 };
                 combo_LALT {
@@ -179,7 +180,7 @@
                 combo_RALT {
                     bindings = <&kp LALT>;
                     key-positions = <27 28>;
-                    layers = <LIN CAD LWRL LWRW RSEL RSEW ADJL ADJW MOVL MOVW>;
+                    layers = <LIN CAD LWRL LWRW RSEL RSEW ADJL ADJW MOVL MOVW AML>;
                     timeout-ms = <80>;
                 };
                 combo_sl_LCTRL_LSHFT {
@@ -491,6 +492,12 @@
                     layers = <ADJW>;
                     bindings = <&win_shift_s>;
                 };
+                combo_ADJLW_tss { // ADJL,ADJWレイヤーでのテキストスクリーンショット
+                    timeout-ms = <80>;
+                    key-positions = <4 5>; // T,Yのキー位置に書き換えてください
+                    layers = <ADJL ADJW>;
+                    bindings = <&win_shift_t>;
+                };
 
                 mb1_cad {
                     bindings = <&mkp MB1>;
@@ -513,7 +520,7 @@
                 mb1_shft_cad_r {
                     bindings = <&shft_mb1>;
                     key-positions = <25 26 27>;
-                    layers = <CAD LWRW>;
+                    layers = <CAD LWRW AML>;
                     timeout-ms = <70>;
                 };
                 mb1_shft_cad_l {
@@ -549,7 +556,7 @@
                 int5_g_c {
                     bindings = <&int5_g>;
                     key-positions = <18 28>;
-                    layers = <CAD>;
+                    layers = <CAD AML>;
                     timeout-ms = <80>;
                 };
                 combo_symbol_call {  // シンボル一覧(AHK)
@@ -4421,6 +4428,17 @@
                         , <&macro_release &kp LGUI>
                         , <&macro_release &kp LSHFT>
                         ;
+                };
+                win_shift_t: win_shift_t { // テキストスクリーンショット
+                    compatible = "zmk,behavior-macro";
+                    #binding-cells = <0>;
+                    bindings
+                        = <&macro_press &kp LGUI>
+                        , <&macro_press &kp LSHFT>
+                        , <&macro_tap &kp T>
+                        , <&macro_release &kp LGUI>
+                        , <&macro_release &kp LSHFT>
+                        ;
                 };	
                 ctrl_alt_s: ctrl_alt_s { // シンボル一覧(AHK)
                     compatible = "zmk,behavior-macro";
@@ -5255,6 +5273,17 @@
                                                     &kp G           &kp LSHFT       &kp SPACE       &kp TAB         &kp ENTER	    &kp INT4        &kp RCTRL
                     >;
                     sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
+                };
+                
+                AML {
+                    bindings = <
+                // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
+                    &trans          &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &trans
+                    &trans          &trans          &trans          &mkp MB3                                                        &trans          &trans          &trans          &trans          &kp RCTRL
+                    &trans          &trans          &mkp MB1        &kp LCTRL                                       &trans          &mkp MB1        &mkp MB1        &mkp MB3        &mkp MB2        &trans
+                                                    &trans          &trans          &mkp MB2        &trans          &trans          &kp RSHFT       &trans
+                    >;
+                    sensor-bindings = <&inc_dec_kp LC(PG_DN) LC(PG_UP)>;
                 };
 
                 BLE {
