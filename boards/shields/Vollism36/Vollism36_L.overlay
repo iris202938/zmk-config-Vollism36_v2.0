@@ -395,15 +395,10 @@
 
 &zip_temp_layer {
     excluded-positions = <
-        18 // RCTRL
-        21 // MB1
-        22 // LCTRL        
-        31 // MB2
-        13 // MB3
-        24 // MB1
-        25 // MB1
-        26 // MB2
-        27 // MB3
+        15 // MB1
+        16 // MB2
+        17 // MB3
+        18 // RCTRL       
         34 // RSHFT
     >;
 };
@@ -471,21 +466,6 @@
 		// max_threshold = <200>
 		// max_pending_activations = <10>
     };
-    zip_keybind_keys_freecad_3d: zip_keybind_keys_freecad_3d {
-        compatible = "zmk,input-processor-keybind";
-        #input-processor-cells = <0>;
-		// track_remainders;
-        bindings 
-            = <&mb3_mb1>
-            , <&mb3_mb1>
-            , <&mb3_mb1>
-            , <&mb3_mb1>
-            ;
-        tick = <5>;       // 少しだけ持たせる（1だと重すぎる場合があるため10〜50程度に調整）
-        wait-ms = <10>;    // 待ち時間を短く
-        tap-ms = <100>;     // 500から大幅に小さくし、スティックを離したら即座に離す（例: 20〜50）
-        mode = <1>;
-	};
 
     peripheral_listener: peripheral_listener {
         compatible = "zmk,input-listener";
