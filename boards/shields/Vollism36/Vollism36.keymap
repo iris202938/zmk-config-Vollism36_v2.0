@@ -131,7 +131,7 @@
                 };
                 combo_esc_r {
                     timeout-ms = <75>;
-                    layers = <QWE LIN MOV CAD>;
+                    layers = <QWE LIN MOV CAD AML>;
                     key-positions = <9 18>; 
                     bindings = <&kp ESC>;
                 };
