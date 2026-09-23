@@ -484,6 +484,15 @@
 		// 	layers = <BLE>; // レイヤー23がアクティブな場合
 		// 	input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
+        r_layer22 {
+			layers = <AML>; // レイヤー22がアクティブな場合
+			input-processors = <&zip_keybind_keys_freecad>; // zip_keybind_keys_freecad を使用
+			process-next;
+		};
+		r_layer22-prevent {
+			layers = <AML>; // レイヤー22がアクティブな場合
+			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+		};
 		r_layer21 {
 			layers = <WINS>; // レイヤー21がアクティブな場合
 			input-processors = <&zip_keybind_keys_directionH>; // zip_keybind_keys_directionH を使用
