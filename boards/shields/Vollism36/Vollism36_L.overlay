@@ -513,7 +513,7 @@
 		};
 		r_layer19 {
 			layers = <NUML>; // レイヤー19がアクティブな場合
-			input-processors = <&zip_keybind_keys_freecad>; // zip_keybind_keys_freecad を使用
+			input-processors = <&zip_keybind_keys_directionL>; // zip_keybind_keys_directionL を使用
 			process-next; // 他のプロセッサも処理を継続
 		};
 		r_layer19-prevent {
