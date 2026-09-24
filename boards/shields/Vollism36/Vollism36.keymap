@@ -159,26 +159,26 @@
                     layers = <QWE LIN CAD>;
                     timeout-ms = <65>;
                 };
-                combo_RGUI {
-                    bindings = <&kp LGUI>;
+                combo_RALT {
+                    bindings = <&kp LALT>;
                     key-positions = <27 28>;
                     layers = <QWE LWR RSE ADJ MOV>;
-                    timeout-ms = <80>;
-                };
-                combo_LGUI {
-                    bindings = <&kp LGUI>;
-                    key-positions = <19 20>;
-                    layers = <LIN CAD LWRL LWRW RSEL RSEW MOVL MOVW AML>;
                     timeout-ms = <80>;
                 };
                 combo_LALT {
                     bindings = <&kp LALT>;
                     key-positions = <19 20>;
+                    layers = <LIN CAD LWRL LWRW RSEL RSEW MOVL MOVW AML>;
+                    timeout-ms = <80>;
+                };
+                combo_LGUI {
+                    bindings = <&kp LGUI>;
+                    key-positions = <19 20>;
                     layers = <QWE LWR RSE ADJ>;
                     timeout-ms = <80>;
                 };
-                combo_RALT {
-                    bindings = <&kp LALT>;
+                combo_RGUI {
+                    bindings = <&kp LGUI>;
                     key-positions = <27 28>;
                     layers = <LIN CAD LWRL LWRW RSEL RSEW ADJL ADJW MOVL MOVW>;
                     timeout-ms = <80>;
@@ -5038,7 +5038,7 @@
                 // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
                     &mt LSHFT Q     &kp W           &kp E           &kp R           &kp T                                           &kp Y           &kp U           &kp I           &kp O           &mt RSHFT P
                     &mt LCTRL A     &kp S           &kp D           &kp F                                                           &kp H           &kp J           &kp K           &kp L           &mt RCTRL SEMI
-                    &mt LGUI Z      &kp X           &kp C           &kp V                                           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt LALT SLASH
+                    &mt LALT Z      &kp X           &kp C           &kp V                                           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt LGUI SLASH
                                                     &kp G           &lt_bl NUM LBKT &mt LSHFT SPACE &lt LWR TAB     &lt RSE ENTER   &mt RSHFT SPACE &lt_bl MOV RBKT
                     >;
                     sensor-bindings = <&encoder_msc_down_up>;
@@ -5060,7 +5060,7 @@
                 // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
                     &mt_s LSHFT Q   &kp W           &kp E           &kp R           &kp T                                           &kp Y           &kp U           &kp I           &kp O           &mt_s RSHFT P
                     &mt_s LCTRL A   &kp S           &kp D           &kp F                                                           &kp H           &kp J           &kp K           &kp L           &mt_s RCTRL SEMI
-                    &mt_s LALT Z    &kp X           &kp C           &kp V                                           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt_s LGUI SLASH
+                    &mt_s LGUI Z    &kp X           &kp C           &kp V                                           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt_s LALT SLASH
                                                     &kp G           &lt_bl NUML ESC &mt LSHFT SPACE &lt LWRL TAB	&lt RSEL ENTER	&mt RSHFT SPACE &lt_bl MOVL ESC
                     >;
                     sensor-bindings = <&inc_dec_kp LC(PG_DN) LC(PG_UP)>;
@@ -5104,7 +5104,7 @@
                 // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
                     &mt_s LSHFT PG_UP &kp LC(A)     &kp UP          &kp LC(E)       &kp LS(TAB)                                     &kp DEL         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &mt_s RSHFT SCRL_UP
                     &mt_s LCTRL PG_DN &kp LEFT      &kp DOWN        &kp RIGHT   	                                                &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &mt_s RCTRL SCRL_DOWN
-                    &mt_s LGUI LC(V)  &mkp MB1      &mkp MB3        &mkp MB2		                                &trans          &mkp MB1        &kp LS(ENTER)   &kp LA(LEFT)    &kp LA(RIGHT)   &mt_cmd_v LALT 0
+                    &mt_s LALT LC(V)  &mkp MB1      &mkp MB3        &mkp MB2		                                &trans          &mkp MB1        &kp LS(ENTER)   &kp LA(LEFT)    &kp LA(RIGHT)   &mt_cmd_v LGUI 0
                                                     &trans          &kp LSHFT       &sk_shft        &trans          &ht_lg1 ADJ 0   &kp LS(LC(V))   &kp RSHFT
                     >;
                     sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
@@ -5115,7 +5115,7 @@
                 // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
                     &mt_s LSHFT PG_UP &kp HOME      &kp UP          &kp END         &kp LS(TAB)                                     &kp DEL         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &mt_s RSHFT SCRL_UP
                     &mt_s LCTRL PG_DN &kp LEFT      &kp DOWN        &kp RIGHT   	                                                &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &mt_s RCTRL SCRL_DOWN
-                    &mt_s LALT LC(V)  &mkp MB1      &mkp MB3        &mkp MB2		                                &kp LS(LA(LEFT)) &mkp MB1       &kp LS(ENTER)   &kp LC(LEFT)    &kp LC(RIGHT)   &mt_cmd_v LGUI 0
+                    &mt_s LGUI LC(V)  &mkp MB1      &mkp MB3        &mkp MB2		                                &kp LS(LA(LEFT)) &mkp MB1       &kp LS(ENTER)   &kp LC(LEFT)    &kp LC(RIGHT)   &mt_cmd_v LALT 0
                                                     &kp LS(LA(RIGHT)) &kp LSHFT     &sk_shft        &trans          &ht_it4 ADJL 0  &kp LS(LC(V))   &kp RSHFT
                     >;
                     sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
@@ -5126,7 +5126,7 @@
                 // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
                     &mt_s LSHFT PG_UP &kp HOME      &kp UP          &kp END         &kp LS(TAB)                                     &kp DEL         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &mt_s RSHFT SCRL_UP
                     &mt_s LCTRL PG_DN &kp LEFT      &kp DOWN        &kp RIGHT   	                                                &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &mt_s RCTRL SCRL_DOWN
-                    &mt_s LALT LC(V)  &mkp MB1      &mkp MB3        &mkp MB2		                                &kp LS(LA(LEFT)) &mkp MB1       &kp LS(ENTER)   &kp LC(LEFT)    &kp LC(RIGHT)   &mt_cmd_v LGUI 0
+                    &mt_s LGUI LC(V)  &mkp MB1      &mkp MB3        &mkp MB2		                                &kp LS(LA(LEFT)) &mkp MB1       &kp LS(ENTER)   &kp LC(LEFT)    &kp LC(RIGHT)   &mt_cmd_v LALT 0
                                                     &kp LS(LA(RIGHT)) &kp LSHFT     &sk_shft        &trans          &htW_it4 ADJW 0 &kp LS(LC(V))   &kp RSHFT
                     >;
                     sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
@@ -5137,7 +5137,7 @@
                 // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
                     &mt_s LSHFT F1  &kp F2          &kp F3          &kp F4          &kp F5         		         		            &kp F6          &kp F7    	    &kp F8          &kp F9          &mt_s RSHFT F10
                     &macro_JPN1     &macro_JPN2	    &macro_JPN3     &macro_JPN4                                     	            &macro_JPN6     &macro_JPN7     &macro_JPN8	    &macro_JPN9     &macro_JPN0
-                    &mt_s LGUI INT1 &kp BSLH        &kp INT3        &kp SLASH   		     		                &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &mt_cmd_v LALT 0
+                    &mt_s LALT INT1 &kp BSLH        &kp INT3        &kp SLASH   		     		                &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &mt_cmd_v LGUI 0
                                                     &macro_JPN5     &kp LSHFT       &kp SPACE       &ht_lg2 ADJ 0   &trans          &sk_ctrl        &kp RSHFT
                     >;
                     sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
@@ -5148,7 +5148,7 @@
                 // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
                     &mt_s LSHFT F1  &kp F2          &kp F3          &kp F4          &kp F5         		         		            &kp F6          &kp F7    	    &kp F8          &kp F9          &mt_s RSHFT F10
                     &mt_s LCTRL N1  &kp N2          &kp N3          &kp N4      		     		                                &kp N6          &kp N7    	    &kp N8          &kp N9          &mt_s RCTRL N0
-                    &mt_s LALT INT1 &kp BSLH        &kp INT3        &kp SLASH   		     		                &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &mt_ctrl_v LGUI 0
+                    &mt_s LGUI INT1 &kp BSLH        &kp INT3        &kp SLASH   		     		                &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &mt_ctrl_v LALT 0
                                                     &kp N5          &kp LSHFT       &kp SPACE       &ht_it5 ADJL 0  &trans          &sk_ctrl        &kp RSHFT
                     >;
                     sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
@@ -5159,7 +5159,7 @@
                 // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
                     &mt_s LSHFT F1  &kp F2          &kp F3          &kp F4          &kp F5         		         		            &kp F6          &kp F7    	    &kp F8          &kp F9          &mt_s RSHFT F10
                     &mt_s LCTRL N1  &kp N2          &kp N3          &kp N4      		     		                                &kp N6          &kp N7    	    &kp N8          &kp N9          &mt_s RCTRL N0
-                    &mt_s LALT INT1 &kp BSLH        &kp INT3        &kp SLASH   		     		                &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &mt_ctrl_v LGUI 0
+                    &mt_s LGUI INT1 &kp BSLH        &kp INT3        &kp SLASH   		     		                &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &mt_ctrl_v LALT 0
                                                     &kp N5          &kp LSHFT       &kp SPACE       &htC_it5 ADJW 0 &trans          &sk_ctrl        &kp RSHFT
                     >;
                     sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
@@ -5203,7 +5203,7 @@
                 // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
                     &kp LS(LC(TAB)) &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP                                    &lt BLE LC(Y)   &kp LC(A)       &kp UP          &kp LC(E)       &kp PG_UP
                     &mt_s LCTRL MB1 &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT                                                 &lt BLE BSPC    &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN
-                    &mt_s LGUI Z    &kp LG(LBKT)    &mkp MB3        &kp LG(RBKT)                                    &kp LC(TAB)     &kp LC(Z)       &kp LS(LC(TAB)) &kp LA(LEFT)    &kp LA(RIGHT)   &kp LC(TAB)
+                    &mt_s LALT Z    &kp LG(LBKT)    &mkp MB3        &kp LG(RBKT)                                    &kp LC(TAB)     &kp LC(Z)       &kp LS(LC(TAB)) &kp LA(LEFT)    &kp LA(RIGHT)   &kp LC(TAB)
                                                     &msc SCRL_DOWN  &kp LG(C)       &kp LG(V)       &mkp MB2        &kp ENTER       &mkp MB1        &to QWE
                     >;
                     sensor-bindings = <&history_encoder>;
@@ -5214,7 +5214,7 @@
                 // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
                     &kp LS(LC(TAB)) &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP                                    &lt BLE LC(Y)   &kp HOME        &kp UP          &kp END         &kp PG_UP
                     &mt_s LCTRL MB1 &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT                                                 &lt BLE BSPC    &kp LEFT        &kp DOWN        &kp RIGHT       &mt_s RCTRL PG_DN
-                    &mt_s LALT Z    &kp LA(LEFT)    &mkp MB3        &kp LA(RIGHT)                                   &kp LC(TAB)     &kp LC(Z)       &kp LC(PG_UP)   &kp LG(LBKT)    &kp LG(RBKT)    &kp LC(PG_DN)
+                    &mt_s LGUT Z    &kp LA(LEFT)    &mkp MB3        &kp LA(RIGHT)                                   &kp LC(TAB)     &kp LC(Z)       &kp LC(PG_UP)   &kp LG(LBKT)    &kp LG(RBKT)    &kp LC(PG_DN)
                                                     &msc SCRL_DOWN  &cp_tab         &cp_enter       &mkp MB2        &kp ENTER       &mkp MB1        &to LIN
                     >;
                     sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
@@ -5225,7 +5225,7 @@
                 // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
                     &kp LS(LC(TAB)) &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP                                    &lt BLE LC(Y)   &kp HOME        &kp UP          &kp END         &kp PG_UP
                     &mt_s LCTRL MB1 &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT                                                 &lt BLE BSPC    &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN
-                    &mt_s LALT Z    &kp LA(LEFT)    &mkp MB3        &kp LA(RIGHT)                                   &kp LC(TAB)     &kp LC(Z)       &kp LC(PG_UP)   &kp LG(LBKT)    &kp LG(RBKT)    &kp LC(PG_DN)
+                    &mt_s LGUI Z    &kp LA(LEFT)    &mkp MB3        &kp LA(RIGHT)                                   &kp LC(TAB)     &kp LC(Z)       &kp LC(PG_UP)   &kp LG(LBKT)    &kp LG(RBKT)    &kp LC(PG_DN)
                                                     &msc SCRL_DOWN  &cp_tab         &cp_enter       &mkp MB2        &kp ENTER       &mkp MB1        &to CAD
                     >;
                     sensor-bindings = <&history_encoder>;
@@ -5279,8 +5279,8 @@
                     bindings = <
                 // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
                     &trans          &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &trans
-                    &trans          &trans          &trans          &mkp MB1                                                        &trans          &trans          &trans          &trans          &kp RCTRL
-                    &trans          &trans          &trans          &trans                                          &trans          &mkp MB1        &trans          &mkp MB3        &mkp MB2        &trans
+                    &trans          &trans          &trans          &trans                                                          &trans          &trans          &trans          &trans          &kp RCTRL
+                    &trans          &trans          &trans          &mkp MB1                                        &trans          &mkp MB1        &trans          &mkp MB3        &mkp MB2        &trans
                                                     &trans          &trans          &mt LCTRL SPACE &trans          &trans          &kp RSHFT       &trans
                     >;
                     sensor-bindings = <&inc_dec_kp LC(PG_DN) LC(PG_UP)>;
