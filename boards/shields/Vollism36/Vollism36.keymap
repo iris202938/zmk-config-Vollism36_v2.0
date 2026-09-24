@@ -160,7 +160,7 @@
                     timeout-ms = <65>;
                 };
                 combo_RGUI {
-                    bindings = <&kp RGUI>;
+                    bindings = <&kp LGUI>;
                     key-positions = <27 28>;
                     layers = <QWE LWR RSE ADJ MOV>;
                     timeout-ms = <80>;
@@ -180,7 +180,7 @@
                 combo_RALT {
                     bindings = <&kp LALT>;
                     key-positions = <27 28>;
-                    layers = <LIN CAD LWRL LWRW RSEL RSEW ADJL ADJW MOVL MOVW AML>;
+                    layers = <LIN CAD LWRL LWRW RSEL RSEW ADJL ADJW MOVL MOVW>;
                     timeout-ms = <80>;
                 };
                 combo_sl_LCTRL_LSHFT {
@@ -210,7 +210,7 @@
                 alt_slash {
                     bindings = <&file_f>;
                     key-positions = <17 28>;
-                    layers = <CAD>;
+                    layers = <CAD AML>;
                     timeout-ms = <80>;
                 };
                 gui_left {
@@ -5279,9 +5279,9 @@
                     bindings = <
                 // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
                     &trans          &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &trans
-                    &trans          &trans          &trans          &mkp MB3                                                        &trans          &trans          &trans          &trans          &kp RCTRL
-                    &trans          &trans          &mkp MB1        &kp LCTRL                                       &trans          &mkp MB1        &mkp MB1        &mkp MB3        &mkp MB2        &trans
-                                                    &trans          &trans          &mkp MB2        &trans          &trans          &kp RSHFT       &trans
+                    &trans          &trans          &trans          &mkp MB1                                                        &trans          &trans          &trans          &trans          &kp RCTRL
+                    &trans          &trans          &trans          &trans                                          &trans          &mkp MB1        &trans          &mkp MB3        &mkp MB2        &trans
+                                                    &trans          &trans          &mt LCTRL SPACE &trans          &trans          &kp RSHFT       &trans
                     >;
                     sensor-bindings = <&inc_dec_kp LC(PG_DN) LC(PG_UP)>;
                 };
