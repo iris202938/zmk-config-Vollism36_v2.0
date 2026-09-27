@@ -34,6 +34,10 @@
 #define AML 22
 #define BLE 23
 
+&mkp_input_listener {
+            input-processors =< &zip_temp_layer AML 250>;
+        };
+
 / {
     aliases {
         led-red = &led0;   /* Xiao BLE の赤色LEDラベル */
