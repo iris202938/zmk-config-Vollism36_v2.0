@@ -37,9 +37,9 @@
         #define AML 22
         #define BLE 23
 
-        // &mkp_input_listener {
-        //     input-processors =< &zip_temp_layer AML 250>;
-        // };
+        &mkp_input_listener {
+            input-processors =< &zip_temp_layer AML 2500>;
+        };
 
         &mt {
             flavor = "hold-preferred";
