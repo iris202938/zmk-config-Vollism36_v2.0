@@ -38,7 +38,7 @@
         #define BLE 23
 
         &mkp_input_listener {
-            input-processors =< &zip_temp_layer AML 2500>;
+            input-processors =< &zip_temp_layer AML 3000>;
         };
 
         &mt {
