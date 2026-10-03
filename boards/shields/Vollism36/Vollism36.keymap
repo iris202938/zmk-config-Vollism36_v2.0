@@ -1,3 +1,6 @@
+        #define ZMK_POINTING_DEFAULT_MOVE_VAL 600
+        #define ZMK_POINTING_DEFAULT_SCRL_VAL 80
+
         #include <behaviors.dtsi>
         #include <dt-bindings/zmk/bt.h>
         #include <dt-bindings/zmk/keys.h>
@@ -6,10 +9,6 @@
         #include <dt-bindings/zmk/pointing.h>
         #include <behaviors/rgbled_widget.dtsi>
         #include <input/processors.dtsi>
-
-
-        #define ZMK_POINTING_DEFAULT_MOVE_VAL 600
-        #define ZMK_POINTING_DEFAULT_SCRL_VAL 10
 
         #define QWE 0
         #define NIC 1
