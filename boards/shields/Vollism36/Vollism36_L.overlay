@@ -642,13 +642,4 @@
                             , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
         };
     };
-    // peripheral_listener: peripheral_listener {
-    //     compatible = "zmk,input-listener";
-    //     device = <&joystick_split>; /* 右から転送されてくる仮想デバイスを指定 */
-        
-    //     /* ここにスティック用のレイヤー設定などを記述 */
-    //     default {
-    //         layers = <QWE>;
-    //         input-processors = <&zip_xy_scaler 10 30>;
-    //     };
 };
