@@ -397,7 +397,6 @@
 &zip_temp_layer {
     excluded-positions = <
         18 // RCTRL
-        22 // MB1
         24 // MB1
         26 // MB2
         27 // MB3
