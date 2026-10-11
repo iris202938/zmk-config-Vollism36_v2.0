@@ -218,7 +218,7 @@
             layers = <ADJW>;
             input-processors = 
                 <&sensor_rotation>,
-                <&zip_xy_scaler 100 100>; // スケーリング（100/100）
+                <&zip_xy_scaler 120 100>; // スケーリング（120/100）
         };
 
         /* ==========================================================
@@ -229,7 +229,7 @@
             input-processors = 
                 <&sensor_rotation>,
                 <&zip_temp_layer AML 100000>,
-                <&zip_xy_scaler 100 100>; // スケーリング（100/100）
+                <&zip_xy_scaler 120 100>; // スケーリング（120/100）
         };
 
         /* ==========================================================
@@ -288,7 +288,7 @@
         l_lwrw {
             layers = <LWRW>;
             input-processors = <&sensor_rotation>
-                            , <&zip_xy_scaler 80 100>; // スケーリング（80/100）
+                            , <&zip_xy_scaler 50 100>; // スケーリング（50/100）
         };
 
         /* ==========================================================
@@ -297,7 +297,7 @@
         l_lwrl {
             layers = <LWRL>;
             input-processors = <&sensor_rotation>
-                            , <&zip_xy_scaler 80 100>; // スケーリング（80/100）
+                            , <&zip_xy_scaler 50 100>; // スケーリング（50/100）
         };
 
         /* ==========================================================
@@ -306,7 +306,7 @@
         l_lwr {
             layers = <LWR>;
             input-processors = <&sensor_rotation>
-                            , <&zip_xy_scaler 80 100>; // スケーリング（80/100）
+                            , <&zip_xy_scaler 50 100>; // スケーリング（50/100）
         };
 
         /* ==========================================================
