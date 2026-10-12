@@ -549,12 +549,12 @@
                     layers = <QWE LIN CAD WINS>;
                     timeout-ms = <80>;
                 };
-                mb3_mb1 {
-                    bindings = <&mb3_mb1>;
-                    key-positions = <26 27 28>;
-                    layers = <LIN>;
-                    timeout-ms = <80>;
-                };
+                // mb3_mb1 {
+                //     bindings = <&mb3_mb1>;
+                //     key-positions = <26 27 28>;
+                //     layers = <LIN>;
+                //     timeout-ms = <80>;
+                // };
                 int5_g_c {
                     bindings = <&int5_g>;
                     key-positions = <18 28>;
@@ -3225,16 +3225,16 @@
                         , <&macro_tap     &kp S>
                         ;
                 };
-                mb3_mb1: mb3_mb1 { //FreeCADのマウスボタン3+1 (トグル動作例)
-                    compatible = "zmk,behavior-macro";
-                    #binding-cells = <0>;
-                    bindings
-                        = <&macro_press &mkp MB3>
-                        , <&macro_press &mkp MB1>
-                        , <&macro_pause_for_release>
-                        , <&macro_release &mkp MB3>
-                        , <&macro_release &mkp MB1>;
-                };
+                // mb3_mb1: mb3_mb1 { //FreeCADのマウスボタン3+1 (トグル動作例)
+                //     compatible = "zmk,behavior-macro";
+                //     #binding-cells = <0>;
+                //     bindings
+                //         = <&macro_press &mkp MB3>
+                //         , <&macro_press &mkp MB1>
+                //         , <&macro_pause_for_release>
+                //         , <&macro_release &mkp MB3>
+                //         , <&macro_release &mkp MB1>;
+                // };
                 // // HiMacroから変換：コピー ➔ 画面切り替え ➔ 貼り付け ➔ 元の画面に戻る
                 // ecl_transfer: ecl_transfer {
                 //     compatible = "zmk,behavior-macro";
@@ -5293,7 +5293,7 @@
                 // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
                     &sys_reset      &bootloader     &kp INT3        &kp INT6        &bt BT_CLR_ALL                                  &bt BT_CLR_ALL  &m_hi_con   	&kp GRAVE       &bootloader     &sys_reset
                     &kp LC(LG(T))   &kp LC(LG(C))   &kp LC(LG(P))   &kp LC(LG(G))                                                   &trans          &kp LC(LG(E))   &kp LC(LG(A))   &kp LC(LG(L))   &kp LC(LG(X))
-                    &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3                                    &bootloader     &bootloader     &bt4_lLIN       &kp TILDE       &kp TILDE2      &mb3_mb1
+                    &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3                                    &bootloader     &bootloader     &bt4_lLIN       &kp TILDE       &kp TILDE2      &kp K_CALC
                                                     &trans          &trans          &kp LS(LG(F23)) &bt BT_CLR      &bt BT_CLR      &kp LA(LG(G))   &trans
                     >;
                     sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
