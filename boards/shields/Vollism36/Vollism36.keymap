@@ -2320,14 +2320,14 @@
                     #binding-cells = <2>;
                     flavor = "tap-preferred";
                     tapping-term-ms = <200>;
-                    bindings = <&kp>, <&LS(LG(RIGHT))>;
+                    bindings = <&kp>, <&S_G(RIGHT)>;
                 };
                 mt_S(END): mt_S(END) {  
                     compatible = "zmk,behavior-hold-tap";
                     #binding-cells = <2>;
                     flavor = "tap-preferred";
                     tapping-term-ms = <200>;
-                    bindings = <&kp>, <&LS(END)>;
+                    bindings = <&kp>, <&S(END)>;
                 };
                 // ① ホールド・タップの挙動を定義
                 // esc_ctrl_shift: esc_ctrl_shift {
@@ -2891,6 +2891,26 @@
                         = <&macro_press &kp LCTRL>
                         , <&macro_tap &kp V>
                         , <&macro_release &kp LCTRL>
+                        ;
+                };
+                S_G(RIGHT): S_G(RIGHT) {
+                    compatible = "zmk,behavior-macro";
+                    #binding-cells = <0>;
+                    bindings
+                        = <&macro_press &kp LSHFT>
+                        , <&macro_press &kp LGUI>
+                        , <&macro_tap &kp RIGHT>
+                        , <&macro_release &kp LGUI>
+                        , <&macro_release &kp LSHFT>
+                        ;
+                };
+                S(END): _S(END) {
+                    compatible = "zmk,behavior-macro";
+                    #binding-cells = <0>;
+                    bindings
+                        = <&macro_press &kp LSHFT>
+                        , <&macro_tap &kp END>
+                        , <&macro_release &kp LSHFT>
                         ;
                 };
                 shft_mb1: shft_mb1 { // Shiftキー+左クリック
