@@ -2315,6 +2315,20 @@
                     tapping-term-ms = <200>;
                     bindings = <&kp>, <&ctrl_v>;
                 };
+                mt_S_G(RIGHT): mt_S_G(RIGHT)
+                    compatible = "zmk,behavior-hold-tap";
+                    #binding-cells = <2>;
+                    flavor = "tap-preferred";
+                    tapping-term-ms = <200>;
+                    bindings = <&kp>, <&LS(LG(RIGHT))>;
+                };
+                mt_S(END): mt_S(END)
+                    compatible = "zmk,behavior-hold-tap";
+                    #binding-cells = <2>;
+                    flavor = "tap-preferred";
+                    tapping-term-ms = <200>;
+                    bindings = <&kp>, <&LS(END)>;
+                };
                 // ① ホールド・タップの挙動を定義
                 // esc_ctrl_shift: esc_ctrl_shift {
                 //     compatible = "zmk,behavior-hold-tap";
@@ -5172,7 +5186,7 @@
                 // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
                     &mt_s LSHFT F11 &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP                                    &kp CAPS        &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp LS(UP)
                     &kp LCTRL       &usb_lCAD       &bt3_lCAD       &kp LS(RIGHT)                                                   &kp INT5        &file_r         &pr_pg          &nx_pg          &file_f
-                    &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP                                       &kp LS(LEFT)    &kp LS(DOWN) &kp LS(LG(LEFT)) &kp LS(LA(LEFT)) &kp LS(LA(RIGHT)) &kp LS(LG(RIGHT))
+                    &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP                                       &kp LS(LEFT)    &kp LS(DOWN) &kp LS(LG(LEFT)) &kp LS(LA(LEFT)) &kp LS(LA(RIGHT)) &mt_S_G(RIGHT) LALT 0
                                                     &kp G           &to QWE         &sk_alt         &trans          &trans          &sk_gui	        &to CAD
                     >;
                     sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -5183,7 +5197,7 @@
                 // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
                     &mt_s LSHFT F11 &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP                                    &kp CAPS        &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp LS(UP)
                     &kp LCTRL       &usb_lCAD       &bt3_lCAD       &kp LS(RIGHT)                                                   &kp INT5        &file_r         &pr_pg          &nx_pg          &file_f
-                    &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP                                       &kp LS(LEFT)    &kp LS(DOWN)    &kp LS(HOME) &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)
+                    &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP                                       &kp LS(LEFT)    &kp LS(DOWN)    &kp LS(HOME) &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &mt_S(END) LALT 0
                                                     &kp G           &to QWE         &sk_gui         &trans          &trans          &sk_alt	        &to CAD
                     >;
                     sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -5194,7 +5208,7 @@
                 // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
                     &mt_s LSHFT F11 &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP                                    &kp CAPS        &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp LS(UP)
                     &kp LCTRL       &usb_lCAD       &bt3_lCAD       &kp LS(RIGHT)                                                   &kp INT5        &file_r         &pr_pg          &nx_pg          &file_f
-                    &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP                                       &kp LS(LEFT)    &kp LS(DOWN)    &kp LS(HOME) &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)
+                    &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP                                       &kp LS(LEFT)    &kp LS(DOWN)    &kp LS(HOME) &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &mt_S(END) LALT 0
                                                     &kp G           &to QWE         &sk_gui         &trans          &trans          &sk_alt	        &to CAD
                     >;
                     sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
