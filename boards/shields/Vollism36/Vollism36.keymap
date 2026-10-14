@@ -2315,19 +2315,19 @@
                     tapping-term-ms = <200>;
                     bindings = <&kp>, <&ctrl_v>;
                 };
-                mt_S_G(RIGHT): mt_S_G(RIGHT) {
+                mt_S_G_RIGHT: mt_S_G_RIGHT {
                     compatible = "zmk,behavior-hold-tap";
                     #binding-cells = <2>;
                     flavor = "tap-preferred";
                     tapping-term-ms = <200>;
-                    bindings = <&kp>, <&S_G(RIGHT)>;
+                    bindings = <&kp>, <&S_G_RIGHT>;
                 };
-                mt_S(END): mt_S(END) {  
+                mt_S_END: mt_S_END {  
                     compatible = "zmk,behavior-hold-tap";
                     #binding-cells = <2>;
                     flavor = "tap-preferred";
                     tapping-term-ms = <200>;
-                    bindings = <&kp>, <&S(END)>;
+                    bindings = <&kp>, <&S_END>;
                 };
                 // ① ホールド・タップの挙動を定義
                 // esc_ctrl_shift: esc_ctrl_shift {
@@ -2893,7 +2893,7 @@
                         , <&macro_release &kp LCTRL>
                         ;
                 };
-                S_G(RIGHT): S_G(RIGHT) {
+                S_G_RIGHT: S_G_RIGHT {
                     compatible = "zmk,behavior-macro";
                     #binding-cells = <0>;
                     bindings
@@ -2904,7 +2904,7 @@
                         , <&macro_release &kp LSHFT>
                         ;
                 };
-                S(END): _S(END) {
+                S_END: S_END {
                     compatible = "zmk,behavior-macro";
                     #binding-cells = <0>;
                     bindings
