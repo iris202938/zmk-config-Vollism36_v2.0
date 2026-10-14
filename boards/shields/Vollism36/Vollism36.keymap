@@ -2315,14 +2315,14 @@
                     tapping-term-ms = <200>;
                     bindings = <&kp>, <&ctrl_v>;
                 };
-                mt_S_G(RIGHT): mt_S_G(RIGHT)
+                mt_S_G(RIGHT): mt_S_G(RIGHT) {
                     compatible = "zmk,behavior-hold-tap";
                     #binding-cells = <2>;
                     flavor = "tap-preferred";
                     tapping-term-ms = <200>;
                     bindings = <&kp>, <&LS(LG(RIGHT))>;
                 };
-                mt_S(END): mt_S(END)
+                mt_S(END): mt_S(END) {  
                     compatible = "zmk,behavior-hold-tap";
                     #binding-cells = <2>;
                     flavor = "tap-preferred";
