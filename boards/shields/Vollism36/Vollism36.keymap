@@ -2762,110 +2762,110 @@
                     mods = <(MOD_LCTL)>;
                     keep-mods = <(MOD_LCTL)>;
                 };
-            //    w_shift_p: win-shift-positive {
-            //        compatible = "zmk,behavior-mod-morph";
-            //        #binding-cells = <0>;
-            //        bindings = <&none>, <&kp RIGHT>;
-            //        mods = <(MOD_RSFT|MOD_LSFT)>;
-            //    }; 
-            //    w_shift_ctrl_p: win-shift-ctrl-positive {
-            //        compatible = "zmk,behavior-mod-morph";
-            //        #binding-cells = <0>;
-            //        bindings = <&w_shift_p>, <&w_ctrl_p>;
-            //        mods = <(MOD_LCTL|MOD_RCTL)>;
-            //    };
-            //    w_shift_ctrl_none_p: win_shift-ctrl-none-positive {
-            //        compatible = "zmk,behavior-mod-morph";
-            //        #binding-cells = <0>;
-            //        bindings = <&kp C_VOL_UP>, <&w_shift_ctrl_p>;
-            //        mods = <(MOD_LSFT|MOD_LCTL|MOD_RSFT|MOD_RCTL)>;
-            //    };
-            //    win_enc_p: win-enc-positive {
-            //        compatible = "zmk,behavior-mod-morph";
-            //        #binding-cells = <0>;
-            //        bindings = <&w_shift_ctrl_none_p>, <&w_alt_gui_p>;
-            //        mods = <(MOD_LALT|MOD_LGUI|MOD_RALT|MOD_RGUI)>;
-            //    };
-            //   
-            //    w_r_alt_n: win-right-alt-negative {
-            //        compatible = "zmk,behavior-mod-morph";
-            //        #binding-cells = <0>;
-            //        bindings = <&kp 0>, <&kp LEFT>;
-            //        mods = <(MOD_RALT)>;
-            //        keep-mods = <(MOD_RALT)>;
-            //    };
-            //    w_alt_n: win-alt-negative {
-            //        compatible = "zmk,behavior-mod-morph";
-            //        #binding-cells = <0>;
-            //        bindings = <&w_r_alt_n>, <&kp LS(TAB)>;
-            //        mods = <(MOD_LALT)>;
-            //        keep-mods = <(MOD_LALT)>;
-            //    };
-            //    w_r_gui_n: win-right-gui-negative {
-            //        compatible = "zmk,behavior-mod-morph";
-            //        #binding-cells = <0>;
-            //        bindings = <&kp 0>, <&kp LC(LEFT)>;
-            //        mods = <(MOD_RGUI)>;
-            //        keep-mods = <(MOD_RGUI)>;
-            //    };
-            //    w_gui_n: win-gui-negative {
-            //        compatible = "zmk,behavior-mod-morph";
-            //        #binding-cells = <0>;
-            //        bindings = <&w_r_gui_n>, <&kp LEFT>;
-            //        mods = <(MOD_LGUI)>;
-            //        keep-mods = <(MOD_LGUI)>;
-            //    };
-            //    w_alt_gui_n: win-alt-gui-negative {
-            //        compatible = "zmk,behavior-mod-morph";
-            //        #binding-cells = <0>;
-            //        bindings = <&w_gui_n>, <&w_alt_n>;
-            //        mods = <(MOD_LALT|MOD_RALT)>;
-            //    };
-            //    w_r_ctrl_n: win-right-ctrl-negative {
-            //        compatible = "zmk,behavior-mod-morph";
-            //        #binding-cells = <0>;
-            //        bindings = <&kp 0>, <&kp LS(TAB)>;
-            //        mods = <(MOD_RCTL)>;
-            //        keep-mods = <(MOD_RCTL)>;
-            //    };
-            //    w_ctrl_n: win-ctrl-negative {
-            //        compatible = "zmk,behavior-mod-morph";
-            //        #binding-cells = <0>;
-            //        bindings = <&w_r_ctrl_n>, <&kp UP>;
-            //        mods = <(MOD_LCTL)>;
-            //    };
-            //    w_shift_n: win-shift-negative {
-            //        compatible = "zmk,behavior-mod-morph";
-            //        #binding-cells = <0>;
-            //        bindings = <&none>, <&kp LEFT>;
-            //        mods = <(MOD_RSFT|MOD_LSFT)>;
-            //    };
-            //    w_shift_ctrl_n: win-shift-ctrl-negative {
-            //        compatible = "zmk,behavior-mod-morph";
-            //        #binding-cells = <0>;
-            //        bindings = <&w_shift_n>, <&w_ctrl_n>;
-            //        mods = <(MOD_LCTL|MOD_RCTL)>;
-            //    };
-            //    w_shift_ctrl_none_n: win_shift-ctrl-none-negative {
-            //        compatible = "zmk,behavior-mod-morph";
-            //        #binding-cells = <0>;
-            //        bindings = <&kp C_VOL_DN>, <&w_shift_ctrl_n>;
-            //        mods = <(MOD_LSFT|MOD_LCTL|MOD_RSFT|MOD_RCTL)>;
-            //    };
-            //    win_enc_n: win-enc-negative {
-            //        compatible = "zmk,behavior-mod-morph";
-            //        #binding-cells = <0>;
-            //        bindings = <&w_shift_ctrl_none_n>, <&w_alt_gui_n>;
-            //        mods = <(MOD_LALT|MOD_LGUI|MOD_RALT|MOD_RGUI)>;
-            //    };
-            //    
-            //    win_enc: win-enc {
-            //        compatible = "zmk,behavior-sensor-rotate";
-            //        #sensor-binding-cells = <0>;
-            //        bindings = <&win_enc_n>, <&win_enc_p>;
-            //        tap-ms = <10>;
-            //    };
-            //    
+                w_shift_p: win-shift-positive {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&none>, <&kp RIGHT>;
+                    mods = <(MOD_RSFT|MOD_LSFT)>;
+                }; 
+                w_shift_ctrl_p: win-shift-ctrl-positive {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&w_shift_p>, <&w_ctrl_p>;
+                    mods = <(MOD_LCTL|MOD_RCTL)>;
+                };
+                w_shift_ctrl_none_p: win_shift-ctrl-none-positive {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&kp C_VOL_UP>, <&w_shift_ctrl_p>;
+                    mods = <(MOD_LSFT|MOD_LCTL|MOD_RSFT|MOD_RCTL)>;
+                };
+                win_enc_p: win-enc-positive {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&w_shift_ctrl_none_p>, <&w_alt_gui_p>;
+                    mods = <(MOD_LALT|MOD_LGUI|MOD_RALT|MOD_RGUI)>;
+                };
+
+                w_r_alt_n: win-right-alt-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&kp 0>, <&kp LEFT>;
+                    mods = <(MOD_RALT)>;
+                    keep-mods = <(MOD_RALT)>;
+                };
+                w_alt_n: win-alt-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&w_r_alt_n>, <&kp LS(TAB)>;
+                    mods = <(MOD_LALT)>;
+                    keep-mods = <(MOD_LALT)>;
+                };
+                w_r_gui_n: win-right-gui-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&kp 0>, <&kp LC(LEFT)>;
+                    mods = <(MOD_RGUI)>;
+                    keep-mods = <(MOD_RGUI)>;
+                };
+                w_gui_n: win-gui-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&w_r_gui_n>, <&kp LEFT>;
+                    mods = <(MOD_LGUI)>;
+                    keep-mods = <(MOD_LGUI)>;
+                };
+                w_alt_gui_n: win-alt-gui-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&w_gui_n>, <&w_alt_n>;
+                    mods = <(MOD_LALT|MOD_RALT)>;
+                };
+                w_r_ctrl_n: win-right-ctrl-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&kp 0>, <&kp LS(TAB)>;
+                    mods = <(MOD_RCTL)>;
+                    keep-mods = <(MOD_RCTL)>;
+                };
+               w_ctrl_n: win-ctrl-negative {
+                   compatible = "zmk,behavior-mod-morph";
+                   #binding-cells = <0>;
+                   bindings = <&w_r_ctrl_n>, <&kp UP>;
+                   mods = <(MOD_LCTL)>;
+               };
+               w_shift_n: win-shift-negative {
+                   compatible = "zmk,behavior-mod-morph";
+                   #binding-cells = <0>;
+                   bindings = <&none>, <&kp LEFT>;
+                   mods = <(MOD_RSFT|MOD_LSFT)>;
+               };
+               w_shift_ctrl_n: win-shift-ctrl-negative {
+                   compatible = "zmk,behavior-mod-morph";
+                   #binding-cells = <0>;
+                   bindings = <&w_shift_n>, <&w_ctrl_n>;
+                   mods = <(MOD_LCTL|MOD_RCTL)>;
+               };
+               w_shift_ctrl_none_n: win_shift-ctrl-none-negative {
+                   compatible = "zmk,behavior-mod-morph";
+                   #binding-cells = <0>;
+                   bindings = <&kp C_VOL_DN>, <&w_shift_ctrl_n>;
+                   mods = <(MOD_LSFT|MOD_LCTL|MOD_RSFT|MOD_RCTL)>;
+               };
+               win_enc_n: win-enc-negative {
+                   compatible = "zmk,behavior-mod-morph";
+                   #binding-cells = <0>;
+                   bindings = <&w_shift_ctrl_none_n>, <&w_alt_gui_n>;
+                   mods = <(MOD_LALT|MOD_LGUI|MOD_RALT|MOD_RGUI)>;
+               };
+               
+               win_enc: win-enc {
+                   compatible = "zmk,behavior-sensor-rotate";
+                   #sensor-binding-cells = <0>;
+                   bindings = <&win_enc_n>, <&win_enc_p>;
+                   tap-ms = <10>;
+               };
+               
             // //encorder control MAC
 
             // //app select    
