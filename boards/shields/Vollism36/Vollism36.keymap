@@ -2922,51 +2922,51 @@
                     mods = <(MOD_LGUI|MOD_RGUI)>;
                     keep-mods = <(MOD_LGUI)>;
                 };
-               //browser tab move
-               m_r_ctrl_n: mac-right-ctrl-negative {
-                   compatible = "zmk,behavior-mod-morph";
-                   #binding-cells = <0>;
-                   bindings = <&kp 0>, <&kp LS(TAB)>;
-                   mods = <(MOD_RCTL)>;
-                   keep-mods = <(MOD_RCTL)>;
-               };
-               m_ctrl_n: mac-ctrl-negative {
-                   compatible = "zmk,behavior-mod-morph";
-                   #binding-cells = <0>;
-                   bindings = <&m_r_ctrl_n>, <&kp UP>;
-                   mods = <(MOD_LCTL)>;
-               }; 
-               m_shift_n: mac-shift-negative {
-                   compatible = "zmk,behavior-mod-morph";
-                   #binding-cells = <0>;
-                   bindings = <&none>, <&kp LEFT>;
-                   mods = <(MOD_RSFT|MOD_LSFT)>; 
+                //browser tab move
+                m_r_ctrl_n: mac-right-ctrl-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&kp 0>, <&kp LS(TAB)>;
+                    mods = <(MOD_RCTL)>;
+                    keep-mods = <(MOD_RCTL)>;
+                };
+                m_ctrl_n: mac-ctrl-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&m_r_ctrl_n>, <&kp UP>;
+                    mods = <(MOD_LCTL)>;
                 }; 
-               m_shift_ctrl_n: mac-shift-ctrl-negative {
-                   compatible = "zmk,behavior-mod-morph";
-                   #binding-cells = <0>;
-                   bindings = <&m_shift_n>, <&m_ctrl_n>;
-                   mods = <(MOD_LCTL|MOD_RCTL)>;
-            };
-               m_shift_ctrl_none_n: mac_shift-ctrl-none-negative {
-                   compatible = "zmk,behavior-mod-morph";
-                   #binding-cells = <0>;
-                   bindings = <&kp C_VOL_DN>, <&m_shift_ctrl_n>;
-                   mods = <(MOD_LSFT|MOD_LCTL|MOD_RSFT|MOD_RCTL)>;
-               };
-               mac_enc_n: mac-enc-negative {
-                   compatible = "zmk,behavior-mod-morph";
-                   #binding-cells = <0>;
-                   bindings = <&m_shift_ctrl_none_n>, <&m_gui_n>;
-                   mods = <(MOD_LGUI|MOD_RGUI)>;
-               };
+                m_shift_n: mac-shift-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&none>, <&kp LEFT>;
+                    mods = <(MOD_RSFT|MOD_LSFT)>; 
+                }; 
+                m_shift_ctrl_n: mac-shift-ctrl-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&m_shift_n>, <&m_ctrl_n>;
+                    mods = <(MOD_LCTL|MOD_RCTL)>;
+                };
+                m_shift_ctrl_none_n: mac_shift-ctrl-none-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&kp C_VOL_DN>, <&m_shift_ctrl_n>;
+                    mods = <(MOD_LSFT|MOD_LCTL|MOD_RSFT|MOD_RCTL)>;
+                };
+                mac_enc_n: mac-enc-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&m_shift_ctrl_none_n>, <&m_gui_n>;
+                    mods = <(MOD_LGUI|MOD_RGUI)>;
+                };
             
-               mac_enc: mac-enc {
-                   compatible = "zmk,behavior-sensor-rotate";
-                   #sensor-binding-cells = <0>;
-                   bindings = <&mac_enc_n>, <&mac_enc_p>;
-                   tap-ms = <10>;
-               }; 
+                mac_enc: mac-enc {
+                    compatible = "zmk,behavior-sensor-rotate";
+                    #sensor-binding-cells = <0>;
+                    bindings = <&mac_enc_n>, <&mac_enc_p>;
+                    tap-ms = <10>;
+                }; 
             };
 
             macros {
