@@ -5331,7 +5331,7 @@
                     &mt LALT Z      &kp X           &kp C           &kp V                                           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt LGUI SLASH
                                                     &kp G           &lt_bl NUM LBKT &mt LSHFT SPACE &lt LWR TAB     &lt RSE ENTER   &mt RSHFT SPACE &lt_bl MOV RBKT
                     >;
-                    sensor-bindings = <&encoder_msc_down_up>;
+                    sensor-bindings = <&mac_enc>;
                 };
 
                 NIC { 
@@ -5342,7 +5342,7 @@
                     &macro_JPTEN    &macro_HI	    &macro_SU       &macro_HU                                       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN
                                                     &macro_SE       &lt_bl NUM LBKT &kp SPACE       &lt LWR TAB     &lt RSE ENTER   &kp LS(SPACE)   &lt_bl MOV RBKT
                     >;
-                    sensor-bindings = <&inc_dec_kp LC(PG_UP) LC(PG_DN)>;
+                    sensor-bindings = <&scroll_left_right>;
                 };
 
                 LIN {
