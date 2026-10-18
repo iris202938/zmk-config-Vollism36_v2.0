@@ -5356,7 +5356,7 @@
                     &macro_JPTEN    &macro_HI	    &macro_SU       &macro_HU                                       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN
                                                     &macro_SE       &lt_bl NUM LBKT &kp SPACE       &lt LWR TAB     &lt RSE ENTER   &kp LS(SPACE)   &lt_bl MOV RBKT
                     >;
-                    sensor-bindings = <&inc_dec_kp w_shift_ctrl_none_p &w_shift_ctrl_none_p>; // 例: 逆転時と正転時に同じ、あるいは別のモッドモーフを指定する場合usi
+                    sensor-bindings = <&scroll_up_down>;
                 };
 
                 LIN {
@@ -5367,7 +5367,7 @@
                     &mt_s LGUI Z    &kp X           &kp C           &kp V                                           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt_s LALT SLASH
                                                     &kp G           &lt_bl NUML ESC &mt LSHFT SPACE &lt LWRL TAB	&lt RSEL ENTER	&mt RSHFT SPACE &lt_bl MOVL ESC
                     >;
-                    sensor-bindings = <&encoder_msc_down_up>;
+                    sensor-bindings = <&scroll_left_right>;
                 };
 
                 NICL { 
@@ -5389,7 +5389,7 @@
                     &td_Z           &td_X           &td_C           &td_V                                           &td_B           &td_N           &td_M           &td_COMMA       &td_DOT         &td_SLASH
                                                     &td_G           &lt_bl NUMW INT5 &kp SPACE      &lt LWRW TAB    &lt RSEW ENTER	&mt RSHFT ESC   &lt_bl MOVW INT4 // INT4はALT+変換のAHKマクロ用
                     >;
-                    sensor-bindings = <&encoder_msc_down_up>;
+                    sensor-bindings = <&win_enc>;
                 };
 
                 WIN {
@@ -5400,7 +5400,7 @@
                     &kp Z           &kp X           &kp C           &kp V                                           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &kp SLASH
                                                     &kp G           &lt_bl NUMW ESC &kp SPACE      &lt LWRW TAB     &lt RSEW ENTER	&kp INT4        &lt_bl MOVW ESC
                     >;
-                    sensor-bindings = <&encoder_msc_down_up>;
+                    sensor-bindings = <&win_enc>;
                 };
 
                 LWR {
@@ -5477,7 +5477,7 @@
                     &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP                                       &kp LS(LEFT)    &kp LS(DOWN) &kp LS(LG(LEFT)) &kp LS(LA(LEFT)) &kp LS(LA(RIGHT)) &mt_S_G_RIGHT LGUI 0
                                                     &kp G           &to QWE         &sk_alt         &trans          &trans          &sk_gui	        &to CAD
                     >;
-                    sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+                    sensor-bindings = <&media_control>;
                 };
 
                 ADJL {
