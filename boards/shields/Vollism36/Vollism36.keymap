@@ -2980,7 +2980,14 @@
                     #sensor-binding-cells = <0>;
                     bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>;
                     tap-ms = <20>;
-                };   
+                };
+                
+                media_control: media-control {
+                    compatible = "zmk,behavior-sensor-rotate";
+                    #sensor-binding-cells = <0>;
+                    bindings = <&kp C_RW>, <&kp C_FF>;
+                    tap-ms = <10>;
+                };      
             };
 
             macros {
