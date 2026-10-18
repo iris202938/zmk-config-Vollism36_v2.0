@@ -5356,7 +5356,7 @@
                     &macro_JPTEN    &macro_HI	    &macro_SU       &macro_HU                                       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN
                                                     &macro_SE       &lt_bl NUM LBKT &kp SPACE       &lt LWR TAB     &lt RSE ENTER   &kp LS(SPACE)   &lt_bl MOV RBKT
                     >;
-                    sensor-bindings = <&scroll_left_right>;
+                    sensor-bindings = <&inc_dec_kp w_shift_ctrl_none_p &w_shift_ctrl_none_p>; // 例: 逆転時と正転時に同じ、あるいは別のモッドモーフを指定する場合usi
                 };
 
                 LIN {
