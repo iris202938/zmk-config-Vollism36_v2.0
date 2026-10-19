@@ -5363,7 +5363,7 @@
                     &macro_JPTEN    &macro_HI	    &macro_SU       &macro_HU                                       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN
                                                     &macro_SE       &lt_bl NUM LBKT &kp SPACE       &lt LWR TAB     &lt RSE ENTER   &kp LS(SPACE)   &lt_bl MOV RBKT
                     >;
-                    sensor-bindings = <&scroll_up_down>;
+                    sensor-bindings = <&mac_enc>;
                 };
 
                 LIN {
@@ -5374,7 +5374,7 @@
                     &mt_s LGUI Z    &kp X           &kp C           &kp V                                           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt_s LALT SLASH
                                                     &kp G           &lt_bl NUML ESC &mt LSHFT SPACE &lt LWRL TAB	&lt RSEL ENTER	&mt RSHFT SPACE &lt_bl MOVL ESC
                     >;
-                    sensor-bindings = <&scroll_left_right>;
+                    sensor-bindings = <&win_enc>;
                 };
 
                 NICL { 
@@ -5385,7 +5385,7 @@
                     &macro_JPTEN    &macro_HI	    &macro_SU       &macro_HU                                       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN
                                                     &macro_SE       &lt_bl NUML ESC &kp SPACE       &lt LWRL TAB    &lt RSEL ENTER  &kp LS(SPACE)   &lt_bl MOVL ESC
                     >;
-                    sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
+                    sensor-bindings = <&win_enc>;
                 };
 
                 CAD {
@@ -5418,7 +5418,7 @@
                     &mt_s LALT LC(V)  &mkp MB1      &mkp MB3        &mkp MB2		                                &trans          &mkp MB1        &kp LS(ENTER)   &kp LA(LEFT)    &kp LA(RIGHT)   &mt_cmd_v LGUI 0
                                                     &trans          &kp LSHFT       &sk_shft        &trans          &ht_lg1 ADJ 0   &kp LS(LC(V))   &kp RSHFT
                     >;
-                    sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
+                    sensor-bindings = <&mac_enc>;
                 };
 
                 LWRL {
@@ -5429,7 +5429,7 @@
                     &mt_s LGUI LC(V)  &mkp MB1      &mkp MB3        &mkp MB2		                                &kp LS(LA(LEFT)) &mkp MB1       &kp LS(ENTER)   &kp LC(LEFT)    &kp LC(RIGHT)   &mt_cmd_v LALT 0
                                                     &kp LS(LA(RIGHT)) &kp LSHFT     &sk_shft        &trans          &ht_it4 ADJL 0  &kp LS(LC(V))   &kp RSHFT
                     >;
-                    sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
+                    sensor-bindings = <&win_enc>;
                 };
 
                 LWRW {
@@ -5440,7 +5440,7 @@
                     &mt_s LGUI LC(V)  &mkp MB1      &mkp MB3        &mkp MB2		                                &kp LS(LA(LEFT)) &mkp MB1       &kp LS(ENTER)   &kp LC(LEFT)    &kp LC(RIGHT)   &mt_cmd_v LALT 0
                                                     &kp LS(LA(RIGHT)) &kp LSHFT     &sk_shft        &trans          &htW_it4 ADJW 0 &kp LS(LC(V))   &kp RSHFT
                     >;
-                    sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
+                    sensor-bindings = <&win_enc>;
                 };
 
                 RSE {
@@ -5451,7 +5451,7 @@
                     &mt_s LALT INT1 &kp BSLH        &kp INT3        &kp SLASH   		     		                &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &mt_cmd_v LGUI 0
                                                     &macro_JPN5     &kp LSHFT       &kp SPACE       &ht_lg2 ADJ 0   &trans          &sk_ctrl        &kp RSHFT
                     >;
-                    sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
+                    sensor-bindings = <&mac_enc>;
                 };
 
                 RSEL {
@@ -5462,7 +5462,7 @@
                     &mt_s LGUI INT1 &kp BSLH        &kp INT3        &kp SLASH   		     		                &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &mt_ctrl_v LALT 0
                                                     &kp N5          &kp LSHFT       &kp SPACE       &ht_it5 ADJL 0  &trans          &sk_ctrl        &kp RSHFT
                     >;
-                    sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
+                    sensor-bindings = <&win_enc>;
                 };
 
                 RSEW {
@@ -5473,7 +5473,7 @@
                     &mt_s LGUI INT1 &kp BSLH        &kp INT3        &kp SLASH   		     		                &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &mt_ctrl_v LALT 0
                                                     &kp N5          &kp LSHFT       &kp SPACE       &htC_it5 ADJW 0 &trans          &sk_ctrl        &kp RSHFT
                     >;
-                    sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
+                    sensor-bindings = <&win_enc>;
                 };
 
                 ADJ {
@@ -5495,7 +5495,7 @@
                     &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP                                       &kp LS(LEFT)    &kp LS(DOWN)    &kp LS(HOME) &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &mt_S_END LALT 0
                                                     &kp G           &to QWE         &sk_gui         &trans          &trans          &sk_alt	        &to CAD
                     >;
-                    sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+                    sensor-bindings = <&win_enc>;
                 };
 
                 ADJW {
@@ -5506,7 +5506,7 @@
                     &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP                                       &kp LS(LEFT)    &kp LS(DOWN)    &kp LS(HOME) &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &mt_S_END LALT 0
                                                     &kp G           &to QWE         &sk_gui         &trans          &trans          &sk_alt	        &to CAD
                     >;
-                    sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+                    sensor-bindings = <&win_enc>;
                 };
 
                 MOV {
@@ -5583,7 +5583,7 @@
                     &kp Z           &kp X           &kp C           &kp V                                           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &kp SLASH
                                                     &kp G           &kp LSHFT       &kp SPACE       &kp TAB         &kp ENTER	    &kp INT4        &kp RCTRL
                     >;
-                    sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
+                    sensor-bindings = <&win_enc>;
                 };
                 
                 AML {
@@ -5594,7 +5594,7 @@
                     &trans          &trans          &trans          &trans                                          &trans          &mkp MB1        &trans          &mkp MB3        &mkp MB2        &mt_s LALT SLASH
                                                     &trans          &trans          &mt LCTRL SPACE &trans          &trans          &kp RSHFT       &trans
                     >;
-                    sensor-bindings = <&encoder_msc_down_up>;
+                    sensor-bindings = <&win_enc>;
                 };
 
                 BLE {
@@ -5605,7 +5605,7 @@
                     &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3                                    &bootloader     &bootloader     &bt4_lLIN       &kp TILDE       &kp TILDE2      &kp K_CALC
                                                     &trans          &trans          &kp LS(LG(F23)) &bt BT_CLR      &bt BT_CLR      &kp LA(LG(G))   &trans
                     >;
-                    sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
+                    sensor-bindings = <&win_enc>;
                 };
             };
             v_sensors: sensors {
