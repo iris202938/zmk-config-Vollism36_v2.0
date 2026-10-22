@@ -371,7 +371,7 @@
             layers = <QWE>;
             input-processors = 
                 <&sensor_rotation>,
-                <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
+                <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>,
                 <&zip_temp_layer AML 100000>,
                 <&zip_xy_scaler 120 100>; // スケーリング（120/100）
         };
