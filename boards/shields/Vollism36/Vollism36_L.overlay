@@ -76,7 +76,7 @@
         sensor_rotation: sensor_rotation {
             compatible = "zmk,input-processor-sensor-rotation";
             #input-processor-cells = <0>;
-            rotation-angle = <135>;
+            rotation-angle = <60>;
             // rotation-angle = <0>;
         };
 
@@ -166,6 +166,7 @@
             layers = <MOVW>; 
             input-processors = 
                 <&sensor_rotation>,
+                <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>,
                 <&zip_xy_scaler 200 100>, 
                 <&xy_to_keys>;
             process-next;
@@ -184,6 +185,7 @@
             layers = <MOVL>;
             input-processors = 
                 <&sensor_rotation>,
+                <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>,
                 <&zip_xy_scaler 200 100>, 
                 <&xy_to_keys>;
             process-next;
@@ -202,6 +204,7 @@
             layers = <MOV>; 
             input-processors = 
                 <&sensor_rotation>, 
+                <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>,
                 <&zip_xy_scaler 200 100>, 
                 <&xy_to_keys>;
             process-next;
