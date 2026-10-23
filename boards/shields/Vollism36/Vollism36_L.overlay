@@ -127,6 +127,7 @@
             layers = <NUMW>;
             input-processors = 
                 <&sensor_rotation>,
+                <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>,
                 <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
                 <&zip_xy_scaler 1 30>,
                 <&zip_xy_to_scroll_mapper>,
@@ -140,6 +141,7 @@
             layers = <NUML>;
             input-processors = 
                 <&sensor_rotation>,
+                <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>,
                 <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
                 <&zip_xy_scaler 1 30>,
                 <&zip_xy_to_scroll_mapper>,
@@ -153,6 +155,7 @@
             layers = <NUM>;
             input-processors = 
                 <&sensor_rotation>,
+                <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>,
                 <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
                 <&zip_xy_scaler 1 30>,
                 <&zip_xy_to_scroll_mapper>,
@@ -258,6 +261,7 @@
             layers = <RSEW>;
             input-processors = 
                 <&sensor_rotation>,
+                <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>,
                 <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
                 <&zip_xy_scaler 1 30>,
                 <&zip_xy_to_scroll_mapper>,
@@ -271,6 +275,7 @@
             layers = <RSEL>;
             input-processors = 
                 <&sensor_rotation>,
+                <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>,
                 <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
                 <&zip_xy_scaler 1 30>,
                 <&zip_xy_to_scroll_mapper>,
@@ -284,6 +289,7 @@
             layers = <RSE>;
             input-processors = 
                 <&sensor_rotation>,
+                <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>,
                 <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
                 <&zip_xy_scaler 1 30>,
                 <&zip_xy_to_scroll_mapper>,
