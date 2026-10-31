@@ -517,7 +517,7 @@
         r_layer22 {
 			layers = <AML>; // レイヤー22がアクティブな場合
             input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
-							,  <&zip_xy_scaler 8 100> // スケーリング（8/100）
+							,  <&zip_xy_scaler 4 100> // スケーリング（4/100）
 							,  <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		// 	input-processors = <&zip_keybind_keys_freecad>; // zip_keybind_keys_freecad を使用
 		// 	process-next;
@@ -646,14 +646,14 @@
 		r_layer8 {
 			layers = <LWRW>; // レイヤー8がアクティブな場合
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
-							,  <&zip_xy_scaler 18 100> // スケーリング（18/100）
+							,  <&zip_xy_scaler 8 100> // スケーリング（8/100）
 							,  <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
 		r_layer7 {
 			layers = <LWRL>; // レイヤー7がアクティブな場合
             input-processors = <&zip_xy_scaler 40 100>; // 速度を40/100に設定 (乗数40, 除数100)
 			// input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
-			// 				, <&zip_xy_scaler 18 100> // スケーリング（18/100）
+			// 				, <&zip_xy_scaler 8 100> // スケーリング（8/100）
 			// 				, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
 		r_layer6 {
