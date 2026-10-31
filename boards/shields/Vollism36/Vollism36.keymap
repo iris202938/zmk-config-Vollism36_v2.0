@@ -1,3 +1,5 @@
+        #define ZMK_POINTING_DEFAULT_MOVE_VAL 600
+        #define ZMK_POINTING_DEFAULT_SCRL_VAL 80
 
         #include <behaviors.dtsi>
         #include <dt-bindings/zmk/bt.h>
@@ -7,10 +9,6 @@
         #include <dt-bindings/zmk/pointing.h>
         #include <behaviors/rgbled_widget.dtsi>
         #include <input/processors.dtsi>
-
-
-        #define ZMK_POINTING_DEFAULT_MOVE_VAL 600
-        #define ZMK_POINTING_DEFAULT_SCRL_VAL 10
 
         #define QWE 0
         #define NIC 1
@@ -36,6 +34,10 @@
         #define WINS 21
         #define AML 22
         #define BLE 23
+
+        &mkp_input_listener {
+            input-processors =< &zip_temp_layer AML 3000>;
+        };
 
         &mt {
             flavor = "hold-preferred";
@@ -178,7 +180,7 @@
                     timeout-ms = <80>;
                 };
                 combo_RGUI {
-                    bindings = <&kp LGUI>;
+                    bindings = <&kp RGUI>;
                     key-positions = <27 28>;
                     layers = <LIN CAD LWRL LWRW RSEL RSEW ADJL ADJW MOVL MOVW>;
                     timeout-ms = <80>;
@@ -521,13 +523,13 @@
                     bindings = <&shft_mb1>;
                     key-positions = <25 26 27>;
                     layers = <CAD LWRW AML>;
-                    timeout-ms = <70>;
+                    timeout-ms = <80>;
                 };
                 mb1_shft_cad_l {
                     bindings = <&shft_mb1>;
                     key-positions = <13 21 32>;
-                    layers = <CAD>;
-                    timeout-ms = <70>;
+                    layers = <CAD AML>;
+                    timeout-ms = <80>;
                 };
                 mb1_l_cad {
                     bindings = <&mkp MB1>;
@@ -547,12 +549,12 @@
                     layers = <QWE LIN CAD WINS>;
                     timeout-ms = <80>;
                 };
-                mb3_mb1 {
-                    bindings = <&mb3_mb1>;
-                    key-positions = <26 27 28>;
-                    layers = <LIN>;
-                    timeout-ms = <80>;
-                };
+                // mb3_mb1 {
+                //     bindings = <&mb3_mb1>;
+                //     key-positions = <26 27 28>;
+                //     layers = <LIN>;
+                //     timeout-ms = <80>;
+                // };
                 int5_g_c {
                     bindings = <&int5_g>;
                     key-positions = <18 28>;
@@ -2313,6 +2315,20 @@
                     tapping-term-ms = <200>;
                     bindings = <&kp>, <&ctrl_v>;
                 };
+                mt_S_G_RIGHT: mt_S_G_RIGHT {
+                    compatible = "zmk,behavior-hold-tap";
+                    #binding-cells = <2>;
+                    flavor = "tap-preferred";
+                    tapping-term-ms = <200>;
+                    bindings = <&kp>, <&S_G_RIGHT>;
+                };
+                mt_S_END: mt_S_END {  
+                    compatible = "zmk,behavior-hold-tap";
+                    #binding-cells = <2>;
+                    flavor = "tap-preferred";
+                    tapping-term-ms = <200>;
+                    bindings = <&kp>, <&S_END>;
+                };
                 // ① ホールド・タップの挙動を定義
                 // esc_ctrl_shift: esc_ctrl_shift {
                 //     compatible = "zmk,behavior-hold-tap";
@@ -2697,6 +2713,281 @@
                     tap-ms = <20>; 
                     // time-to-live-ms = <20>;
                 };
+                //encorder control WIN  
+                w_r_alt_p: win-right-alt-positive {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&kp 0>, <&kp RIGHT>;
+                    mods = <(MOD_RALT)>;
+                    keep-mods = <(MOD_RALT)>;
+                };
+                w_alt_p: win-alt-positive {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&w_r_alt_p>, <&kp TAB>;
+                    mods = <(MOD_LALT)>;
+                    keep-mods = <(MOD_LALT)>;
+                };
+                w_r_gui_p: win-right-gui-positive {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&kp 0>, <&kp LC(RIGHT)>;
+                    mods = <(MOD_RGUI)>;
+                    keep-mods = <(MOD_RGUI)>;
+                };
+                w_gui_p: win-gui-positive {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&w_r_gui_p>, <&kp RIGHT>;
+                    mods = <(MOD_LGUI)>;
+                    keep-mods = <(MOD_LGUI)>;
+                };
+                w_alt_gui_p: win-alt-gui-positive {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&w_gui_p>, <&w_alt_p>;
+                    mods = <(MOD_LALT|MOD_RALT)>;
+                };
+                w_r_ctrl_p: win-right-ctrl-positive {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&kp 0>, <&kp TAB>;
+                    mods = <(MOD_RCTL)>;
+                    keep-mods = <(MOD_RCTL)>;
+                };
+                w_ctrl_p: win-ctrl-positive {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&w_r_ctrl_p>, <&kp DOWN>;
+                    mods = <(MOD_LCTL)>;
+                    keep-mods = <(MOD_LCTL)>;
+                };
+                w_shift_p: win-shift-positive {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&none>, <&kp RIGHT>;
+                    mods = <(MOD_RSFT|MOD_LSFT)>;
+                }; 
+                w_shift_ctrl_p: win-shift-ctrl-positive {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&w_shift_p>, <&w_ctrl_p>;
+                    mods = <(MOD_LCTL|MOD_RCTL)>;
+                };
+                w_shift_ctrl_none_p: win_shift-ctrl-none-positive {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&kp C_VOL_UP>, <&w_shift_ctrl_p>;
+                    mods = <(MOD_LSFT|MOD_LCTL|MOD_RSFT|MOD_RCTL)>;
+                };
+                win_enc_p: win-enc-positive {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&w_shift_ctrl_none_p>, <&w_alt_gui_p>;
+                    mods = <(MOD_LALT|MOD_LGUI|MOD_RALT|MOD_RGUI)>;
+                };
+
+                w_r_alt_n: win-right-alt-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&kp 0>, <&kp LEFT>;
+                    mods = <(MOD_RALT)>;
+                    keep-mods = <(MOD_RALT)>;
+                };
+                w_alt_n: win-alt-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&w_r_alt_n>, <&kp LS(TAB)>;
+                    mods = <(MOD_LALT)>;
+                    keep-mods = <(MOD_LALT)>;
+                };
+                w_r_gui_n: win-right-gui-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&kp 0>, <&kp LC(LEFT)>;
+                    mods = <(MOD_RGUI)>;
+                    keep-mods = <(MOD_RGUI)>;
+                };
+                w_gui_n: win-gui-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&w_r_gui_n>, <&kp LEFT>;
+                    mods = <(MOD_LGUI)>;
+                    keep-mods = <(MOD_LGUI)>;
+                };
+                w_alt_gui_n: win-alt-gui-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&w_gui_n>, <&w_alt_n>;
+                    mods = <(MOD_LALT|MOD_RALT)>;
+                };
+                w_r_ctrl_n: win-right-ctrl-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&kp 0>, <&kp LS(TAB)>;
+                    mods = <(MOD_RCTL)>;
+                    keep-mods = <(MOD_RCTL)>;
+                };
+                w_ctrl_n: win-ctrl-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&w_r_ctrl_n>, <&kp UP>;
+                    mods = <(MOD_LCTL)>;
+                };
+                w_shift_n: win-shift-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&none>, <&kp LEFT>;
+                    mods = <(MOD_RSFT|MOD_LSFT)>;
+                };
+                w_shift_ctrl_n: win-shift-ctrl-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&w_shift_n>, <&w_ctrl_n>;
+                    mods = <(MOD_LCTL|MOD_RCTL)>;
+                };
+                w_shift_ctrl_none_n: win_shift-ctrl-none-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&kp C_VOL_DN>, <&w_shift_ctrl_n>;
+                    mods = <(MOD_LSFT|MOD_LCTL|MOD_RSFT|MOD_RCTL)>;
+                };
+                win_enc_n: win-enc-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&w_shift_ctrl_none_n>, <&w_alt_gui_n>;
+                    mods = <(MOD_LALT|MOD_LGUI|MOD_RALT|MOD_RGUI)>;
+                };
+
+                win_enc: win-enc {
+                    compatible = "zmk,behavior-sensor-rotate";
+                    #sensor-binding-cells = <0>;
+                    bindings = <&win_enc_n>, <&win_enc_p>;
+                    tap-ms = <10>;
+                };
+
+            //encorder control MAC
+
+                //app select    
+                m_gui_p: mac-gui-positive {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&none>, <&kp TAB>;
+                    mods = <(MOD_LGUI|MOD_RGUI)>;
+                    keep-mods = <(MOD_LGUI)>;
+                };
+                //browser tab move
+                m_r_ctrl_p: mac-right-ctrl-positive {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&kp 0>, <&kp TAB>;
+                    mods = <(MOD_RCTL)>;
+                    keep-mods = <(MOD_RCTL)>;
+                };
+                m_ctrl_p: mac-ctrl-positive {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&m_r_ctrl_p>, <&kp DOWN>;
+                    mods = <(MOD_LCTL)>;
+                }; 
+                m_shift_p: mac-shift-positive {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&none>, <&kp RIGHT>;
+                    mods = <(MOD_RSFT|MOD_LSFT)>;
+                }; 
+                m_shift_ctrl_p: mac-shift-ctrl-positive {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&m_shift_p>, <&m_ctrl_p>;
+                    mods = <(MOD_LCTL|MOD_RCTL)>;
+                };
+                m_shift_ctrl_none_p: mac_shift-ctrl-none-positive {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&kp C_VOL_UP>, <&m_shift_ctrl_p>;
+                    mods = <(MOD_LSFT|MOD_LCTL|MOD_RSFT|MOD_RCTL)>;
+                };
+                mac_enc_p: mac-enc-positive {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&m_shift_ctrl_none_p>, <&m_gui_p>;
+                    mods = <(MOD_LGUI|MOD_RGUI)>;
+                };
+                //app select    
+                m_gui_n: mac-gui-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&none>, <&kp LS(TAB)>;
+                    mods = <(MOD_LGUI|MOD_RGUI)>;
+                    keep-mods = <(MOD_LGUI)>;
+                };
+                //browser tab move
+                m_r_ctrl_n: mac-right-ctrl-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&kp 0>, <&kp LS(TAB)>;
+                    mods = <(MOD_RCTL)>;
+                    keep-mods = <(MOD_RCTL)>;
+                };
+                m_ctrl_n: mac-ctrl-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&m_r_ctrl_n>, <&kp UP>;
+                    mods = <(MOD_LCTL)>;
+                }; 
+                m_shift_n: mac-shift-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&none>, <&kp LEFT>;
+                    mods = <(MOD_RSFT|MOD_LSFT)>; 
+                }; 
+                m_shift_ctrl_n: mac-shift-ctrl-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&m_shift_n>, <&m_ctrl_n>;
+                    mods = <(MOD_LCTL|MOD_RCTL)>;
+                };
+                m_shift_ctrl_none_n: mac_shift-ctrl-none-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&kp C_VOL_DN>, <&m_shift_ctrl_n>;
+                    mods = <(MOD_LSFT|MOD_LCTL|MOD_RSFT|MOD_RCTL)>;
+                };
+                mac_enc_n: mac-enc-negative {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&m_shift_ctrl_none_n>, <&m_gui_n>;
+                    mods = <(MOD_LGUI|MOD_RGUI)>;
+                };
+            
+                mac_enc: mac-enc {
+                    compatible = "zmk,behavior-sensor-rotate";
+                    #sensor-binding-cells = <0>;
+                    bindings = <&mac_enc_n>, <&mac_enc_p>;
+                    tap-ms = <10>;
+                };
+                
+                scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
+                    compatible = "zmk,behavior-sensor-rotate";
+                    #sensor-binding-cells = <0>;
+                    bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+                    tap-ms = <20>;
+                }; 
+                
+                scroll_left_right: behavior_sensor_rotate_mouse_wheel_left_right {
+                    compatible = "zmk,behavior-sensor-rotate";
+                    #sensor-binding-cells = <0>;
+                    bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>;
+                    tap-ms = <20>;
+                };
+                
+                media_control: media-control {
+                    compatible = "zmk,behavior-sensor-rotate";
+                    #sensor-binding-cells = <0>;
+                    bindings = <&kp C_RW>, <&kp C_FF>;
+                    tap-ms = <10>;
+                };      
             };
 
             macros {
@@ -2875,6 +3166,26 @@
                         = <&macro_press &kp LCTRL>
                         , <&macro_tap &kp V>
                         , <&macro_release &kp LCTRL>
+                        ;
+                };
+                S_G_RIGHT: S_G_RIGHT {
+                    compatible = "zmk,behavior-macro";
+                    #binding-cells = <0>;
+                    bindings
+                        = <&macro_press &kp LSHFT>
+                        , <&macro_press &kp LGUI>
+                        , <&macro_tap &kp RIGHT>
+                        , <&macro_release &kp LGUI>
+                        , <&macro_release &kp LSHFT>
+                        ;
+                };
+                S_END: S_END {
+                    compatible = "zmk,behavior-macro";
+                    #binding-cells = <0>;
+                    bindings
+                        = <&macro_press &kp LSHFT>
+                        , <&macro_tap &kp END>
+                        , <&macro_release &kp LSHFT>
                         ;
                 };
                 shft_mb1: shft_mb1 { // Shiftキー+左クリック
@@ -3223,16 +3534,16 @@
                         , <&macro_tap     &kp S>
                         ;
                 };
-                mb3_mb1: mb3_mb1 { //FreeCADのマウスボタン3+1 (トグル動作例)
-                    compatible = "zmk,behavior-macro";
-                    #binding-cells = <0>;
-                    bindings
-                        = <&macro_press &mkp MB3>
-                        , <&macro_press &mkp MB1>
-                        , <&macro_pause_for_release>
-                        , <&macro_release &mkp MB3>
-                        , <&macro_release &mkp MB1>;
-                };
+                // mb3_mb1: mb3_mb1 { //FreeCADのマウスボタン3+1 (トグル動作例)
+                //     compatible = "zmk,behavior-macro";
+                //     #binding-cells = <0>;
+                //     bindings
+                //         = <&macro_press &mkp MB3>
+                //         , <&macro_press &mkp MB1>
+                //         , <&macro_pause_for_release>
+                //         , <&macro_release &mkp MB3>
+                //         , <&macro_release &mkp MB1>;
+                // };
                 // // HiMacroから変換：コピー ➔ 画面切り替え ➔ 貼り付け ➔ 元の画面に戻る
                 // ecl_transfer: ecl_transfer {
                 //     compatible = "zmk,behavior-macro";
@@ -5041,7 +5352,7 @@
                     &mt LALT Z      &kp X           &kp C           &kp V                                           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt LGUI SLASH
                                                     &kp G           &lt_bl NUM LBKT &mt LSHFT SPACE &lt LWR TAB     &lt RSE ENTER   &mt RSHFT SPACE &lt_bl MOV RBKT
                     >;
-                    sensor-bindings = <&encoder_msc_down_up>;
+                    sensor-bindings = <&mac_enc>;
                 };
 
                 NIC { 
@@ -5052,7 +5363,7 @@
                     &macro_JPTEN    &macro_HI	    &macro_SU       &macro_HU                                       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN
                                                     &macro_SE       &lt_bl NUM LBKT &kp SPACE       &lt LWR TAB     &lt RSE ENTER   &kp LS(SPACE)   &lt_bl MOV RBKT
                     >;
-                    sensor-bindings = <&inc_dec_kp LC(PG_UP) LC(PG_DN)>;
+                    sensor-bindings = <&mac_enc>;
                 };
 
                 LIN {
@@ -5063,7 +5374,7 @@
                     &mt_s LGUI Z    &kp X           &kp C           &kp V                                           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt_s LALT SLASH
                                                     &kp G           &lt_bl NUML ESC &mt LSHFT SPACE &lt LWRL TAB	&lt RSEL ENTER	&mt RSHFT SPACE &lt_bl MOVL ESC
                     >;
-                    sensor-bindings = <&inc_dec_kp LC(PG_DN) LC(PG_UP)>;
+                    sensor-bindings = <&win_enc>;
                 };
 
                 NICL { 
@@ -5074,7 +5385,7 @@
                     &macro_JPTEN    &macro_HI	    &macro_SU       &macro_HU                                       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN
                                                     &macro_SE       &lt_bl NUML ESC &kp SPACE       &lt LWRL TAB    &lt RSEL ENTER  &kp LS(SPACE)   &lt_bl MOVL ESC
                     >;
-                    sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
+                    sensor-bindings = <&win_enc>;
                 };
 
                 CAD {
@@ -5085,7 +5396,7 @@
                     &td_Z           &td_X           &td_C           &td_V                                           &td_B           &td_N           &td_M           &td_COMMA       &td_DOT         &td_SLASH
                                                     &td_G           &lt_bl NUMW INT5 &kp SPACE      &lt LWRW TAB    &lt RSEW ENTER	&mt RSHFT ESC   &lt_bl MOVW INT4 // INT4はALT+変換のAHKマクロ用
                     >;
-                    sensor-bindings = <&inc_dec_kp LC(PG_DN) LC(PG_UP)>;
+                    sensor-bindings = <&win_enc>;
                 };
 
                 WIN {
@@ -5096,7 +5407,7 @@
                     &kp Z           &kp X           &kp C           &kp V                                           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &kp SLASH
                                                     &kp G           &lt_bl NUMW ESC &kp SPACE      &lt LWRW TAB     &lt RSEW ENTER	&kp INT4        &lt_bl MOVW ESC
                     >;
-                    sensor-bindings = <&inc_dec_kp LC(PG_UP) LC(PG_DN)>;
+                    sensor-bindings = <&win_enc>;
                 };
 
                 LWR {
@@ -5107,7 +5418,7 @@
                     &mt_s LALT LC(V)  &mkp MB1      &mkp MB3        &mkp MB2		                                &trans          &mkp MB1        &kp LS(ENTER)   &kp LA(LEFT)    &kp LA(RIGHT)   &mt_cmd_v LGUI 0
                                                     &trans          &kp LSHFT       &sk_shft        &trans          &ht_lg1 ADJ 0   &kp LS(LC(V))   &kp RSHFT
                     >;
-                    sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
+                    sensor-bindings = <&mac_enc>;
                 };
 
                 LWRL {
@@ -5118,7 +5429,7 @@
                     &mt_s LGUI LC(V)  &mkp MB1      &mkp MB3        &mkp MB2		                                &kp LS(LA(LEFT)) &mkp MB1       &kp LS(ENTER)   &kp LC(LEFT)    &kp LC(RIGHT)   &mt_cmd_v LALT 0
                                                     &kp LS(LA(RIGHT)) &kp LSHFT     &sk_shft        &trans          &ht_it4 ADJL 0  &kp LS(LC(V))   &kp RSHFT
                     >;
-                    sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
+                    sensor-bindings = <&win_enc>;
                 };
 
                 LWRW {
@@ -5129,7 +5440,7 @@
                     &mt_s LGUI LC(V)  &mkp MB1      &mkp MB3        &mkp MB2		                                &kp LS(LA(LEFT)) &mkp MB1       &kp LS(ENTER)   &kp LC(LEFT)    &kp LC(RIGHT)   &mt_cmd_v LALT 0
                                                     &kp LS(LA(RIGHT)) &kp LSHFT     &sk_shft        &trans          &htW_it4 ADJW 0 &kp LS(LC(V))   &kp RSHFT
                     >;
-                    sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
+                    sensor-bindings = <&win_enc>;
                 };
 
                 RSE {
@@ -5140,7 +5451,7 @@
                     &mt_s LALT INT1 &kp BSLH        &kp INT3        &kp SLASH   		     		                &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &mt_cmd_v LGUI 0
                                                     &macro_JPN5     &kp LSHFT       &kp SPACE       &ht_lg2 ADJ 0   &trans          &sk_ctrl        &kp RSHFT
                     >;
-                    sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
+                    sensor-bindings = <&mac_enc>;
                 };
 
                 RSEL {
@@ -5151,7 +5462,7 @@
                     &mt_s LGUI INT1 &kp BSLH        &kp INT3        &kp SLASH   		     		                &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &mt_ctrl_v LALT 0
                                                     &kp N5          &kp LSHFT       &kp SPACE       &ht_it5 ADJL 0  &trans          &sk_ctrl        &kp RSHFT
                     >;
-                    sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
+                    sensor-bindings = <&win_enc>;
                 };
 
                 RSEW {
@@ -5162,7 +5473,7 @@
                     &mt_s LGUI INT1 &kp BSLH        &kp INT3        &kp SLASH   		     		                &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &mt_ctrl_v LALT 0
                                                     &kp N5          &kp LSHFT       &kp SPACE       &htC_it5 ADJW 0 &trans          &sk_ctrl        &kp RSHFT
                     >;
-                    sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
+                    sensor-bindings = <&win_enc>;
                 };
 
                 ADJ {
@@ -5170,10 +5481,10 @@
                 // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
                     &mt_s LSHFT F11 &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP                                    &kp CAPS        &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp LS(UP)
                     &kp LCTRL       &usb_lCAD       &bt3_lCAD       &kp LS(RIGHT)                                                   &kp INT5        &file_r         &pr_pg          &nx_pg          &file_f
-                    &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP                                       &kp LS(LEFT)    &kp LS(DOWN) &kp LS(LG(LEFT)) &kp LS(LA(LEFT)) &kp LS(LA(RIGHT)) &kp LS(LG(RIGHT))
+                    &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP                                       &kp LS(LEFT)    &kp LS(DOWN) &kp LS(LG(LEFT)) &kp LS(LA(LEFT)) &kp LS(LA(RIGHT)) &mt_S_G_RIGHT LGUI 0
                                                     &kp G           &to QWE         &sk_alt         &trans          &trans          &sk_gui	        &to CAD
                     >;
-                    sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+                    sensor-bindings = <&media_control>;
                 };
 
                 ADJL {
@@ -5181,10 +5492,10 @@
                 // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
                     &mt_s LSHFT F11 &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP                                    &kp CAPS        &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp LS(UP)
                     &kp LCTRL       &usb_lCAD       &bt3_lCAD       &kp LS(RIGHT)                                                   &kp INT5        &file_r         &pr_pg          &nx_pg          &file_f
-                    &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP                                       &kp LS(LEFT)    &kp LS(DOWN)    &kp LS(HOME) &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)
+                    &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP                                       &kp LS(LEFT)    &kp LS(DOWN)    &kp LS(HOME) &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &mt_S_END LALT 0
                                                     &kp G           &to QWE         &sk_gui         &trans          &trans          &sk_alt	        &to CAD
                     >;
-                    sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+                    sensor-bindings = <&win_enc>;
                 };
 
                 ADJW {
@@ -5192,10 +5503,10 @@
                 // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
                     &mt_s LSHFT F11 &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP                                    &kp CAPS        &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp LS(UP)
                     &kp LCTRL       &usb_lCAD       &bt3_lCAD       &kp LS(RIGHT)                                                   &kp INT5        &file_r         &pr_pg          &nx_pg          &file_f
-                    &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP                                       &kp LS(LEFT)    &kp LS(DOWN)    &kp LS(HOME) &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)
+                    &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP                                       &kp LS(LEFT)    &kp LS(DOWN)    &kp LS(HOME) &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &mt_S_END LALT 0
                                                     &kp G           &to QWE         &sk_gui         &trans          &trans          &sk_alt	        &to CAD
                     >;
-                    sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+                    sensor-bindings = <&win_enc>;
                 };
 
                 MOV {
@@ -5217,7 +5528,7 @@
                     &mt_s LGUI Z    &kp LA(LEFT)    &mkp MB3        &kp LA(RIGHT)                                   &kp LC(TAB)     &kp LC(Z)       &kp LC(PG_UP)   &kp LG(LBKT)    &kp LG(RBKT)    &kp LC(PG_DN)
                                                     &msc SCRL_DOWN  &cp_tab         &cp_enter       &mkp MB2        &kp ENTER       &mkp MB1        &to LIN
                     >;
-                    sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
+                    sensor-bindings = <&encoder_msc_down_up>;
                 };
 
                 MOVW {
@@ -5272,7 +5583,7 @@
                     &kp Z           &kp X           &kp C           &kp V                                           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &kp SLASH
                                                     &kp G           &kp LSHFT       &kp SPACE       &kp TAB         &kp ENTER	    &kp INT4        &kp RCTRL
                     >;
-                    sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
+                    sensor-bindings = <&win_enc>;
                 };
                 
                 AML {
@@ -5280,10 +5591,10 @@
                 // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
                     &trans          &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &trans
                     &trans          &trans          &trans          &trans                                                          &trans          &trans          &trans          &trans          &kp RCTRL
-                    &trans          &trans          &trans          &mkp MB1                                        &trans          &mkp MB1        &trans          &mkp MB3        &mkp MB2        &trans
+                    &trans          &trans          &trans          &trans                                          &trans          &mkp MB1        &trans          &mkp MB3        &mkp MB2        &mt_s LALT SLASH
                                                     &trans          &trans          &mt LCTRL SPACE &trans          &trans          &kp RSHFT       &trans
                     >;
-                    sensor-bindings = <&inc_dec_kp LC(PG_DN) LC(PG_UP)>;
+                    sensor-bindings = <&win_enc>;
                 };
 
                 BLE {
@@ -5291,10 +5602,10 @@
                 // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
                     &sys_reset      &bootloader     &kp INT3        &kp INT6        &bt BT_CLR_ALL                                  &bt BT_CLR_ALL  &m_hi_con   	&kp GRAVE       &bootloader     &sys_reset
                     &kp LC(LG(T))   &kp LC(LG(C))   &kp LC(LG(P))   &kp LC(LG(G))                                                   &trans          &kp LC(LG(E))   &kp LC(LG(A))   &kp LC(LG(L))   &kp LC(LG(X))
-                    &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3                                    &bootloader     &bootloader     &bt4_lLIN       &kp TILDE       &kp TILDE2      &mb3_mb1
+                    &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3                                    &bootloader     &bootloader     &bt4_lLIN       &kp TILDE       &kp TILDE2      &kp K_CALC
                                                     &trans          &trans          &kp LS(LG(F23)) &bt BT_CLR      &bt BT_CLR      &kp LA(LG(G))   &trans
                     >;
-                    sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS)>;
+                    sensor-bindings = <&win_enc>;
                 };
             };
             v_sensors: sensors {
