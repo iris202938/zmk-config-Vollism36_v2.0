@@ -12,6 +12,8 @@ manifest:
       url-base: https://github.com/iris202938
     - name: hsgw
       url-base: https://github.com/hsgw
+    - name: mjmjm0101
+      url-base: https://github.com/mjmjm0101
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -19,7 +21,6 @@ manifest:
       revision: v0.3
       import: app/west.yml
     - name: zmk-pmw3610-driver
-      # remote: sayu-hub
       remote: badjeff
       revision: main
     - name: zmk-input-processor-keybind
@@ -38,6 +39,9 @@ manifest:
       path: modules/zmk-input-processor-report-rate-limit
     - name: zmk-analog-input-driver
       remote: badjeff
+      revision: main
+    - name: zmk-input-processor-scroll-inertia
+      remote: mjmjm0101
       revision: main
   self:
     path: config

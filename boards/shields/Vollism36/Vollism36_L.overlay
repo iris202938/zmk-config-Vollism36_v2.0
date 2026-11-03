@@ -93,6 +93,19 @@
     };
 };
 
+/ {
+    scroll_inertia_v: scroll_inertia_v {
+        compatible = "zmk,input-processor-scroll-inertia";
+        #input-processor-cells = <0>;
+
+        axis      = <1>;   /* 縦スクロール */
+        layer     = <4>;   /* 対象レイヤー */
+
+        scale     = <4>;   /* scroll_scalerと合わせる */
+        scale-div = <675>; /* scroll_scalerと合わせる */
+    };
+};
+
 //     // Ctrl + A, C: コピー
 // 	ctrl_a_c: ctrl_a_c {
 // 		compatible = "zmk,behavior-macro";
@@ -431,12 +444,18 @@
         ========================================================== */
         l_rsel {
             layers = <RSEL>;
-            input-processors = 
+            // input-processors = 
+            input-processors = <
+                &zip_y_scaler (-1) 1
+                &zip_xy_to_scroll_mapper
+                &scroll_inertia_v
+                &zip_scroll_scaler 4 675
+            >,
                 <&sensor_rotation>,
                 <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>,
                 <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
                 <&zip_xy_scaler 1 30>,
-                <&zip_xy_to_scroll_mapper>,
+                // <&zip_xy_to_scroll_mapper>,
                 <&zip_xy_scaler 0 1>; 
         };
 
