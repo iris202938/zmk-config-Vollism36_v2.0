@@ -99,7 +99,7 @@
         #input-processor-cells = <0>;
 
         axis      = <1>;   /* 縦スクロール */
-        layer     = <4>;   /* 対象レイヤー */
+        layer     = <RSEL>;   /* 対象レイヤー */
 
         scale     = <4>;   /* scroll_scalerと合わせる */
         scale-div = <675>; /* scroll_scalerと合わせる */
