@@ -3534,7 +3534,7 @@
                         , <&macro_tap     &kp S>
                         ;
                 };
-                 // 修飾キーを強制解除するマクロの定義
+                // 修飾キーを強制解除するマクロの定義
                 clear_mods: clear_mods {
                     compatible = "zmk,behavior-macro";
                     #binding-cells = <0>;
