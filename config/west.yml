@@ -12,6 +12,8 @@ manifest:
       url-base: https://github.com/iris202938
     - name: hsgw
       url-base: https://github.com/hsgw
+    - name: razilyis
+      url-base: https://github.com/razilyis
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -19,9 +21,8 @@ manifest:
       revision: v0.3
       import: app/west.yml
     - name: zmk-pmw3610-driver
-      # remote: sayu-hub
-      remote: badjeff
-      revision: main
+      remote: razilyis
+      revision: Dev-v0.3_inertial-scroll
     - name: zmk-input-processor-keybind
       remote: zettaface
       revision: main
@@ -41,4 +42,3 @@ manifest:
       revision: main
   self:
     path: config
-
