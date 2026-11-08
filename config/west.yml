@@ -12,6 +12,8 @@ manifest:
       url-base: https://github.com/iris202938
     - name: hsgw
       url-base: https://github.com/hsgw
+    - name: kot149
+      url-base: https://github.com/kot149
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -36,9 +38,11 @@ manifest:
       remote: badjeff
       revision: main
       path: modules/zmk-input-processor-report-rate-limit
+    - name: zmk-scroll-snap
+      remote: kot149
+      revision: v1
     - name: zmk-analog-input-driver
       remote: badjeff
       revision: main
   self:
     path: config
-

@@ -7,6 +7,7 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors/sensor_rotation.dtsi>
 #include <input/processors/zmk-input-processor-keybind.dtsi>
+#include <scroll-snap.dtsi>
 // #include <dt-bindings/zmk/input.h>
 
 #define QWE 0
@@ -289,6 +290,7 @@
                 <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
                 <&zip_xy_scaler 1 30>,
                 <&zip_xy_to_scroll_mapper>,
+                <&zip_scroll_snap>,
                 <&zip_xy_scaler 0 1>; 
         };
 
@@ -303,6 +305,7 @@
                 <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
                 <&zip_xy_scaler 1 30>,
                 <&zip_xy_to_scroll_mapper>,
+                <&zip_scroll_snap>,
                 <&zip_xy_scaler 0 1>; 
         };
 
@@ -317,6 +320,7 @@
                 <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
                 <&zip_xy_scaler 1 30>,
                 <&zip_xy_to_scroll_mapper>,
+                <&zip_scroll_snap>,
                 <&zip_xy_scaler 0 1>; 
         };
 
@@ -423,6 +427,7 @@
                 <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
                 <&zip_xy_scaler 1 30>,
                 <&zip_xy_to_scroll_mapper>,
+                <&zip_scroll_snap>,
                 <&zip_xy_scaler 0 1>; 
         };
 
@@ -437,6 +442,7 @@
                 <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
                 <&zip_xy_scaler 1 30>,
                 <&zip_xy_to_scroll_mapper>,
+                <&zip_scroll_snap>,
                 <&zip_xy_scaler 0 1>; 
         };
 
@@ -451,6 +457,7 @@
                 <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
                 <&zip_xy_scaler 1 30>,
                 <&zip_xy_to_scroll_mapper>,
+                <&zip_scroll_snap>,
                 <&zip_xy_scaler 0 1>; 
         };
 
@@ -676,7 +683,8 @@
 			layers = <AML>; // レイヤー22がアクティブな場合
             input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
 							,  <&zip_xy_scaler 4 100> // スケーリング（4/100）
-							,  <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
+							,  <&zip_xy_to_scroll_mapper> // スクロールイベントにマッピング
+							,  <&zip_scroll_snap>;
 		// 	input-processors = <&zip_keybind_keys_freecad>; // zip_keybind_keys_freecad を使用
 		// 	process-next;
 		// };
@@ -805,7 +813,8 @@
 			layers = <LWRW>; // レイヤー8がアクティブな場合
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
 							,  <&zip_xy_scaler 8 100> // スケーリング（8/100）
-							,  <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
+							,  <&zip_xy_to_scroll_mapper> // スクロールイベントにマッピング
+							,  <&zip_scroll_snap>;
 		};
 		r_layer7 {
 			layers = <LWRL>; // レイヤー7がアクティブな場合
@@ -818,7 +827,8 @@
 			layers = <LWR>; // レイヤー6がアクティブな場合
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
 							,  <&zip_xy_scaler 8 100> // スケーリング（8/100）
-							,  <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
+							,  <&zip_xy_to_scroll_mapper> // スクロールイベントにマッピング
+							,  <&zip_scroll_snap>;
 		};
 		r_layer5 {
 			layers = <WIN>; // レイヤー5がアクティブな場合
@@ -842,7 +852,8 @@
 			layers = <NICL>; // レイヤー3がアクティブな場合
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
 							, <&zip_xy_scaler 16 100> // スケーリング（16/100）
-							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
+							, <&zip_xy_to_scroll_mapper> // スクロールイベントにマッピング
+							, <&zip_scroll_snap>;
 		};
         r_layer2 {
 			layers = <LIN>; // レイヤー2がアクティブな場合
@@ -857,13 +868,15 @@
 			layers = <NIC>; // レイヤー1がアクティブな場合
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
 							, <&zip_xy_scaler 8 100> // スケーリング（8/100）
-							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
+							, <&zip_xy_to_scroll_mapper> // スクロールイベントにマッピング
+							, <&zip_scroll_snap>;
 		};
 		r_layer0 {
             layers = <QWE>;
             input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
                             , <&zip_xy_scaler 4 100> // スケーリング（4/100）
-                            , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
-        };
+		                    , <&zip_xy_to_scroll_mapper> // スクロールイベントにマッピング
+		                    , <&zip_scroll_snap>;
+		};
     };
 };
