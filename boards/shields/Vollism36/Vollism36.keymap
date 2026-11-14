@@ -771,6 +771,16 @@
                     layers = <NUMW>;
                     timeout-ms = <80>;
                 };
+                combo_ctrl_f_e {  // ECAD閉じる
+                    bindings = <&ctrl_f_e>;
+                    key-positions = <2 12>; // E,Dのキー位置に書き換えてください
+                    layers = <LWRW>;
+                    timeout-ms = <80>;
+                combo_ctrl_f_s {  // ECAD上書き保存
+                    bindings = <&ctrl_f_s>;
+                    key-positions = <1 11>; // W,Sのキー位置に書き換えてください
+                    layers = <LWRW>;
+                    timeout-ms = <80>;
                 // exl_ecd_paste {
                 //     bindings = <&exl_ecd_paste>;
                 //     key-positions = <0 10>;
