@@ -4225,6 +4225,18 @@
                         = <&macro_press &kp LCTRL>
                         , <&macro_tap &kp D>, <&macro_release &kp LCTRL>
                         , <&macro_tap &kp K>
+                        , <&macro_tap &kp TAB> //1
+                        , <&macro_tap &kp TAB> //2
+                        , <&macro_tap &kp TAB> //3
+                        , <&macro_tap &kp TAB> //4
+                        , <&macro_tap &kp TAB> //5
+                        , <&macro_tap &kp TAB> //6
+                        , <&macro_tap &kp TAB> //7
+                        , <&macro_tap &kp TAB> //8
+                        , <&macro_tap &kp TAB> //9
+                        , <&macro_tap &kp TAB> //10
+                        , <&macro_tap &kp N1>
+                        , <&macro_tap &kp ENTER>
                         ;
                 };
 
