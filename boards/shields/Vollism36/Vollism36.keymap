@@ -4863,8 +4863,11 @@
                     #binding-cells = <0>;
                     bindings
                         = <&macro_tap &kp Z>
+                        , <&macro_tap &mkp MB1>
                         , <&macro_tap &kp DOWN> // 下1
                         , <&macro_tap &kp DOWN> // 下2
+                        , <&macro_tap &kp DOWN> // 青
+                        , <&macro_tap &kp RIGHT> // 赤
                         // , <&macro_tap &kp ENTER>
                         ;
                 };
@@ -4875,11 +4878,14 @@
                     #binding-cells = <0>;
                     bindings
                         = <&macro_tap &kp Z>
+                        , <&macro_tap &mkp MB1>
                         , <&macro_tap &kp DOWN> // 下1
                         , <&macro_tap &kp DOWN> // 下2
-                        , <&macro_tap &kp RIGHT> // 右1
-                        , <&macro_tap &kp RIGHT> // 右2
-                        , <&macro_tap &kp RIGHT> // 右3
+                        , <&macro_tap &kp DOWN> // 青
+                        , <&macro_tap &kp RIGHT> // 赤
+                        , <&macro_tap &kp RIGHT> // ピンク
+                        , <&macro_tap &kp RIGHT> // 緑
+                        , <&macro_tap &kp RIGHT> // 薄青
                         // , <&macro_tap &kp ENTER>
                         ;
                 };
@@ -4890,12 +4896,13 @@
                     #binding-cells = <0>;
                     bindings
                         = <&macro_tap &kp Z>
+                        , <&macro_tap &mkp MB1>
                         , <&macro_tap &kp DOWN> // 下1
                         , <&macro_tap &kp DOWN> // 下2
-                        , <&macro_tap &kp RIGHT> // 右1
-                        , <&macro_tap &kp RIGHT> // 右2
-                        , <&macro_tap &kp RIGHT> // 右3
-                        , <&macro_tap &kp RIGHT> // 右4
+                        , <&macro_tap &kp DOWN> // 青
+                        , <&macro_tap &kp RIGHT> // 赤
+                        , <&macro_tap &kp RIGHT> // ピンク
+                        , <&macro_tap &kp RIGHT> // 緑
                         // , <&macro_tap &kp ENTER>
                         ;
                 };
@@ -4906,13 +4913,26 @@
                     #binding-cells = <0>;
                     bindings
                         = <&macro_tap &kp Z>
+                        , <&macro_tap &mkp MB1>
                         , <&macro_tap &kp DOWN> // 下1
                         , <&macro_tap &kp DOWN> // 下2
-                        , <&macro_tap &kp RIGHT> // 右1
-                        , <&macro_tap &kp RIGHT> // 右2
-                        , <&macro_tap &kp RIGHT> // 右3
-                        , <&macro_tap &kp RIGHT> // 右4
-                        , <&macro_tap &kp RIGHT> // 右5
+                        , <&macro_tap &kp DOWN> // 青
+                        , <&macro_tap &kp RIGHT> // 赤
+                        , <&macro_tap &kp RIGHT> // ピンク
+                        , <&macro_tap &kp RIGHT> // 緑
+                        , <&macro_tap &kp RIGHT> // 薄青
+                        , <&macro_tap &kp RIGHT> // 黄
+                        , <&macro_tap &kp RIGHT> // 白
+                        // , <&macro_tap &kp ENTER>
+                        ;
+                };
+                
+                tab_1: tab_1 { // TAB*回数
+                    compatible = "zmk,behavior-macro";
+                    wait-ms = <30>;
+                    tap-ms = <30>;
+                    #binding-cells = <0>;
+                    bindings
                         , <&macro_tap &kp RIGHT> // 右6
                         // , <&macro_tap &kp ENTER>
                         ;
