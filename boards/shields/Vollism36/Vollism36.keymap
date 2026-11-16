@@ -4933,16 +4933,6 @@
                     tap-ms = <30>;
                     #binding-cells = <0>;
                     bindings
-                        , <&macro_tap &kp RIGHT> // 右6
-                        // , <&macro_tap &kp ENTER>
-                        ;
-                };
-                tab_1: tab_1 { // TAB*回数
-                    compatible = "zmk,behavior-macro";
-                    wait-ms = <30>;
-                    tap-ms = <30>;
-                    #binding-cells = <0>;
-                    bindings
                         = <&macro_tap &kp TAB>
                         ;
                 };
