@@ -783,21 +783,33 @@
                     layers = <LWRW>;
                     timeout-ms = <80>;
                 };
+                combo_z_blue {  // ECAD属性変更 青
+                    bindings = <&z_blue>;
+                    key-positions = <19 23>; // Z,Bのキー位置に書き換えてください
+                    layers = <LWRW>;
+                    timeout-ms = <80>;
+                };
                 combo_z_red {  // ECAD属性変更 赤
                     bindings = <&z_red>;
                     key-positions = <19 3>; // Z,Rのキー位置に書き換えてください
                     layers = <LWRW>;
                     timeout-ms = <80>;
                 };
-                combo_z_light_blue {  // ECAD属性変更 薄青
-                    bindings = <&z_light_blue>;
-                    key-positions = <19 23>; // Z,Bのキー位置に書き換えてください
-                    layers = <LWRW>;
-                    timeout-ms = <80>;
-                };
                 combo_z_green {  // ECAD属性変更 緑
                     bindings = <&z_green>;
                     key-positions = <19 29>; // Z,Gのキー位置に書き換えてください
+                    layers = <LWRW>;
+                    timeout-ms = <80>;
+                };
+                combo_z_light_blue {  // ECAD属性変更 薄青
+                    bindings = <&z_light_blue>;
+                    key-positions = <19 17>; // Z,Lのキー位置に書き換えてください
+                    layers = <LWRW>;
+                    timeout-ms = <80>;
+                };
+                combo_z_yellow {  // ECAD属性変更 黄
+                    bindings = <&z_yellow>;
+                    key-positions = <19 5>; // Z,Yのキー位置に書き換えてください
                     layers = <LWRW>;
                     timeout-ms = <80>;
                 };
@@ -4856,37 +4868,37 @@
                         , <&macro_release &kp LALT>
                         ;
                 };
+                z_blue: z_blue { // ECAD属性変更 青
+                    compatible = "zmk,behavior-macro";
+                    wait-ms = <30>;
+                    tap-ms = <30>;
+                    #binding-cells = <0>;
+                    bindings
+                        // = <&macro_tap &kp Z>
+                        // , <&macro_tap &mkp MB1>
+                        = <&macro_tap &kp ENTER>
+                        , <&macro_wait_time 80>
+                        , <&macro_tap &kp DOWN> // 下1
+                        , <&macro_tap &kp DOWN> // 下2
+                        , <&macro_tap &kp DOWN> // 青
+                        , <&macro_tap &kp ENTER>
+                        ;
+                };
                 z_red: z_red { // ECAD属性変更 赤
                     compatible = "zmk,behavior-macro";
                     wait-ms = <30>;
                     tap-ms = <30>;
                     #binding-cells = <0>;
                     bindings
-                        = <&macro_tap &kp Z>
-                        , <&macro_tap &mkp MB1>
+                        // = <&macro_tap &kp Z>
+                        // , <&macro_tap &mkp MB1>
+                        = <&macro_tap &kp ENTER>
+                        , <&macro_wait_time 80>
                         , <&macro_tap &kp DOWN> // 下1
                         , <&macro_tap &kp DOWN> // 下2
                         , <&macro_tap &kp DOWN> // 青
                         , <&macro_tap &kp RIGHT> // 赤
-                        // , <&macro_tap &kp ENTER>
-                        ;
-                };
-                z_light_blue: z_light_blue { // ECAD属性変更 薄青
-                    compatible = "zmk,behavior-macro";
-                    wait-ms = <30>;
-                    tap-ms = <30>;
-                    #binding-cells = <0>;
-                    bindings
-                        = <&macro_tap &kp Z>
-                        , <&macro_tap &mkp MB1>
-                        , <&macro_tap &kp DOWN> // 下1
-                        , <&macro_tap &kp DOWN> // 下2
-                        , <&macro_tap &kp DOWN> // 青
-                        , <&macro_tap &kp RIGHT> // 赤
-                        , <&macro_tap &kp RIGHT> // ピンク
-                        , <&macro_tap &kp RIGHT> // 緑
-                        , <&macro_tap &kp RIGHT> // 薄青
-                        // , <&macro_tap &kp ENTER>
+                        , <&macro_tap &kp ENTER>
                         ;
                 };
                 z_green: z_green { // ECAD属性変更 緑
@@ -4895,15 +4907,58 @@
                     tap-ms = <30>;
                     #binding-cells = <0>;
                     bindings
-                        = <&macro_tap &kp Z>
-                        , <&macro_tap &mkp MB1>
+                        // = <&macro_tap &kp Z>
+                        // , <&macro_tap &mkp MB1>
+                        = <&macro_tap &kp ENTER>
+                        , <&macro_wait_time 80>
                         , <&macro_tap &kp DOWN> // 下1
                         , <&macro_tap &kp DOWN> // 下2
                         , <&macro_tap &kp DOWN> // 青
                         , <&macro_tap &kp RIGHT> // 赤
                         , <&macro_tap &kp RIGHT> // ピンク
                         , <&macro_tap &kp RIGHT> // 緑
-                        // , <&macro_tap &kp ENTER>
+                        , <&macro_tap &kp ENTER>
+                        ;
+                };
+                z_light_blue: z_light_blue { // ECAD属性変更 薄青
+                    compatible = "zmk,behavior-macro";
+                    wait-ms = <30>;
+                    tap-ms = <30>;
+                    #binding-cells = <0>;
+                    bindings
+                        // = <&macro_tap &kp Z>
+                        // , <&macro_tap &mkp MB1>
+                        = <&macro_tap &kp ENTER>
+                        , <&macro_wait_time 80>
+                        , <&macro_tap &kp DOWN> // 下1
+                        , <&macro_tap &kp DOWN> // 下2
+                        , <&macro_tap &kp DOWN> // 青
+                        , <&macro_tap &kp RIGHT> // 赤
+                        , <&macro_tap &kp RIGHT> // ピンク
+                        , <&macro_tap &kp RIGHT> // 緑
+                        , <&macro_tap &kp RIGHT> // 薄青
+                        , <&macro_tap &kp ENTER>
+                        ;
+                };
+                z_yellow: z_yellow { // ECAD属性変更 黄
+                    compatible = "zmk,behavior-macro";
+                    wait-ms = <30>;
+                    tap-ms = <30>;
+                    #binding-cells = <0>;
+                    bindings
+                        // = <&macro_tap &kp Z>
+                        // , <&macro_tap &mkp MB1>
+                        = <&macro_tap &kp ENTER>
+                        , <&macro_wait_time 80>
+                        , <&macro_tap &kp DOWN> // 下1
+                        , <&macro_tap &kp DOWN> // 下2
+                        , <&macro_tap &kp DOWN> // 青
+                        , <&macro_tap &kp RIGHT> // 赤
+                        , <&macro_tap &kp RIGHT> // ピンク
+                        , <&macro_tap &kp RIGHT> // 緑
+                        , <&macro_tap &kp RIGHT> // 薄青
+                        , <&macro_tap &kp RIGHT> // 黄
+                        , <&macro_tap &kp ENTER>
                         ;
                 };
                 z_white: z_white { // ECAD属性変更 白
@@ -4912,8 +4967,10 @@
                     tap-ms = <30>;
                     #binding-cells = <0>;
                     bindings
-                        = <&macro_tap &kp Z>
-                        , <&macro_tap &mkp MB1>
+                        // = <&macro_tap &kp Z>
+                        // , <&macro_tap &mkp MB1>
+                        = <&macro_tap &kp ENTER>
+                        , <&macro_wait_time 80>
                         , <&macro_tap &kp DOWN> // 下1
                         , <&macro_tap &kp DOWN> // 下2
                         , <&macro_tap &kp DOWN> // 青
@@ -4923,7 +4980,7 @@
                         , <&macro_tap &kp RIGHT> // 薄青
                         , <&macro_tap &kp RIGHT> // 黄
                         , <&macro_tap &kp RIGHT> // 白
-                        // , <&macro_tap &kp ENTER>
+                        , <&macro_tap &kp ENTER>
                         ;
                 };
                 
