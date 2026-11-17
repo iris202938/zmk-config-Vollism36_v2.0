@@ -645,6 +645,20 @@
 			wait-ms = <0>; // 待機時間
 			tap-ms = <50>; // タップ時間
 	};
+    zip_keybind_keys_ECAD: zip_keybind_keys_ECAD {
+			compatible = "zmk,input-processor-keybind";
+			#input-processor-cells = <0>;
+		// track_remainders;
+			bindings 
+                = <&nx_pg>
+				, <&pr_pg>
+				, <&file_r>
+				, <&file_f>
+				;
+			tick = <100>; // ティック間隔
+			wait-ms = <5>; // 待機時間
+			tap-ms = <40>; // タップ時間
+	};
     zip_keybind_keys_freecad: zip_keybind_keys_freecad {
 		compatible = "zmk,input-processor-keybind";
 		#input-processor-cells = <0>;
