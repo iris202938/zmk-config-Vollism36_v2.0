@@ -819,6 +819,12 @@
                     layers = <LWRW>;
                     timeout-ms = <80>;
                 };
+                combo_macro_unzip {  // 解凍
+                    bindings = <&macro_unzip>;
+                    key-positions = <13 22>; // F,Vのキー位置に書き換えてください
+                    layers = <ADJL ADJW>;
+                    timeout-ms = <80>;
+                };
                 // exl_ecd_paste {
                 //     bindings = <&exl_ecd_paste>;
                 //     key-positions = <0 10>;
@@ -4275,6 +4281,7 @@
                         = <&macro_press &kp LCTRL>
                         , <&macro_tap &kp D>, <&macro_release &kp LCTRL>
                         , <&macro_tap &kp K>
+                        , <&macro_wait_time 80>
                         , <&macro_tap &kp TAB> //1
                         , <&macro_tap &kp TAB> //2
                         , <&macro_tap &kp TAB> //3
@@ -5455,6 +5462,27 @@
                         , <&macro_tap &kp H>         // ホームタブ
                         , <&macro_tap &kp O>         // 書式(Format)
                         , <&macro_tap &kp R>;        // シート名の変更(Rename)
+                };
+                // 解凍
+                macro_unzip: macro_unzip {
+                    compatible = "zmk,behavior-macro";
+                    #binding-cells = <0>;
+                    wait-ms = <30>;
+                    tap-ms = <30>;
+                    bindings
+                        = <&macro_tap &kp K_APP>
+                        , <&macro_wait_time 80>
+                        , <&macro_tap &kp TAB> //1
+                        , <&macro_tap &kp TAB> //2
+                        , <&macro_tap &kp TAB> //3
+                        , <&macro_tap &kp TAB> //4
+                        , <&macro_tap &kp TAB> //5
+                        , <&macro_tap &kp TAB> //6
+                        , <&macro_tap &kp TAB> //7
+                        , <&macro_tap &kp TAB> //8
+                        , <&macro_tap &kp TAB> //9
+                        , <&macro_tap &kp ENTER>
+                        ;
                 };
                 sk_shft: sk_shft {
                     compatible = "zmk,behavior-macro";
