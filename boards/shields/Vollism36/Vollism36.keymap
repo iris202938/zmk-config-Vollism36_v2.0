@@ -209,6 +209,12 @@
                     layers = <QWE LIN CAD>;
                     timeout-ms = <80>;
                 };
+                combo_minus {
+                    bindings = <&kp MINUS>;
+                    key-positions = <8 9>;
+                    layers = <QWE LIN CAD>;
+                    timeout-ms = <80>;
+                };
                 alt_slash {
                     bindings = <&file_f>;
                     key-positions = <17 28>;
@@ -5467,11 +5473,11 @@
                 macro_unzip: macro_unzip {
                     compatible = "zmk,behavior-macro";
                     #binding-cells = <0>;
-                    wait-ms = <30>;
-                    tap-ms = <30>;
+                    wait-ms = <100>;
+                    tap-ms = <40>;
                     bindings
                         = <&macro_tap &kp K_APP>
-                        , <&macro_wait_time 80>
+                        , <&macro_wait_time 200>
                         , <&macro_tap &kp TAB> //1
                         , <&macro_tap &kp TAB> //2
                         , <&macro_tap &kp TAB> //3
@@ -5481,7 +5487,7 @@
                         , <&macro_tap &kp TAB> //7
                         , <&macro_tap &kp TAB> //8
                         , <&macro_tap &kp TAB> //9
-                        , <&macro_tap &kp ENTER>
+                        // , <&macro_tap &kp ENTER>
                         ;
                 };
                 sk_shft: sk_shft {
@@ -5814,10 +5820,10 @@
                 BLE {
                     bindings = <
                 // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-                    &clear_mods     &bootloader     &kp INT3        &kp INT6        &bt BT_CLR_ALL                                  &bt BT_CLR_ALL  &m_hi_con   	&kp GRAVE       &bootloader     &sys_reset
+                    &clear_mods     &bootloader     &kp INT3        &kp INT6        &mkp MB2                                        &bt BT_CLR_ALL  &m_hi_con   	&kp GRAVE       &bootloader     &sys_reset
                     &kp LC(LG(T))   &kp LC(LG(C))   &kp LC(LG(P))   &kp LC(LG(G))                                                   &trans          &kp LC(LG(E))   &kp LC(LG(A))   &kp LC(LG(L))   &kp LC(LG(X))
                     &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3                                    &bootloader     &bootloader     &bt4_lLIN       &kp TILDE       &kp TILDE2      &kp K_CALC
-                                                    &trans          &trans          &kp LS(LG(F23)) &bt BT_CLR      &bt BT_CLR      &kp LA(LG(G))   &trans
+                                                    &trans          &trans          &mkp MB3        &mkp MB1        &bt BT_CLR      &kp LA(LG(G))   &trans
                     >;
                     sensor-bindings = <&win_enc>;
                 };
