@@ -5480,6 +5480,8 @@
                     bindings
                         = <&macro_tap &kp K_APP>
                         , <&macro_wait_time 5000>
+                        , <&macro_tap &kp LALT>
+                        , <&macro_wait_time 2000>
                         , <&macro_tap &kp T>
                         , <&macro_wait_time 2000>
                         , <&macro_tap &kp N2>
