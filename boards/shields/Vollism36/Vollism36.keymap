@@ -5476,12 +5476,12 @@
                     compatible = "zmk,behavior-macro";
                     #binding-cells = <0>;
                     wait-ms = <80>;
-                    tap-ms = <50>;
+                    tap-ms = <80>;
                     bindings
                         = <&macro_tap &kp K_APP>
-                        , <&macro_wait_time 1000>
+                        , <&macro_wait_time 2000>
                         , <&macro_tap &kp T>
-                        , <&macro_wait_time 300>
+                        , <&macro_wait_time 2000>
                         , <&macro_tap &kp N2>
                         ;
                 };
