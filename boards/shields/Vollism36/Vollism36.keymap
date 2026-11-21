@@ -5481,6 +5481,7 @@
                         = <&macro_tap &kp K_APP>
                         , <&macro_wait_time 100>
                         , <&macro_tap &kp T>
+                        , <&macro_wait_time 100>
                         , <&macro_tap &kp N2>
                         ;
                 };
